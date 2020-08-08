@@ -1,0 +1,42 @@
+<!--pages/prove/prove.wxml-->
+<view class="toptitle">
+    <view class="radiu"></view>
+    <view class="title">
+        易班轻应用开发大赛活动证明
+    </view>
+</view>
+<view class="middlecontent">
+    <view class="container">
+        <text class="content">易班轻应用开发大赛活动证明如下
+        </text>
+    </view>
+</view>
+<view class="imgcontainer"> 
+    <image class="picture" 
+    mode="aspectFill"
+    wx:for="{{picUrl}}" 
+    wx:key="*this" 
+    src='{{item}}' 
+    data-index='{{index}}'
+    bindtap="handPreviewImg" />
+</view>
+<view class="labelcontainer"
+    >
+    <view class="lableinner"
+    wx:for="{{label}}"
+    wx:key="*this">
+        {{item}}
+    </view>
+</view>
+
+  
+<view class="bottomoptions">
+    <view class="bottomcontainer" bindtap="handcollection">
+        <view class="iconfont icon-shoucang icons" hidden="{{colle?true:false}}"></view>
+        <view class="iconfont icon-collection-b icons" hidden="{{colle?false:true}}"></view>
+        <view class="bottominner">
+            收藏
+        </view>
+    </view>
+</view>
+

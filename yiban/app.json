@@ -1,0 +1,54 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/activity/activity",
+    "pages/organization/organization",
+    "pages/prove/prove",
+    "pages/team/team",
+    "pages/teamcontent/teamcontent",
+    "pages/teamEditors/teamEditors",
+    "pages/informationList/informationList",
+    "pages/informationDetail/informationDetail",
+    "pages/searchActivity/searchActivity",
+    "pages/searchOrganization/searchOrganization",
+    "pages/personalCenter/personalCenter",
+    "pages/auditList/auditList",
+    "pages/auditDetail/auditDetail",
+    "pages/auditSuccess/auditSuccess",
+    "pages/auditFail/auditFail"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff5e5b",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "#ff5e5b",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "./icon/home.png",
+      "selectedIconPath": "./icon/home1.png"
+    },
+    {
+      "pagePath": "pages/organization/organization",
+      "text": "资料",
+      "iconPath": "./icon/organization.png",
+      "selectedIconPath": "./icon/organization1.png"
+    },
+    {
+      "pagePath": "pages/personalCenter/personalCenter",
+      "text": "我的",
+      "iconPath": "./icon/my.png",
+      "selectedIconPath": "./icon/my1.png"
+    }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

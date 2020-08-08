@@ -1,0 +1,131 @@
+/* pages/searchOrganization/searchOrganization.wxss */
+/* pages/searchActivity/searchActivity.wxss */
+page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.topcontainer{
+    width: 702rpx;
+    height: 60rpx;
+    
+    margin: 25rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerInput{
+    width: 550rpx;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin-right: 25rpx;
+    box-sizing: border-box;
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    font-size: 34rpx;
+}
+.inputtip{
+    font-size: 34rpx;
+    color: #999592;
+}
+.innerButton{
+    width: 127rpx;
+    font-size: 34rpx;
+    background-color: #ff5e5b;
+    border-radius: 25rpx;
+    text-align: center;
+    line-height: 60rpx;
+}
+.ListContainer{
+    margin-bottom: 100rpx;
+}
+.resultList{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    /* display: flex;
+    align-items: center; */
+    box-sizing: border-box;
+    padding: 25rpx;
+    padding-left: 60rpx;
+    position: relative;
+}
+.radiu{
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #17c3b2;
+    border-radius: 50%;
+    margin-right:25rpx;
+    position: absolute;
+    top: 42rpx;
+    left: 25rpx;
+}
+.title{
+    width: 600rpx;
+    font-size: 42rpx;
+    /* margin-top: 24rpx; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.text{
+    /* height: 25rpx; */
+    width: 540rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 15rpx;
+    font-size: 34rpx;
+    color: #999592;
+    display: flex;
+    justify-content: flex-start;
+}
+.text1{
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+    /* text-align:right */
+}
+.text2{
+    color: #ff5e5b;
+    
+}
+.onlySearch{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.text3{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.labelcontainer{
+    width: 702rpx;
+    margin-top: 15rpx;
+    /* padding-left: 25rpx; */
+    display: flex;
+    flex-wrap: wrap;
+}
+.lableinner{
+    height: 30rpx;
+    background-color: #ffffff;
+    border: 2rpx #999592 solid;
+    border-radius: 35rpx;
+    padding: 8rpx 25rpx;
+    font-size: 34rpx;
+    color: #999592;
+    margin-right: 25rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date{
+    font-size: 25rpx;
+    float: right;
+    color: #999592;
+    position: absolute;
+    bottom: 15rpx;
+    right: 25rpx;
+}

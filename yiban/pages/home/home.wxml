@@ -1,0 +1,124 @@
+<!--pages/home/home.wxml  -->
+<view>
+    <searchinput innet-text="搜索" jump-url="../../pages/searchActivity/searchActivity"></searchinput>
+    <view class="bar">
+        <view class="first {{isActive==='one'?'active':''}}" bindtap="handlebar" data-judge="one">
+            活动
+        </view>
+        <view class="second {{isActive==='second'?'active':''}}" bindtap="handlebar" data-judge="second">
+            活动证明
+        </view>
+    </view>
+    <view class="firstPage" hidden="{{isActive=='one'?false:true}}">
+        <navigator class="content" 
+        wx:for="{{activityArray}}"
+        wx:key="id"
+        url="../activity/activity?activityId={{item.activity.id}}">
+            <view class="contentinner">
+                <view class="{{item.browsed?'radiuGreen':'radiuRed'}}" ></view>
+                <view class="title">
+                    {{item.activity.title}}
+                </view>
+                <view class="iconfont icon-xinxiaoxi newIcon" hidden="{{item.browsed?true:false}}"></view>
+                  
+            </view>
+            <view class="time">
+                {{item.activity.dayToNow}}
+            </view>
+        </navigator>
+    </view>
+    <view class="firstPage" hidden="{{isActive=='second'?false:true}}">
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+                <view class="iconfont icon-xinxiaoxi newIcon"></view>
+            </view>
+            <view class="time">
+                2分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+                <view class="iconfont icon-xinxiaoxi newIcon"></view>
+            </view>
+            <view class="time">
+                2分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+        <navigator class="content" url="../prove/prove">
+            <view class="contentinner">
+                <view class="{{isClick?'radiuGreen':'radiuRed'}}"></view>
+                <view class="title">
+                    易班轻应用开发大赛活动证明
+                </view>
+            </view>
+            <view class="time">
+                3分钟前
+            </view>
+        </navigator>
+    </view>
+
+
+</view>

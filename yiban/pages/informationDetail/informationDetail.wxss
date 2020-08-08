@@ -1,0 +1,98 @@
+/* pages/informationDetail/informationDetail.wxss */
+Page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.toptitle{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 25rpx 25rpx 0rpx 25rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25rpx;
+    padding-left: 60rpx;
+    position: relative;
+}
+.radiu{
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #17c3b2;
+    border-radius: 50%;
+    margin-right:25rpx;
+    position: absolute;
+    top: 42rpx;
+    left: 25rpx;
+}
+.title{
+    font-size: 34rpx;
+}
+.middleContent{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 25rpx;
+    margin: 25rpx;
+    font-size: 34rpx;
+}
+.middleInnerContent{
+    border-left: 2rpx solid #999592;
+    padding-left: 25rpx;
+}
+.middlePicture{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    padding: 25rpx;
+    margin: 0rpx 25rpx;
+}
+.innerPicture{
+    width: 652rpx;
+    margin-bottom: 25rpx;
+}
+.bottomHrefTip{
+    width: 150rpx;
+    background-color: #ff5e5b;
+    font-size: 34rpx;
+    border-radius: 20rpx;
+    text-align: center;
+    margin-left: 25rpx;
+    margin-top: 25rpx;
+    box-sizing: border-box;
+    line-height: 70rpx;
+}
+.bottomHref{
+    width: 702rpx;
+    margin: 25rpx;
+    margin-bottom: 100rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+.bottomHrefText{
+    display: inline-block;
+    width: 520rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin-right: 25rpx;
+    font-size: 34rpx;
+    box-sizing: border-box;
+    padding: 25rpx;
+}
+.bottomHrefButton{
+    width: 157rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 0rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34rpx;
+}
+.buttonIcon{
+    color: #333333;
+    margin-right: 10rpx;
+}

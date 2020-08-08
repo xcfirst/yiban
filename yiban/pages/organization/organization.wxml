@@ -1,0 +1,62 @@
+<!--pages/organization/organization.wxml-->
+<searchinput innet-text="搜索组织社团" jump-url="../searchOrganization/searchOrganization"></searchinput>
+<view class="mark">
+    校级组织
+</view>
+<view class="cardContainer">
+    <navigator class="card" url="../informationList/informationList?type=组织">
+        <view class="cardTop organization">
+            <view class="iconfont icon-zuzhibumen cardIcon"></view>
+        </view>
+        <view class="cardText">
+            校级组织
+        </view>
+    </navigator>
+</view>
+
+<view class="mark">
+    社团
+</view>
+
+<view class="cardContainer">
+    <navigator class="card" url="../informationList/informationList?type=学术科技类">
+        <view class="cardTop academic">
+            <view class="iconfont icon-kejichuangxin cardIcon"></view>
+        </view>
+        <view class="cardText">
+            学术科技类
+        </view>
+    </navigator>
+    <navigator class="card" url="../informationList/informationList?type=公益实践类">
+        <view class="cardTop publicWelfare">
+            <view class="iconfont icon-gongyi cardIcon"></view>
+        </view>
+        <view class="cardText">
+            公益实践类
+        </view>
+    </navigator>
+    <navigator class="card" url="../informationList/informationList?type=文化艺术类">
+        <view class="cardTop cultureArt">
+            <view class="iconfont icon-gongyi cardIcon"></view>
+        </view>
+        <view class="cardText">
+            文化艺术类
+        </view>
+    </navigator>
+    <navigator class="card" url="../informationList/informationList?type=体育竞技类">
+        <view class="cardTop sport">
+            <view class="iconfont icon-tiyu cardIcon"></view>
+        </view>
+        <view class="cardText">
+            体育竞技类
+        </view>
+    </navigator>
+</view>
+<view class="bottomContainer">
+    <view class="iconfont icon-web-icon- bottomIcon"></view>
+    <text class="bottomTip">相关组织社团负责人若需要更新资料或申请添加新的组织社团，请在 我的>资料申请 处申请
+        注意：只有社团组织负责人才能进行资料的添加和修改，在进行资料的添加修改之前，需先完成身份的认证。
+    </text>
+      
+</view>
+  

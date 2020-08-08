@@ -1,0 +1,5 @@
+<!--pages/auditSuccess/auditSuccess.wxml-->
+<view class="tipText">
+    成功发送审核通过信息
+</view>
+  

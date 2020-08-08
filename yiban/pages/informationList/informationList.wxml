@@ -1,0 +1,12 @@
+<!--pages/FieldOrganization/FieldOrganization.wxml-->
+<view class="bigContainer">
+        <navigator class="toptitle" 
+        wx:for="{{nowAssociation}}"
+        wx:key="AssociationId"
+        url="../informationDetail/informationDetail?name={{item}}" >
+        <view class="radiu"></view>
+        <view class="title">
+            {{item}}
+        </view>
+    </navigator>
+</view>

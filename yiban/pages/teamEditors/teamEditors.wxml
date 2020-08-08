@@ -1,0 +1,29 @@
+<!--pages/teamEditors/teamEditors.wxml-->
+<view class="tipcontent">
+    <view class="iconfont icon-web-icon- tipicon"></view>
+    <view class="tiptext">
+        请输入健康积极向上的内容噢，与平台主题不符合的内容将会被删除
+    </view>
+</view>
+<view class="inputcontain">
+    <view class="inputinner">
+        <textarea class="inputcontent"
+        type="text" 
+        placeholder="点击编辑组队信息" 
+        placeholder-class="inputtip"
+        maxlength="-1"
+        bindinput="handleInput"
+        auto-height
+        >
+    </textarea>
+    </view>
+</view>
+<cover-view class="bottomteam" bindtap="handsubmit">
+    <cover-view class="iconfont icon-bianji bottomicon"></cover-view>
+    <cover-view class="bottomtext">
+        确认发布
+    </cover-view>
+</cover-view>
+
+  
+  

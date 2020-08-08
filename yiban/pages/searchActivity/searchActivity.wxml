@@ -1,0 +1,34 @@
+<view class="topcontainer">
+    <input class="innerInput" type="text" placeholder="搜索" placeholder-class="inputtip" bindinput="handleInput" focus />
+    <view class="innerButton" bindtap="handleCancle">
+        取消
+    </view>
+
+</view>
+<view class="ListContainer">
+    <navigator class="resultList" wx:for="{{searchResult}}" wx:key="id" url="../activity/activity?activityId={{item.id}}">
+        <view class="radiu"></view>
+        <view class="title">
+            {{item.title}}
+        </view>
+        <view class="text" hidden="{{!item.hasSearch}}">
+            <view class="text1">
+                {{item.searchBefore}}
+            </view>
+            <view class="text2 {{item.onlySearch?'onlySearch':''}}">
+                {{item.search}}
+            </view>
+            <view class="text3">
+                {{item.searchAfter}}
+            </view>
+        </view>
+        <view class="labelcontainer" hidden="{{!item.hasLabel}}">
+            <view class="lableinner">
+                {{item.label}}
+            </view>
+        </view>
+        <view class="date">
+            {{item.date}}
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,13 @@
+/* pages/personalCenter/personalCenter.wxss */
+Page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.bigcontainer{
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin: 25rpx;
+    padding: 25rpx;
+    font-size: 34rpx;
+}

@@ -1,0 +1,67 @@
+<!--pages/auditDetail/auditDetail.wxml-->
+<!--pages/activity/activity.wxml -->
+<view class="toptitle">
+    <view class="radiu"></view>
+    <view class="title">
+        华南农业大学校团委工作人员
+    </view>
+</view>
+
+
+<view class="imgcontainer">
+    <image class="picture" mode="aspectFill" src="../../image/1.jpg" />
+    <image class="picture" mode="aspectFill" src="../../image/1.jpg" />
+    <image class="picture" mode="aspectFill" src="../../image/1.jpg" />
+</view>
+
+
+<view class="messageInnerTop">
+    个人信息
+</view>
+<view class="middleContainer">
+    <view class="middlecontent">
+        <view class="iconfont icon-gerenxinxi middleIconName"></view>
+        <view class="content">
+            张三
+        </view>
+    </view>
+    <view class="middlecontent">
+        <view class="iconfont icon-xuehao middleIconNumber"></view>
+        <view class="content">
+            201811111111
+        </view>
+    </view>
+    <view class="middlecontent">
+        <view class="iconfont icon-nianji middleIconGrade"></view>
+        <view class="content">
+            18级数学与信息学院软件学院
+        </view>
+    </view>
+    <view class="middlecontent">
+        <view class="iconfont icon-banji middleIconClass"></view>
+        <view class="content">
+            网络工程1班
+        </view>
+    </view>
+    <view class="middlecontent">
+        <view class="iconfont icon-lianxifangshi middleIconPhone"></view>
+        <view class="content">
+            13611111111
+        </view>
+    </view>
+    <view class="middlecontent">
+        <view class="iconfont icon-weixinhao middleIconWechat"></view>
+        <view class="content">
+            wechatyiban
+        </view>
+    </view>
+</view>
+
+<view class="bottomoptions">
+    <view class="bottomcontainer" bindtap="handSuccessSubmit">
+        审核通过
+    </view>
+    <navigator class="bottomcontainer" url="../auditFail/auditFail">
+        审核不通过
+    </navigator>
+</view>

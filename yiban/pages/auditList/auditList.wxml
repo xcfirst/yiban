@@ -1,0 +1,27 @@
+<!--pages/auditList/auditList.wxml-->
+<view class="bigContainer">
+    <navigator class="content" url="../auditDetail/auditDetail">
+        <view class="contentinner">
+            <view class="radiuRed"></view>
+            <view class="title">
+                华南农业大学校团委工作人员
+            </view>
+            <view class="iconfont icon-xinxiaoxi newIcon"></view>
+        </view>
+        <view class="time">
+            2020年6月21日
+        </view>
+    </navigator>
+    <navigator class="content" url="../auditDetail/auditDetail">
+        <view class="contentinner">
+            <view class="radiuGreen"></view>
+            <view class="title">
+                华南农业大学校团委工作人员
+            </view>
+            <!-- <view class="iconfont icon-xinxiaoxi newIcon"></view> -->
+        </view>
+        <view class="time">
+            2020年6月21日
+        </view>
+    </navigator>
+</view>

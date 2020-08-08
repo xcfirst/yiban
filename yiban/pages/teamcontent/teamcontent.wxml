@@ -1,0 +1,10 @@
+<!--pages/teamcontent/teamcontent.wxml-->
+<view class="textcontain">
+    <view class="innercontent">
+        <text>{{nowTeamText.text}}</text>
+    </view>
+    
+</view>
+  
+
+  

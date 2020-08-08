@@ -1,0 +1,5 @@
+<!--pages/personalCenter/personalCenter.wxml-->
+<navigator class="bigcontainer" url="../auditList/auditList">
+    身份认证
+</navigator>
+  

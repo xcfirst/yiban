@@ -1,0 +1,36 @@
+<!--pages/informationDetail/informationDetail.wxml-->
+<view class="bigContainer">
+    <view class="toptitle">
+        <view class="radiu"></view>
+        <view class="title">
+            {{nowAssociation.name}}
+        </view>
+    </view>
+    <view class="middleContent">
+        <view class="middleInnerContent">
+            <text>{{nowAssociation.introduce}}
+            </text>
+        </view>
+    </view>
+    <!-- <view class="middlePicture">
+        <image class="innerPicture"
+        mode="widthFix" 
+        wx:for="{{imgArr}}" 
+        wx:key="*this" 
+        src='{{item}}' 
+        data-index='{{index}}'
+        bindtap="handPreviewImg"/>
+    </view> -->
+    <view class="bottomHrefTip">
+        公众号
+    </view>
+      
+    <view class="bottomHref">
+        <text class="bottomHrefText" selectable='true' bindlongtap='copy'>{{nowAssociation.href}}</text>
+        <view class="bottomHrefButton" bindtap="copyBtn">
+            
+            <view class="iconfont icon-fuzhi buttonIcon"></view>
+            <view>复制</view>   
+        </view>
+    </view>
+</view>
