@@ -27,10 +27,11 @@ Page({
       .then(res => {
         console.log(res.data.obj);
         let groupArray = res.data.obj;
-        let hasGroup = this.data.hasGroup;
+        let hasGroup = true;
         if(groupArray == null){
-          hasGroup=false
+          hasGroup = false
         }
+        console.log(hasGroup);
         this.setData({
           groupArray,
           hasGroup
