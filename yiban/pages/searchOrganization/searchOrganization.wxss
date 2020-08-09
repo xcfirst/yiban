@@ -1,5 +1,4 @@
 /* pages/searchOrganization/searchOrganization.wxss */
-/* pages/searchActivity/searchActivity.wxss */
 page{
     background-color: #fef9ef;
     font-size: 42rpx;

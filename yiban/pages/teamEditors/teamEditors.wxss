@@ -47,7 +47,6 @@ page{
 }
 .bottomteam{
     width: 750rpx;
-    /* height: 85rpx; */
     padding: 25rpx 0rpx;
     background-color: #ff5e5b;
     border-radius: 20rpx;

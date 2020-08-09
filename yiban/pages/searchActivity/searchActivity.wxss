@@ -1,4 +1,3 @@
-/* pages/searchOrganization/searchOrganization.wxss */
 /* pages/searchActivity/searchActivity.wxss */
 page{
     background-color: #fef9ef;
@@ -45,8 +44,6 @@ page{
     border-radius: 20rpx;
     background-color: #ffffff;
     margin: 25rpx 24rpx 0rpx 24rpx;
-    /* display: flex;
-    align-items: center; */
     box-sizing: border-box;
     padding: 25rpx;
     padding-left: 60rpx;
@@ -65,13 +62,11 @@ page{
 .title{
     width: 600rpx;
     font-size: 42rpx;
-    /* margin-top: 24rpx; */
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 .text{
-    /* height: 25rpx; */
     width: 540rpx;
     overflow: hidden;
     white-space: nowrap;
@@ -81,15 +76,8 @@ page{
     display: flex;
     justify-content: flex-start;
 }
-.text1{
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; */
-    /* text-align:right */
-}
 .text2{
     color: #ff5e5b;
-    
 }
 .onlySearch{
     overflow: hidden;
@@ -104,7 +92,6 @@ page{
 .labelcontainer{
     width: 702rpx;
     margin-top: 15rpx;
-    /* padding-left: 25rpx; */
     display: flex;
     flex-wrap: wrap;
 }

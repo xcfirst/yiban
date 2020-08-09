@@ -1,10 +1,6 @@
 // pages/informationDetail/informationDetail.js
 import { request } from "../../request/index.js";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     // "Association":[
     //   {
@@ -59,10 +55,6 @@ Page({
     ],
     "name":""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     console.log(options);
     let name = options.name;
@@ -70,17 +62,6 @@ Page({
       name
     })
     this.getAssociation();
-    // let AssociationId = options.AssociationId;
-    // let nowAssociation = {};
-    // for(var i=0; i<this.data.Association.length; i++){
-    //   if(AssociationId==this.data.Association[i].AssociationId){
-    //     nowAssociation = this.data.Association[i];
-    //     break;
-    //   }
-    // }
-    // this.setData({
-    //   nowAssociation:nowAssociation
-    // })
   },
   getAssociation() {
     const name = this.data.name;

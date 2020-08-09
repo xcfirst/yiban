@@ -1,10 +1,6 @@
 // pages/activity/activity.js
 import { request } from "../../request/index.js";
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     "userId": 1,
     "activityId": undefined,
@@ -125,10 +121,6 @@ Page({
     "hasMessage": true,
     
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     this.setData({
       activityId: options.activityId
@@ -143,14 +135,6 @@ Page({
     request({
       // url: "http://liveforjokes.icu:8864/activity/queryActivityById",
       url: "http://localhost:8864/activity/queryActivityById",
-      // header: {
-      //         'content-type': 'application/json' // 默认值
-      //       //   //这里修改json为text   json的话请求时会返回400(bad request)
-      //         // 'content-type': 'application/text'
-      //         // 'content-type': 'json'
-      //         // "Content-Type":"json"
-      //       //   'content-type': "text/plain"
-      //       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

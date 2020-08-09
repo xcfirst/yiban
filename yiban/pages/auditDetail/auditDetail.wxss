@@ -26,9 +26,6 @@ Page{
     top: 42rpx;
     left: 25rpx;
 }
-/* .title{
-    display: inline-block;
-} */
 .imgcontainer{
     width: 702rpx;
     background-color: #ffffff;
@@ -67,7 +64,6 @@ Page{
     margin: 25rpx 24rpx 0rpx 24rpx;
     padding: 25rpx;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     position: relative;
 }
@@ -98,8 +94,6 @@ Page{
     margin-right: 11rpx;
 }
 .content{
-    /* position: absolute; */
-    /* left: 70rpx; */
     padding-left: 25rpx;
     font-size: 34rpx;
     display: flex;

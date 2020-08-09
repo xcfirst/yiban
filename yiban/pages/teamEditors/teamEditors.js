@@ -6,10 +6,6 @@ Page({
     "userId": 1,
     "activityId": null
   },
-
-  /**
-   * 生命周期函数--监听页面加载 
-   */
   onLoad: function (options) {
     let activityId = options.activityId;
     this.setData({
@@ -53,9 +49,6 @@ Page({
     if (this.data.inputtext != "") {
       publish = true;
     }
-    // if (!this.data.inputtext.trim()) {
-    //   publish = true;
-    // }
     if (publish==true) {
       wx.showModal({
         title: '确认发布吗？',
@@ -66,12 +59,6 @@ Page({
             console.log('用户点击确定');
             that.submitGroup();
             wx.navigateBack(2);
-            // wx.redirectTo({
-            //   url: '../team/team?activityId=' + activityId
-            // })
-            // wx.navigateTo({
-            //   url: '../team/team?activityId=' + activityId
-            // })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }

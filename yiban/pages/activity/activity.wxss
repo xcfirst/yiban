@@ -26,9 +26,6 @@ page{
     top: 42rpx;
     left: 25rpx;
 }
-/* .title{
-    display: inline-block;
-} */
 .middlecontent{
     width: 702rpx;
     border-radius: 20rpx;
