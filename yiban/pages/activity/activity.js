@@ -4,7 +4,6 @@ Page({
   data: {
     "userId": 1,
     "activityId": undefined,
-    "colle": false,
     "nowactivityArray": {},
     "isActivityNull": {
       "isTitleNull": true,
@@ -22,8 +21,6 @@ Page({
     this.setData({
       activityId: options.activityId
     })
-  },
-  onShow: function () {
     this.getActivityArray();
   },
   getActivityArray() {
@@ -35,7 +32,6 @@ Page({
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-
       data: { userId, activityId },
       method: "POST",
     })
@@ -56,7 +52,7 @@ Page({
             isActivityNull.isPictureNull = false;
           if (nowactivityArray.message != null)
             isActivityNull.isMessageNull = false;
-          if (nowactivityArray.collected != null)
+          if (nowactivityArray.activity.collected != null)
             isActivityNull.isCollectedNull = false;
 
           let hasMessage = this.data.hasMessage;
@@ -121,12 +117,11 @@ Page({
             });
             // wx.hideToast(timer);
           }
-
-
         })
     }
     this.setData({
-      "isActivityNull.isCollectedNull": colle
+      "isActivityNull.isCollectedNull": colle,
+      "nowactivityArray.activity.collected": !colle
     });
   },
   handPreviewImg(e) {

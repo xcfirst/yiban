@@ -32,7 +32,6 @@ Page({
           if (groupArray == null) {
             hasGroup = false
           }
-          console.log(hasGroup);
           this.setData({
             groupArray,
             hasGroup
