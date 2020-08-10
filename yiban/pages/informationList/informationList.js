@@ -2,8 +2,8 @@
 import { request } from "../../request/index.js";
 Page({
   data: {
-    "nowAssociation":[],
-    "type":""
+    "nowAssociation": [],
+    "type": ""
   },
   onLoad: function (options) {
     console.log(options);
@@ -18,15 +18,18 @@ Page({
     request({
       // url: "http://liveforjokes.icu:8864/getAssociationByType",
       url: "http://localhost:8864/getAssociationByType",
-      data: {type},
+      data: { type },
     })
       .then(res => {
         console.log(res.data.obj);
-        let nowAssociation = res.data.obj;
-        this.setData({
-          nowAssociation
-        })
+        if (res.statusCode == 200) {
+          let nowAssociation = res.data.obj;
+          this.setData({
+            nowAssociation
+          })
+        }
+
       })
   },
-  
+
 })

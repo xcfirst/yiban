@@ -2,39 +2,39 @@
 import { request } from "../../request/index.js";
 Page({
   data: {
-    "searchText":"",
-    "hasText":false,
-    "searchResult":[]
+    "searchText": "",
+    "hasText": false,
+    "searchResult": []
   },
   onLoad: function (options) {
 
   },
 
-  handleCancle(){
+  handleCancle() {
     wx.navigateBack({
-      url:"../organization/organization"
+      url: "../organization/organization"
     })
   },
-  handleInput(e){
+  handleInput(e) {
     // console.log(e.detail.value);
     let searchText = e.detail.value;
     let hasText;
     this.setData({
       searchText
     })
-    if(searchText!=""){
+    if (searchText != "") {
       hasText = true;
     }
     clearTimeout(this.TimeId);
     const that = this;
-    this.TimeId=setTimeout(() => {
-        if(hasText==true){
-          that.qsearch(searchText);
-        }else{
-          this.setData({
-            searchResult:[]
-          })
-        }
+    this.TimeId = setTimeout(() => {
+      if (hasText == true) {
+        that.qsearch(searchText);
+      } else {
+        this.setData({
+          searchResult: []
+        })
+      }
     }, 300);
   },
   qsearch(searchText) {
@@ -42,17 +42,19 @@ Page({
     request({
       // url: "http://liveforjokes.icu:8864/searchAssociation",
       url: "http://localhost:8864/searchAssociation",
-      data: {search},
+      data: { search },
     })
       .then(res => {
         // console.log(res.data.obj);
-        this.setData({
-          searchResult:res.data.obj
-        })
+        if (res.statusCode == 200) {
+          this.setData({
+            searchResult: res.data.obj
+          })
+        }
       })
   },
- 
-  
 
-  
+
+
+
 })

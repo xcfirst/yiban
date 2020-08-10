@@ -26,11 +26,25 @@ export const request=(params)=>{
      header:header,
     //  url:baseUrl+params.url,
      success:(result)=>{
-    //    resolve(result.data.message);
        resolve(result);
+       if (result.statusCode != 200){
+        wx.hideLoading();
+        wx.showToast({
+          title: "请求失败,请稍后重试！",
+          icon: 'none',
+          duration: 2000,
+        });
+       }
      },
      fail:(err)=>{
        reject(err);
+      //  console.log("网络问题，请求失败");
+       wx.hideLoading();
+        wx.showToast({
+          title: "请求失败,请稍后重试！",
+          icon: 'none',
+          duration: 2000,
+        });
      },
      complete:()=>{
       ajaxTimes--;

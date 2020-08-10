@@ -120,6 +120,13 @@
 					"id": -1,
 					"name": "后台审核不通过",
 					"pathName": "pages/auditFail/auditFail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "后台审核列表",
+					"pathName": "pages/auditList/auditList",
 					"scene": null
 				}
 			]

@@ -7,7 +7,7 @@ Page({
     "searchResult": [],
   },
   onLoad: function (options) {
-    
+
   },
   handleCancle() {
     wx.navigateBack({
@@ -46,31 +46,29 @@ Page({
     })
       .then(res => {
         console.log(res.data.obj);
-        let searchResult = res.data.obj;
-        let i;
-        if (searchResult != null) {
-          for (i = 0; i < searchResult.length; i++) {
-            if (searchResult[i].label == null)
-              searchResult[i].hasLabel = false;
-            else
-              searchResult[i].hasLabel = true;
-            if (searchResult[i].search == null)
-              searchResult[i].hasSearch = false;
-            else
-              searchResult[i].hasSearch = true;
-            if(searchResult[i].searchBefore=="" && searchResult[i].searchAfter=="")
-              searchResult[i].onlySearch=true;
-            else
-              searchResult[i].onlySearch=false; 
+        if (res.statusCode == 200) {
+          let searchResult = res.data.obj;
+          let i;
+          if (searchResult != null) {
+            for (i = 0; i < searchResult.length; i++) {
+              if (searchResult[i].label == null)
+                searchResult[i].hasLabel = false;
+              else
+                searchResult[i].hasLabel = true;
+              if (searchResult[i].search == null)
+                searchResult[i].hasSearch = false;
+              else
+                searchResult[i].hasSearch = true;
+              if (searchResult[i].searchBefore == "" && searchResult[i].searchAfter == "")
+                searchResult[i].onlySearch = true;
+              else
+                searchResult[i].onlySearch = false;
+            }
           }
+          this.setData({
+            searchResult
+          })
         }
-
-
-
-
-        this.setData({
-          searchResult
-        })
       })
   },
 

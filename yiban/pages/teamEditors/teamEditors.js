@@ -11,7 +11,6 @@ Page({
     this.setData({
       activityId
     })
-
   },
   submitGroup() {
     const userId = this.data.userId;
@@ -23,18 +22,23 @@ Page({
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-
       data: { activityId, userId, text },
       method: "POST",
     })
       .then(res => {
-        wx.showToast({
-          title: "发布成功",
-          icon: 'success',
-          duration: 1500,
-        });
-        console.log(res);
-      })
+        if (res.statusCode == 200) {
+          wx.showToast({
+            title: "发布成功",
+            icon: 'success',
+            duration: 1500,
+          });
+          setTimeout(function () {
+            wx.navigateBack(2);
+          }, 1500)
+          // console.log(res);
+        } 
+      });
+
   },
   handleInput(e) {
     const inputtext = e.detail.value;
@@ -49,7 +53,7 @@ Page({
     if (this.data.inputtext != "") {
       publish = true;
     }
-    if (publish==true) {
+    if (publish == true) {
       wx.showModal({
         title: '确认发布吗？',
         cancelColor: "#17c3b2",
@@ -58,7 +62,7 @@ Page({
           if (res.confirm) {
             console.log('用户点击确定');
             that.submitGroup();
-            wx.navigateBack(2);
+            // wx.navigateBack(2);
           } else if (res.cancel) {
             console.log('用户点击取消')
           }

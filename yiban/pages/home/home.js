@@ -1,15 +1,15 @@
-// pages/home/home.js
+// pages/home/home.js 
 import { request } from "../../request/index.js";
 Page({
   data: {
     "isClick": false,
     "isActive": "one",
-    "userId":1,
-    "activityArray":[]
+    "userId": 1,
+    "activityArray": []
   },
 
   onLoad: function (options) {
-      // this.getActivityArray();
+    // this.getActivityArray();
   },
   onShow: function () {
     this.getActivityArray();
@@ -19,18 +19,20 @@ Page({
     request({
       // url: "http://www.liveforjokes.icu:8864/index/activity",
       url: "http://localhost:8864/index/activity",
-      data: {userId},
+      data: { userId },
     })
       .then(res => {
         console.log(res.data.obj);
-        let activityArray = [];
-        let i,j;
-        for(i=0,j=0; i<res.data.obj.length; i++,j++){
-          activityArray[j] = res.data.obj[i];
+        if (res.statusCode == 200) {
+          let activityArray = [];
+          let i, j;
+          for (i = 0, j = 0; i < res.data.obj.length; i++, j++) {
+            activityArray[j] = res.data.obj[i];
+          }
+          this.setData({
+            activityArray
+          })
         }
-        this.setData({
-          activityArray
-        })
       })
   },
 

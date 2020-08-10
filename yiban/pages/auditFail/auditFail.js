@@ -1,10 +1,16 @@
 // pages/auditFail/auditFail.js
+import { request } from "../../request/index.js";
 Page({
   data: {
-    "inputtext":""
+    "inputtext": "",
+    "auditId": null
   },
   onLoad: function (options) {
-
+    console.log(options.auditId);
+    let auditId = options.auditId;
+    this.setData({
+      auditId
+    })
   },
 
   handleInput(e) {
@@ -14,12 +20,12 @@ Page({
     })
   },
   handsubmit(e) {
-    // const that = this;
+    const that = this;
     let publish;
     if (this.data.inputtext != "") {
       publish = true;
     }
-    if (publish==true) {
+    if (publish == true) {
       wx.showModal({
         title: '确认不通过审核并发送信息吗？',
         cancelColor: "#17c3b2",
@@ -27,7 +33,7 @@ Page({
         success(res) {
           if (res.confirm) {
             console.log('用户点击确定');
-            // that.submitGroup();
+            that.getFail();
             // wx.navigateBack(2);
           } else if (res.cancel) {
             console.log('用户点击取消')
@@ -35,5 +41,28 @@ Page({
         }
       })
     }
+  },
+  getFail() {
+    const id = this.data.auditId;
+    const information = this.data.inputtext;
+    request({
+      // url: "http://liveforjokes.icu:8864/fail",
+      url: "http://localhost:8864/fail",
+      data: { id, information },
+    })
+      .then(res => {
+        if (res.statusCode == 200) {
+          wx.showToast({
+            title: "提交成功",
+            icon: 'success',
+            duration: 1500,
+          });
+          setTimeout(function () {
+            wx.redirectTo({
+              url: "../auditList/auditList"
+            })
+          }, 1500)
+        }
+      })
   }
 })

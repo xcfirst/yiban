@@ -2,9 +2,9 @@
 import { request } from "../../request/index.js";
 Page({
   data: {
-    "groupArray":[],
+    "groupArray": [],
     "hasGroup": true,
-    "activityId":null
+    "activityId": null
   },
   onLoad: function (options) {
     let activityId = options.activityId;
@@ -16,26 +16,28 @@ Page({
   },
   onShow: function () {
     this.groupArray();
-  }, 
+  },
   groupArray() {
     const activityId = this.data.activityId;
     request({
       // url: "http://liveforjokes.icu:8864/getGroups",
       url: "http://localhost:8864/getGroups",
-      data: {activityId},
+      data: { activityId },
     })
       .then(res => {
         console.log(res.data.obj);
-        let groupArray = res.data.obj;
-        let hasGroup = true;
-        if(groupArray == null){
-          hasGroup = false
+        if (res.statusCode == 200) {
+          let groupArray = res.data.obj;
+          let hasGroup = true;
+          if (groupArray == null) {
+            hasGroup = false
+          }
+          console.log(hasGroup);
+          this.setData({
+            groupArray,
+            hasGroup
+          })
         }
-        console.log(hasGroup);
-        this.setData({
-          groupArray,
-          hasGroup
-        })
       })
   },
 })
