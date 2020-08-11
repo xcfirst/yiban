@@ -19,7 +19,7 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      activityId: options.activityId
+      activityId: +options.activityId
     })
     this.getActivityArray();
   },
@@ -40,19 +40,19 @@ Page({
         if (res.statusCode == 200) {
           let nowactivityArray = res.data.obj;
           let isActivityNull = this.data.isActivityNull;
-          if (nowactivityArray.activity.title != null)
+          if (nowactivityArray.activity.title != null && nowactivityArray.activity.title != "")
             isActivityNull.isTitleNull = false;
-          if (nowactivityArray.activity.date != null)
+          if (nowactivityArray.activity.date != null && nowactivityArray.activity.date != "")
             isActivityNull.isDateNull = false;
-          if (nowactivityArray.activity.address != null)
+          if (nowactivityArray.activity.address != null && nowactivityArray.activity.address != "")
             isActivityNull.isAddressNull = false;
-          if (nowactivityArray.activity.text != null)
+          if (nowactivityArray.activity.text != null && nowactivityArray.activity.text != "")
             isActivityNull.isTextNull = false;
           if (nowactivityArray.activity.picUrl.length != 0)
             isActivityNull.isPictureNull = false;
           if (nowactivityArray.message != null)
             isActivityNull.isMessageNull = false;
-          if (nowactivityArray.activity.collected != null)
+          if (nowactivityArray.activity.collected != null && nowactivityArray.activity.collected != "")
             isActivityNull.isCollectedNull = false;
 
           let hasMessage = this.data.hasMessage;

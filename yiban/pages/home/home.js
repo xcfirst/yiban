@@ -1,4 +1,4 @@
-// pages/home/home.js 
+// pages/home/home.js  
 import { request } from "../../request/index.js";
 Page({
   data: {
@@ -7,7 +7,6 @@ Page({
     "userId": 1,
     "activityArray": []
   },
-
   onLoad: function (options) {
     // this.getActivityArray();
   },
@@ -35,11 +34,10 @@ Page({
         }
       })
   },
-
   handlebar(e) {
     const isActive = e.currentTarget.dataset.judge
     this.setData({
       isActive
     })
-  },
+  }
 })

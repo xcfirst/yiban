@@ -1,4 +1,4 @@
-<view class="topcontainer">
+<view class="topcontainer"> 
     <input class="innerInput" type="text" placeholder="搜索" placeholder-class="inputtip" bindinput="handleInput" focus />
     <view class="innerButton" bindtap="handleCancle">
         取消
@@ -6,7 +6,7 @@
 
 </view>
 <view class="ListContainer">
-    <navigator class="resultList" wx:for="{{searchResult}}" wx:key="id" url="../activity/activity?activityId={{item.id}}">
+    <navigator class="resultList" wx:for="{{searchResult}}" wx:key="id" url="{{item.urlType}}{{item.id}}">
         <view class="radiu"></view>
         <view class="title">
             {{item.title}}

@@ -1,4 +1,4 @@
-// pages/searchActivity/searchActivity.js
+// pages/searchActivity/searchActivity.js 
 import { request } from "../../request/index.js";
 Page({
   data: {
@@ -51,11 +51,11 @@ Page({
           let i;
           if (searchResult != null) {
             for (i = 0; i < searchResult.length; i++) {
-              if (searchResult[i].label == null)
+              if (searchResult[i].label == null || searchResult[i].label == "")
                 searchResult[i].hasLabel = false;
               else
                 searchResult[i].hasLabel = true;
-              if (searchResult[i].search == null)
+              if (searchResult[i].search == null || searchResult[i].search == "")
                 searchResult[i].hasSearch = false;
               else
                 searchResult[i].hasSearch = true;
@@ -63,6 +63,12 @@ Page({
                 searchResult[i].onlySearch = true;
               else
                 searchResult[i].onlySearch = false;
+              if(searchResult[i].type == 1){
+                searchResult[i].urlType="../activity/activity?activityId="
+              }
+              else if(searchResult[i].type == 2){
+                searchResult[i].urlType="../prove/prove?activityId="
+              }
             }
           }
           this.setData({
