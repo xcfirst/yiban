@@ -1,0 +1,314 @@
+.add {
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.image {
+  width: 40rpx;
+  margin: 30rpx;
+}
+.image_2 {
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+  color: #ff5e5b;
+}
+.image_3 {
+  margin-top: 25rpx;
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+  color: #ff5e5b;
+}
+.image_4 {
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+  color: #ff5e5b;
+}
+.image_5 {
+  color: #000;
+  width: 100rpx;
+  font-size: 40rpx;
+}
+.input {
+  color: #000;
+}
+.zero {
+  height: 130rpx;
+  background-color: #fef9ef;
+}
+.first {
+  height: 100rpx;
+  font-size: 25rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999592;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.first .image {
+  width: 40rpx;
+  margin: 30rpx;
+  flex-basis: 6%;
+}
+.second {
+  height: 100rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999592;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.second .container {
+  display: flex;
+  padding-left: 10rpx;
+}
+.second_spe {
+  height: 100rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999592;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #fff;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.third_fir {
+  flex-flow: column;
+  height: 300rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999592;
+  display: flex;
+  justify-content: top;
+  align-items: left;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.third_fir .image_onput_1 {
+  color: #999592;
+  justify-content: top;
+  align-items: left;
+  margin-top: 25rpx;
+  font-size: 30rpx;
+}
+.third_sec {
+  height: 300rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999592;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.third_sec .third_plus {
+  display: flex;
+  flex-basis: 25%;
+  height: 1rpx;
+}
+.third_sec .third_plus .image_plus {
+  justify-content: top;
+  align-items: left;
+  width: 40rpx;
+  margin: 30rpx;
+}
+.third_sec .third_plus .image_onput_2 {
+  color: #999592;
+  justify-content: top;
+  align-items: left;
+  margin-top: 25rpx;
+}
+.third_sec .forth {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40rpx;
+  margin-top: 80rpx;
+}
+.third_sec .forth .fifth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35rpx;
+  border: 2rpx #999592 solid;
+  border-radius: 35rpx;
+  padding: 8rpx 25rpx;
+  margin-bottom: 25rpx;
+  font-size: 30rpx;
+  color: #999592;
+  margin-right: 25rpx;
+}
+.sixth {
+  width: 300rpx;
+  height: 30rpx;
+  padding: 10rpx;
+  display: flex;
+  color: #999592;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  margin-top: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+.forth1 {
+  margin: 25rpx 24rpx 100rpx 24rpx;
+  padding-left: 25rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.forth1 .fifth1 {
+  height: 40rpx;
+  background-color: #ffffff;
+  border: 2rpx #999592 solid;
+  border-radius: 35rpx;
+  padding: 8rpx 25rpx;
+  margin-bottom: 25rpx;
+  font-size: 34rpx;
+  color: #999592;
+  margin-right: 25rpx;
+}
+.seventh {
+  display: flex;
+  justify-content: space-around;
+  height: 70rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  color: #000;
+  background-color: #fdf9ee;
+}
+.seventh .senventh_1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 30rpx;
+  width: 340rpx;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.seventh .senventh_1 .change0 {
+  font-size: 50rpx;
+  color: #ff5e5b;
+}
+.seventh .senventh_1 .image_6 {
+  font-size: 50rpx;
+  color: #000;
+}
+.add_btn {
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+}
+.add_btn .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  width: 100%;
+  background: #ff5e5b;
+  color: #000;
+  border-radius: 15rpx;
+}
+.q-image-wrap {
+  width: 150rpx;
+  height: 150rpx;
+  border: 3px solid #f0f0f0;
+  float: left;
+  margin-right: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.q-image-remover {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background: #ff5e5b;
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+}
+.q-image-remover icon {
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  color: #fff;
+}
+.uploadImgBtn {
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  line-height: 140rpx;
+  border: 6rpx solid #f0f0f0;
+  float: left;
+}
+.uploadImgBtn icon {
+  font-size: 80rpx;
+  color: #999;
+}
+.question-images {
+  margin-left: 40rpx;
+}
+.second_plu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+textarea {
+  padding-right: 100rpx;
+  padding-left: 100rpx;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  width: 700rpx;
+  height: 50px;
+  background-color: #fff;
+  min-height: 32px;
+  /* 设置 min-height 是为了设置 textarea 的高度 */
+  /* 因为行内样式优先级比较高，所以曲线救国 */
+  font-size: 16px;
+  line-height: 16px;
+}
+.rich-text {
+  overflow: hidden;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+.mask-content {
+  position: fixed;
+  top: 44%;
+  left: 50%;
+  height: 60%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 12;
+}
+.beizhu {
+  font-size: 25rpx;
+  margin-right: 30rpx;
+}

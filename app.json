@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/Gongneng/gongneng",
+    "pages/Text/Text",
+    "pages/personal/personal",
+    "pages/collection/collection",
+    "pages/calendar/calendar",
+    "pages/footprint/footprint",
+    "pages/publish/publish",
+    "components/popup/popup",
+    "components/DateTimePicker/DateTimePicker",
+    "pages/message/message",
+    "pages/Release_management/R_m",
+    "pages/Message_center/M_c",
+    "pages/Leaving_message/L_m",
+    "pages/M_c_content/M_c_content",
+    "pages/L_m_content/L_m_content",
+    "pages/zudui/zudui"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff5e5b",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#fef9ef"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/Gongneng/gongneng",
+        "text": "功能",
+        "iconPath": "icon/功能管理.png",
+        "selectedIconPath": "icon/功能管理 (1).png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "我的",
+        "iconPath": "icon/我的.png",
+        "selectedIconPath": "icon/我的 (1).png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

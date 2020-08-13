@@ -1,0 +1,45 @@
+.zero {
+  display: flex;
+  flex-flow: column;
+  height: 110rpx;
+  font-size: 35rpx;
+  margin: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.zero .first {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+.zero .first .earing_info {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 20rpx;
+  margin-right: 30rpx;
+}
+.zero .first .icon2 {
+  margin-top: 0rpx;
+  font-size: 35rpx;
+  color: #ff5e5b;
+}
+.zero .time {
+  display: flex;
+  margin-right: 30rpx;
+  justify-content: flex-end;
+  color: #999592;
+  font-size: 30rpx;
+}
+.icon1 {
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  font-size: 50rpx;
+  color: #ff5e5b;
+}
+.icon3 {
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  font-size: 50rpx;
+  color: #18c3b3;
+}

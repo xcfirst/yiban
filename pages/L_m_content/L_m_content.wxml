@@ -1,0 +1,17 @@
+<view class="zero" >
+    <view class="first">
+        <view class="second">
+          <icon class="icon1 iconfont icon-yuandian"></icon>
+          <text>{{content}}</text>
+        </view>
+    </view>
+    <view class="time">2分钟前</view>
+  </view>
+
+<view class="content">
+    <view class="befor">
+      <view class="after">
+        {{message}}
+      </view>
+    </view>
+</view>

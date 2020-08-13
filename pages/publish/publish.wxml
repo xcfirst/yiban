@@ -1,0 +1,92 @@
+<!-- 二选一 -->
+<view class="sixth" style="white-space:pre-wrap">
+    <view class="iconfont icon-web-icon-"></view>  以下选项请二选一
+</view>
+
+<view class="seventh">
+  <view wx:for="{{list_1}}" wx:key="id" data-index="{{index}}" data-check1="{{list_1[1].ischeck}}" data-check0="{{list_1[0].ischeck}}"bindtap="change">
+      <view  bindtap="select"class="senventh_1"><icon class="{{item.src}}"></icon>{{item.name}}</view>
+  </view>
+</view>
+<view class="second" style="white-space:pre-wrap"><view class="image_2 iconfont icon-biaotizhengwenqiehuan-copy"></view>| <input class="input" bindinput='titleInput' type="text" placeholder="请在这里输入标题"></input></view>
+
+
+<view class="second" hidden="{{hidden2}}"><view class="image_2 iconfont icon-shijian"></view>|
+  <view class="container">
+    <DateTimePicker class="{{input1}}" placeholder = "{{placeholder1}}" date = "{{date}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange1" startDate="{{startDate}}" endDate="{{endDate}}">
+    </DateTimePicker>
+  </view>
+</view>
+
+<view class="second" hidden="{{hidden2}}"><view class="image_2 iconfont icon-shijian"></view>|
+  <view class="container">
+    <DateTimePicker class="{{input2}}" placeholder = "{{placeholder2}}" date = "{{date}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChange2" startDate="{{startDate}}" endDate="{{endDate}}">
+    </DateTimePicker>
+  </view>
+</view>
+
+<view class="second" style="white-space:pre-wrap" hidden="{{hidden2}}"><view class="image_2 iconfont icon-didian"></view>| <input class="input"  type="text" bindinput='addressInput' placeholder="请在这里输入地点"></input></view>
+<view class="second_spe" style="white-space:pre-wrap"><view class="image_2 iconfont icon-bianjizhengwen"></view>| 请在下方输入正文</view>
+<view class="second_plu">
+  <textarea class="input" bindinput='textInput' maxlength='{{maxTextLen}}'  auto-height="{{auto_height}}" bindblur='areablur' bindfocus='areafocus' ></textarea>
+</view>
+ 
+
+<view 
+class="third_fir" >
+    <view class="add">
+     <view class="image_3 iconfont icon-tupian-copy"></view>  
+      <view
+      class="image_onput_1">
+          请上传图片
+      </view>
+    </view>
+  
+    <!-- 上传图片 -->
+    <view class="question-images clearFloat">
+      <view wx:for="{{tempFilePaths}}" wx:key="*this">
+        <view class="q-image-wrap">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+            <icon class='iconfont icon-guanbi'></icon>
+          </view>
+        </view>
+      </view>
+      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 3}}">
+        <icon class='iconfont icon-hao'></icon>
+      </view>
+    </view>
+
+</view>
+ 
+<!-- 选择标签 -->
+<view 
+class="third_sec"> 
+    <view class="third_plus">
+        <view class="image_3 iconfont icon-biaoqian-copy"></view>
+
+        <view
+        class="image_onput_2">
+            点击选择标签
+        </view>
+    </view>
+    <view class="forth" >
+
+      <view class="div_active{{item.selected ? 'checked' : ''}}"style="background-color:{{item.bg_color}}" class="fifth" wx:for="{{div_active}}" wx:key data-index="{{index}}" bindtap="hocol">
+		    <text>{{item.name}}</text>
+	    </view>
+    </view>
+</view>
+  
+
+<view class="zero" >
+</view>
+
+<view class='add_btn'>
+    <button bindtap="sure" class='btn image_5'>
+        <view class="iconfont icon-bianji"></view>确认发布
+    </button>
+</view>
+

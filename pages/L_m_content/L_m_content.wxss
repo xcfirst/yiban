@@ -1,0 +1,49 @@
+.zero {
+  display: flex;
+  flex-flow: column;
+  height: auto;
+  font-size: 35rpx;
+  margin: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.zero .first {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+.zero .first .icon1 {
+  margin-left: 20rpx;
+  font-size: 50rpx;
+  color: #ff5e5b;
+}
+.zero .time {
+  display: flex;
+  margin-right: 30rpx;
+  justify-content: flex-end;
+  color: #999592;
+  font-size: 30rpx;
+}
+.content {
+  border-radius: 15rpx;
+  margin: 25rpx 30rpx;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  background-color: #fff;
+}
+.content .befor {
+  display: flex;
+  margin: 20rpx 30rpx;
+  padding-left: 20rpx;
+  height: auto;
+  border-left: 1px solid #999592;
+}
+.content .befor .after {
+  font-size: 16px;
+  line-height: 24px;
+}
+.second {
+  display: flex;
+  align-items: center;
+}

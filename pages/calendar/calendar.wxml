@@ -1,0 +1,15 @@
+<view class="first">
+    <view class=" icon iconfont icon-web-icon-"></view>
+    <text class="text">日程提醒可以在 我的>设置 里面开启或关闭，默认为开启</text>  
+</view>
+
+
+<view class="zero">
+    <view class="first1" wx:for="{{Richeng}}" wx:key="id">
+        <view class="second">
+            <text class="title">{{item.date}}</text>
+            <text class="other">{{item.title}}</text>
+            <text class="other">地点：{{item.address}}</text>
+        </view>
+    </view> 
+</view>

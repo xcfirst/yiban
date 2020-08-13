@@ -1,0 +1,19 @@
+<view wx:if="{{footprint}}">
+  <navigator url="" wx:for="{{footprint}}" wx:key="id">
+    <view class="zero1" >
+      <view class="first1">
+          <view class="second">
+            <icon class="icon1_1 iconfont icon-yuandian"></icon>
+            <text class="earing_info1">{{item.title}}</text>
+          </view>
+      </view>
+      <view class="time">{{item.date}}</view>
+    </view>
+  </navigator>
+</view>
+  
+<view wx:else>
+  <text class="font">
+    浏览过的活动会在这里显示哦
+  </text>
+</view>

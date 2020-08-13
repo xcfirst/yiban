@@ -1,0 +1,48 @@
+.first {
+  width: 700rpx;
+  height: auto;
+  display: flex;
+  color: #999592;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  margin: 30rpx;
+}
+.first .icon {
+  margin: 15rpx;
+}
+.first .text {
+  margin: 15rpx;
+}
+.zero {
+  margin: 25rpx 30rpx;
+  border-radius: 15px;
+  justify-content: center;
+  width: 700rpx;
+  height: auto;
+  background-color: #fff;
+}
+.zero .first1 {
+  display: flex;
+  border-radius: 15px;
+  width: 700rpx;
+  height: auto;
+  background-color: #fff;
+}
+.zero .first1 .second {
+  display: flex;
+  flex-flow: column;
+  margin: 20rpx 30rpx;
+  padding-left: 20rpx;
+  width: 600rpx;
+  height: auto;
+  border-left: 1px solid #999592;
+}
+.zero .first1 .second .title {
+  font-size: 35rpx;
+}
+.zero .first1 .second .other {
+  font-size: 30rpx;
+}

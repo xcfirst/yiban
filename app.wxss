@@ -1,0 +1,4 @@
+@import "./styles/iconfont.wxss";
+page {
+  background-color: #fdf9ee;
+}

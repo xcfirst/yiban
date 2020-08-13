@@ -1,0 +1,10 @@
+<navigator url="/pages/M_c_content/M_c_content?id = {{item.id}}" wx:for="{{information}}" wx:key="id" >
+  <view class="zero" >
+    <view class="first">
+        <icon class="{{!item.browsed?'icon1':'icon3'}} iconfont icon-yuandian"></icon>
+        <text class="earing_info">{{item.information}}</text>
+        <view class="icon2 iconfont {{!item.browsed?'icon-xinxiaoxi':''}}"></view>
+    </view>
+    <view class="time">{{item.date}}</view>
+  </view>
+</navigator> 
