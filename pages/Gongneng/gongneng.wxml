@@ -59,14 +59,12 @@ url="{{item.url}}"
 
 <view wx:if="{{messages}}">
   <navigator wx:if ="{{index < 2}}" wx:for="{{messages}}" wx:key="id" >
-    <view class="zero1" >
+    <view class="zero" >
 
-      <view class="first1">
-          <view class="second">
-            <icon class="{{!item.browsed?'icon1_1':'icon1_3'}}  iconfont icon-yuandian"></icon>
-            <text class="earing_info1">{{Leaving}}</text>
-          </view>
-          <view class="icon2_1 iconfont {{!item.browsed?'icon-xinxiaoxi':''}} "></view>
+      <view class="first">
+        <icon class="{{!item.browsed?'icon1':'icon3'}}  iconfont icon-yuandian"></icon>
+        <text class="earing_info">{{Leaving}}</text>
+        <view class="icon2 iconfont {{!item.browsed?'icon-xinxiaoxi':''}} "></view>
       </view>
       <view class="time">{{item.date}}</view>
     </view>
@@ -93,10 +91,10 @@ url="{{item.url}}"
 
 <view wx:if="{{publishManagements}}">
    <navigator wx:if ="{{index < 2}}" wx:for="{{publishManagements}}" wx:key="id" >
-     <view class="zero2" >
-       <view class="first2">
-             <icon class="icon1_1_1 iconfont icon-yuandian"></icon>
-             <text class="earing_info2">{{item.title}}</text>
+     <view class="zero" >
+       <view class="first">
+             <icon class="icon1 iconfont icon-yuandian"></icon>
+             <text class="earing_info">{{item.title}}</text>
        </view>
        <view class="time">{{item.date}}</view>
      </view>

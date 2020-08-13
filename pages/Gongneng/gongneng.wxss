@@ -89,6 +89,7 @@
   justify-content: space-between;
 }
 .zero .first .earing_info {
+  flex: 8;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -96,6 +97,7 @@
   margin-right: 30rpx;
 }
 .zero .first .icon2 {
+  flex: 1;
   margin-top: 0rpx;
   font-size: 35rpx;
   color: #ff5e5b;
@@ -107,62 +109,19 @@
   color: #999592;
   font-size: 30rpx;
 }
-.zero1 {
-  display: flex;
-  flex-flow: column;
-  height: 110rpx;
-  font-size: 35rpx;
-  margin: 20rpx 30rpx;
-  background-color: #fff;
-  border-radius: 15rpx;
-}
-.zero1 .first1 {
-  color: #000;
-  display: flex;
-  justify-content: space-between;
-}
-.zero1 .first1 .icon1_1 {
-  margin-left: 20rpx;
-  margin-top: 15rpx;
-  font-size: 50rpx;
-  color: #ff5e5b;
-}
-.zero1 .first1 .icon1_3 {
-  margin-left: 20rpx;
-  margin-top: 15rpx;
-  font-size: 50rpx;
-  color: #18c3b3;
-}
-.zero1 .first1 .earing_info1 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-top: 15rpx;
-  margin-right: 30rpx;
-}
-.zero1 .first1 .icon2_1 {
-  margin-top: 0rpx;
-  font-size: 35rpx;
-  color: #ff5e5b;
-}
-.zero1 .time {
-  display: flex;
-  margin-right: 30rpx;
-  justify-content: flex-end;
-  color: #999592;
-  font-size: 30rpx;
-}
 .second {
   display: flex;
   align-items: center;
 }
 .icon1 {
+  flex: 1;
   margin-left: 20rpx;
   margin-top: 15rpx;
   font-size: 50rpx;
   color: #ff5e5b;
 }
 .icon3 {
+  flex: 1;
   margin-left: 20rpx;
   margin-top: 15rpx;
   font-size: 50rpx;
@@ -189,39 +148,4 @@
 .content .befor .after {
   font-size: 16px;
   line-height: 24px;
-}
-.zero2 {
-  display: flex;
-  flex-flow: column;
-  height: 110rpx;
-  font-size: 35rpx;
-  margin: 20rpx 30rpx;
-  background-color: #fff;
-  border-radius: 15rpx;
-}
-.zero2 .first2 {
-  color: #000;
-  display: flex;
-}
-.zero2 .first2 .icon1_1_1 {
-  flex: 1;
-  margin-left: 20rpx;
-  margin-top: 8rpx;
-  font-size: 50rpx;
-  color: #18c3b3;
-}
-.zero2 .first2 .earing_info2 {
-  flex: 8;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-top: 15rpx;
-  margin-right: 30rpx;
-}
-.zero2 .time {
-  display: flex;
-  margin-right: 30rpx;
-  justify-content: flex-end;
-  color: #999592;
-  font-size: 30rpx;
 }

@@ -47,3 +47,14 @@
   font-size: 30rpx;
   justify-content: center;
 }
+.biaoti {
+  width: 200rpx;
+  height: 50rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5e5b;
+  border-radius: 15rpx;
+  margin: 30rpx;
+}

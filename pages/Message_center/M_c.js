@@ -15,7 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInformations()
+
   },
 
 
@@ -23,7 +23,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    this.getInformations()
   },
 
   getInformations(){
@@ -35,5 +35,16 @@ Page({
       })
       console.log(result)
     })
+  },
+
+  press(e){
+    console.log(e);
+    const id = e.currentTarget.dataset.index 
+    // request({
+    //   url: 'http://liveforjokes.icu:8864/getInformation',
+    //   data: { id },
+    // }).then(res=>{
+    //   console.log(res);
+    // })
   }
 })
