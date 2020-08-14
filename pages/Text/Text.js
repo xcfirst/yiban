@@ -52,17 +52,14 @@ Page({
     })
   },
   popConfirm: function(){
+
     wx.showModal({
-      title: 'confirm的弹窗',
-      content: '确认要删除该项吗？',
-      success: function (res) {
-        if (res.confirm) {  
-          console.log('点击确认回调')
-        } else {   
-          console.log('点击取消回调')
-        }
-      }
-    })
+      content: '确定取消吗',
+      showCancel: false,
+      confirmText: '确定',
+      confirmColor: '#3CC51F',
+    });
+      
   },
   popLoading: function(){
     wx.showLoading({

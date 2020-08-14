@@ -289,14 +289,23 @@ Page({
               const checked2 = this.data.list_1[1].ischeck
               if( title && text && startTime && endTime && address && label && userId && checked1){
                 this.publish()
-                  wx.showToast({
-                  title: '发布成功'
+                wx.showModal({
+                  confirm: false,
+                  content: '取消成功',
+                  showCancel: true,
+                  confirmText: '确定',
+                  confirmColor: '#3CC51F',
                 });
+                  
               }
               else if(title && text && label && userId && checked2 && image){
                 this.publish()
-                wx.showToast({
-                title: '发布成功'
+                wx.showModal({
+                  confirm: false,
+                  content: '取消成功',
+                  showCancel: true,
+                  confirmText: '确定',
+                  confirmColor: '#3CC51F',
                 });
               }
               else{
