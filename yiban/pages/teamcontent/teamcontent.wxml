@@ -1,7 +1,7 @@
 <!--pages/teamcontent/teamcontent.wxml-->
 <view class="textcontain">
     <view class="innercontent">
-        <text>{{nowTeamText.text}}</text>
+        <text selectable="true">{{nowTeamText.text}}</text>
     </view>
     
 </view>

@@ -27,7 +27,7 @@ page{
     width: 702rpx;
     background-color: #ffffff;
     border-radius: 20rpx;
-    margin: 0rpx 25rpx 150rpx 25rpx;
+    margin: 0rpx 25rpx 200rpx 25rpx;
     padding: 15rpx 25rpx;
     box-sizing: border-box;
 }

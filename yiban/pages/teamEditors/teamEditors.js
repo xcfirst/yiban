@@ -3,13 +3,16 @@ import { request } from "../../request/index.js";
 Page({
   data: {
     "inputtext": "",
-    "userId": 1,
+    "userId": null,
     "activityId": null
   },
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
     let activityId = options.activityId;
     this.setData({
-      activityId
+      activityId,
+      userId
     })
   },
   submitGroup() {
@@ -17,8 +20,8 @@ Page({
     const activityId = this.data.activityId;
     const text = this.data.inputtext;
     request({
-      // url: "http://liveforjokes.icu:8864/insertGroups",
-      url: "http://localhost:8864/insertGroups",
+      // url: "http://liveforjokes.icu:8800/insertGroups",
+      url: "http://localhost:8800/insertGroups",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

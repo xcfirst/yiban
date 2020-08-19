@@ -1,6 +1,6 @@
 <!--pages/team/team.wxml-->
 <view class="bigContainer">
-    <navigator class="content" wx:for="{{groupArray}}" wx:key="userId"
+    <navigator class="content" wx:for="{{groupArray}}" wx:key="*this"
         url="../teamcontent/teamcontent?id={{item.id}}&activityId={{item.activityId}}">
         <view class="contentinner">
             <view class="radiu"></view>

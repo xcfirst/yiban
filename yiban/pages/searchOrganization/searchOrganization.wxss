@@ -35,6 +35,9 @@ page{
     text-align: center;
     line-height: 60rpx;
 }
+.ListContainer{
+    margin-bottom: 100rpx;
+}
 .resultList{
     width: 702rpx;
     border-radius: 20rpx;

@@ -46,8 +46,8 @@ Page({
     const id = this.data.auditId;
     const information = this.data.inputtext;
     request({
-      // url: "http://liveforjokes.icu:8864/fail",
-      url: "http://localhost:8864/fail",
+      url: "http://liveforjokes.icu:8800/fail",
+      // url: "http://localhost:8800/fail",
       data: { id, information },
     })
       .then(res => {

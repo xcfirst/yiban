@@ -8,19 +8,19 @@
     </view>
     <view class="middleContent">
         <view class="middleInnerContent">
-            <text>{{nowAssociation.introduce}}
+            <text selectable="true">{{nowAssociation.introduce}}
             </text>
         </view>
     </view>
-    <!-- <view class="middlePicture">
+    <view class="middlePicture" hidden="{{pictureIsNull}}">
         <image class="innerPicture"
         mode="widthFix" 
-        wx:for="{{imgArr}}" 
+        wx:for="{{nowAssociation.picture}}" 
         wx:key="*this" 
         src='{{item}}' 
         data-index='{{index}}'
         bindtap="handPreviewImg"/>
-    </view> -->
+    </view>
     <view class="bottomHrefTip">
         公众号
     </view>

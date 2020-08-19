@@ -4,6 +4,9 @@ page{
     font-size: 42rpx;
     color: #333333;
 }
+.bigContainer{
+    margin-bottom: 200rpx;
+}
 .toptitle{
     width: 702rpx;
     border-radius: 20rpx;
@@ -82,7 +85,7 @@ page{
 }
 .bottomoptions{
     width: 750rpx;
-    height: 85rpx;
+    height: 100rpx;
     display: flex;
     position: fixed;
     bottom: 0rpx;

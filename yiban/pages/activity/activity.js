@@ -1,8 +1,8 @@
-// pages/activity/activity.js
+// pages/activity/activity.js 
 import { request } from "../../request/index.js";
 Page({
   data: {
-    "userId": 1,
+    "userId": null,
     "activityId": undefined,
     "nowactivityArray": {},
     "isActivityNull": {
@@ -12,23 +12,31 @@ Page({
       "isTextNull": true,
       "isPictureNull": true,
       "isMessageNull": true,
-      "isCollectedNull": true
+      "isCollectedNull": true,
     },
+    "subscribeInfo": {},
+    "ACCESS_TOKEN": null,
     "hasMessage": true,
-
+    "nowTime_1": null,
+    "timer": null
   },
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
     this.setData({
-      activityId: +options.activityId
+      activityId: +options.activityId,
+      userId
     })
     this.getActivityArray();
+    this.hasBrowsed();
+    // this.addMessageAllow();
   },
   getActivityArray() {
     const userId = this.data.userId;
     const activityId = this.data.activityId;
     request({
-      // url: "http://liveforjokes.icu:8864/activity/queryActivityById",
-      url: "http://localhost:8864/activity/queryActivityById",
+      url: "http://liveforjokes.icu:8800/activity/queryActivityById",
+      // url: "http://localhost:8800/activity/queryActivityById",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -52,7 +60,7 @@ Page({
             isActivityNull.isPictureNull = false;
           if (nowactivityArray.message != null)
             isActivityNull.isMessageNull = false;
-          if (nowactivityArray.activity.collected != null && nowactivityArray.activity.collected != "")
+          if (nowactivityArray.activity.collected != null && nowactivityArray.activity.collected != "" && nowactivityArray.activity.collected != false)
             isActivityNull.isCollectedNull = false;
 
           let hasMessage = this.data.hasMessage;
@@ -67,7 +75,24 @@ Page({
         }
       })
   },
+  hasBrowsed() {
+    const userId = this.data.userId;
+    const activityId = this.data.activityId;
+    request({
+      url: "http://liveforjokes.icu:8800/certificate/browsedCertificate",
+      // url: "http://localhost:8800/certificate/browsedCertificate",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: { userId, activityId },
+      method: "POST",
+    })
+      .then(res => {
+        console.log(res);
+      })
+  },
   handcollection() {
+    const that = this;
     let colle = this.data.isActivityNull.isCollectedNull;
     colle = !colle;
     let tipTitle;
@@ -76,8 +101,8 @@ Page({
     if (!colle) {
       tipTitle = "收藏成功";
       request({
-        // url: "http://liveforjokes.icu:8864/addActivity",
-        url: "http://localhost:8864/addActivity",
+        url: "http://liveforjokes.icu:8800/addActivity",
+        // url: "http://localhost:8800/addActivity",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -87,20 +112,28 @@ Page({
         .then(res => {
           console.log(res);
           if (res.statusCode == 200) {
-            let timer = wx.showToast({
+            let subscribeInfo = res.data.obj;
+            that.setData({
+              subscribeInfo
+            })
+            wx.showToast({
               title: tipTitle,
               icon: 'success',
               duration: 1500,
             });
-            // wx.hideToast(timer);
+            that.isAllowTip();
+            that.setData({
+              "isActivityNull.isCollectedNull": colle,
+              "nowactivityArray.activity.collected": !colle
+            });
           }
 
         })
     } else {
       tipTitle = "取消成功";
       request({
-        // url: "http://liveforjokes.icu:8864/getCollectedActivity/deleteCollectedActivity",
-        url: "http://localhost:8864/getCollectedActivity/deleteCollectedActivity",
+        url: "http://liveforjokes.icu:8800/getCollectedActivity/deleteCollectedActivity",
+        // url: "http://localhost:8800/getCollectedActivity/deleteCollectedActivity",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -110,27 +143,65 @@ Page({
         .then(res => {
           console.log(res);
           if (res.statusCode == 200) {
-            let timer = wx.showToast({
+            wx.showToast({
               title: tipTitle,
               icon: 'success',
               duration: 1500,
             });
-            // wx.hideToast(timer);
+            if (res.data.obj != null) {
+              let timer = res.data.obj;
+              console.log(timer);
+              clearInterval(timer);
+            }
+            that.setData({
+              "isActivityNull.isCollectedNull": colle,
+              "nowactivityArray.activity.collected": !colle
+            });
           }
         })
     }
-    this.setData({
-      "isActivityNull.isCollectedNull": colle,
-      "nowactivityArray.activity.collected": !colle
-    });
+  },
+  //是否授权发送订阅信息
+  isAllowTip() {
+    const that = this;
+    wx.requestSubscribeMessage({
+      tmplIds: ['8nR52iQ_h-NDdUMLv5R_w40aOXGQgi--uThwLQOF6Qg'], // 此处可填写多个模板 ID，但低版本微信不兼容只能授权一个
+      success(res) {
+        console.log(res);
+        console.log('已授权接收订阅消息');
+        if(res["8nR52iQ_h-NDdUMLv5R_w40aOXGQgi--uThwLQOF6Qg"] == "accept"){
+          that.addMessageAllow();
+        }
+      }
+    })
+  },
+  addMessageAllow() {
+    const userId = this.data.userId;
+    const activityId = this.data.activityId;
+    request({
+      url: "http://liveforjokes.icu:8800/insertMessageSubscribeAllow",
+      // url: "http://localhost:8800/insertMessageSubscribeAllow",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: { userId, activityId },
+      method: "POST",
+    })
+      .then(res => {
+        console.log(res);
+        if (res.statusCode == 200) {
+
+        }
+
+      })
   },
   handPreviewImg(e) {
     console.log(e.currentTarget.dataset.index);
     var index = e.currentTarget.dataset.index;
-    var picUrl = this.data.nowactivityArray.activity.picUrl;
+    var nowactivityArray = this.data.nowactivityArray;
     wx.previewImage({
-      current: picUrl[index],     //当前图片地址
-      urls: picUrl,               //所有要预览的图片的地址集合 数组形式
+      current: nowactivityArray.activity.picUrl[index],     //当前图片地址
+      urls: nowactivityArray.activity.picUrl,               //所有要预览的图片的地址集合 数组形式
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

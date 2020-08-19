@@ -1,0 +1,16 @@
+<!--pages/wechatLogin/wechatLogin.wxml-->
+<view wx:if="{{canIUse}}">
+    <view class='headerContainer'>
+        <image src='../../image/5.jpg' class="headerPicture"></image>
+    </view>
+
+    <view class='loginTip'>
+        <view class="loginTipTop">申请获取以下权限</view>
+        <text class="loginTipBottom">获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottomButton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+        授权登录
+    </button>
+</view>
+<view wx:else>请升级微信版本</view>

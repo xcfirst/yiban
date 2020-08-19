@@ -1,4 +1,4 @@
-<!--pages/teamEditors/teamEditors.wxml-->
+<!--pages/teamEditors/teamEditors.wxml--> 
 <view class="tipcontent">
     <view class="iconfont icon-web-icon- tipicon"></view>
     <view class="tiptext">

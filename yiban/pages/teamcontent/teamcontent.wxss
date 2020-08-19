@@ -9,6 +9,7 @@ page{
     background-color: #ffffff;
     border-radius: 20rpx;
     margin: 25rpx;
+    margin-bottom: 100rpx;
     box-sizing: border-box;
     padding: 25rpx 25rpx;
     font-size: 34rpx;

@@ -40,8 +40,8 @@ Page({
   qsearch(searchText) {
     let search = searchText;
     request({
-      // url: "http://liveforjokes.icu:8864/searchAssociation",
-      url: "http://localhost:8864/searchAssociation",
+      // url: "http://liveforjokes.icu:8800/searchAssociation",
+      url: "http://localhost:8800/searchAssociation",
       data: { search },
     })
       .then(res => {

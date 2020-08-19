@@ -127,6 +127,13 @@
 					"id": -1,
 					"name": "后台审核列表",
 					"pathName": "pages/auditList/auditList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日程",
+					"pathName": "pages/try/try",
 					"scene": null
 				}
 			]

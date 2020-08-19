@@ -1,0 +1,10 @@
+<!--pages/jumpOutPage/jumpOutYiban.wxml--> 
+<view class="container" hidden="{{urlSuccess_1?'false':'true'}}">
+    <web-view 
+    src="https://oauth.yiban.cn/code/html?client_id={{client_id}}&redirect_uri={{redirect_uri}}"
+    bindload="handJump"
+    binderror="handerror"></web-view>
+</view>
+
+
+

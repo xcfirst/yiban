@@ -15,7 +15,10 @@
     "pages/auditList/auditList",
     "pages/auditDetail/auditDetail",
     "pages/auditSuccess/auditSuccess",
-    "pages/auditFail/auditFail"
+    "pages/auditFail/auditFail",
+    "pages/jumpOutYiban/jumpOutYiban",
+    "pages/wechatLogin/wechatLogin"
+    
     
   ],
   "window":{

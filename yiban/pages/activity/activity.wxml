@@ -7,19 +7,19 @@
 </view>
 <view class="middlecontent" hidden="{{isActivityNull.isDateNull}}">
     <view class="container">
-        <text class="content">时间：{{nowactivityArray.activity.date}}
+        <text class="content" selectable="true">时间：{{nowactivityArray.activity.date}}
         </text>
     </view>
 </view> 
 <view class="middlecontent" hidden="{{isActivityNull.isAddressNull}}">
     <view class="container">
-        <text class="content">地点：{{nowactivityArray.activity.address}}
+        <text class="content" selectable="true">地点：{{nowactivityArray.activity.address}}
         </text>
     </view>
 </view>
 <view class="middlecontent" hidden="{{isActivityNull.isTextNull}}">
     <view class="container">
-        <text class="content">{{nowactivityArray.activity.text}}
+        <text class="content" selectable="true">{{nowactivityArray.activity.text}}
         </text>
     </view>
 </view>
@@ -75,8 +75,5 @@
             组队
         </view>
     </navigator>
-</view>
-<view class="backgroud">
-    
 </view>
   

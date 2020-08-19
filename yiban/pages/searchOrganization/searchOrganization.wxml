@@ -1,24 +1,18 @@
 <!--pages/searchOrganization/searchOrganization.wxml  -->
 <view class="topcontainer">
-    <input
-    class="innerInput" 
-    type="text"
-    placeholder="搜索" 
-    placeholder-class="inputtip"
-    bindinput="handleInput"
-    focus/>
+    <input class="innerInput" type="text" placeholder="搜索" placeholder-class="inputtip" bindinput="handleInput" focus />
     <view class="innerButton" bindtap="handleCancle">
         取消
     </view>
-      
+
 </view>
-<navigator 
-   class="resultList" 
-    wx:for="{{searchResult}}"
-    wx:key="*this"
-    url="../informationDetail/informationDetail?name={{item}}">
-    <view class="radiu"></view>
-    <view>
-        {{item}}
-    </view>
-</navigator>
+
+<view class="ListContainer">
+    <navigator class="resultList" wx:for="{{searchResult}}" wx:key="*this"
+        url="../informationDetail/informationDetail?name={{item}}">
+        <view class="radiu"></view>
+        <view>
+            {{item}}
+        </view>
+    </navigator>
+</view>

@@ -15,7 +15,7 @@ Page({
     })
   },
   handleInput(e) {
-    // console.log(e.detail.value);
+    // console.log(e.detail.value); 
     let searchText = e.detail.value;
 
     let hasText;
@@ -40,8 +40,8 @@ Page({
   qsearch(searchText) {
     let search = searchText;
     request({
-      // url: "http://liveforjokes.icu:8864/searchActivity", 
-      url: "http://localhost:8864/searchActivity",
+      // url: "http://liveforjokes.icu:8800/searchActivity", 
+      url: "http://localhost:8800/searchActivity",
       data: { search },
     })
       .then(res => {
@@ -67,7 +67,7 @@ Page({
                 searchResult[i].urlType="../activity/activity?activityId="
               }
               else if(searchResult[i].type == 2){
-                searchResult[i].urlType="../prove/prove?activityId="
+                searchResult[i].urlType="../prove/prove?certificateId="
               }
             }
           }

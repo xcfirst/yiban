@@ -18,8 +18,8 @@ Page({
   groupArray() {
     const id = this.data.id;
     request({
-      // url: "http://liveforjokes.icu:8864/getGroup",
-      url: "http://localhost:8864/getGroup",
+      url: "http://liveforjokes.icu:8800/getGroup",
+      // url: "http://localhost:8800/getGroup",
       data: { id },
     })
       .then(res => {

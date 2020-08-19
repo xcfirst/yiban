@@ -11,3 +11,19 @@ Page{
     padding: 25rpx;
     font-size: 34rpx;
 }
+.openAndClosed{
+    display: inline-block;
+    margin: 0 25rpx 25rpx 25rpx;
+    padding: 25rpx;
+    background-color: #ff5e5b;
+    border-radius: 20rpx;
+    font-size: 34rpx;
+}
+.yiban{
+    width: 150rpx;
+    margin: 25rpx 25rpx 25rpx 25rpx;
+    padding: 25rpx;
+    background-color: #ff5e5b;
+    border-radius: 20rpx;
+    font-size: 34rpx;
+}
