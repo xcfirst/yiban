@@ -9,42 +9,71 @@
     border-radius: 15rpx;
     font-size: 30rpx;
     margin: 30rpx;
-    .icon{
+    position: relative;
+    .second{
+      flex: 1;
+        position: absolute;
         margin: 15rpx;
+        top: 0;
+        right: 626rpx;
+
     }
     .text{
-        margin: 15rpx;
+      flex: 9;
+        margin: 15rpx 20rpx 15rpx 70rpx;
     }
   }
 
-.zero{
+  .zero {
     margin: 25rpx 30rpx;
     border-radius: 15px;
     justify-content: center;
     width: 700rpx;
     height: auto;
-    background-color: #fff; 
-    .first1{
-    display: flex; 
-    border-radius: 15px;
-    width: 700rpx;
-    height: auto;
-    background-color: #fff; 
-        .second{
-            display: flex;
-            flex-flow: column;
-            margin: 20rpx 30rpx;
-            padding-left: 20rpx;
-            width:600rpx; 
-            height: auto;
-            border-left: 1px solid #999592;
-            .title{
-                font-size: 35rpx;
-            }
-            .other{
-                font-size: 30rpx;
-            }
+    background-color: #fff;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    .first1 {
+      margin-left: 50rpx;
+      border-left: 1px solid #999592;
+      display: flex;
+      border-bottom-right-radius: 15px;
+      border-top-right-radius: 15px;
+      width: 600rpx;
+      height: 80%;
+      background-color: #fff;
+      position: relative;
+      .radiu {
+        height: 13rpx;
+        width: 13rpx;
+        border: 2px solid #18c3b3;
+        background-color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 15rpx;
+        right: 590rpx;
+      }
+      .second {
+        display: flex;
+        flex-flow: column;
+        margin: 0rpx 30rpx 20rpx 30rpx;
+        padding-left: 20rpx;
+        width: 600rpx;
+        height: auto;
+        .title {
+          font-size: 35rpx;
         }
+        .other {
+          font-size: 30rpx;
+        }
+      }
     }
-}
+  }
 
+  .font{
+    display: flex;
+    margin-top: 30rpx;
+    color: #999592;
+    font-size: 30rpx;
+    justify-content: center;
+  }

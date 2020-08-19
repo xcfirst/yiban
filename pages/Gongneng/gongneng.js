@@ -12,6 +12,12 @@ Page({
     schedules:[],	             //近期活动
     information:[],                  //消息中心
     messages:[],		                 //留言
+    Name:[
+      { name:"发布"},
+      { name:"日程表"},
+      { name:"收藏"},
+      { name:"足迹"},
+    ]
   },
   
   userId:1,
@@ -64,8 +70,6 @@ Page({
    */
   onLoad: function (options) {
     this.getCatas();
-    this.getFunction();
-    this.getPublish();
   },
 
   getCatas(){
@@ -117,6 +121,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getFunction();
+    this.getPublish();
   },
 })

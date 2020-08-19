@@ -29,6 +29,11 @@
 }
 .input {
   color: #000;
+  width: 530rpx;
+}
+.input1 {
+  color: #000;
+  width: 700rpx;
 }
 .zero {
   height: 130rpx;
@@ -191,13 +196,12 @@
   margin-right: 30rpx;
   margin-bottom: 30rpx;
   color: #000;
-  background-color: #fdf9ee;
 }
 .seventh .senventh_1 {
   display: flex;
   align-items: center;
   justify-content: left;
-  font-size: 30rpx;
+  font-size: 42rpx;
   width: 340rpx;
   height: 100%;
   background-color: #fff;
@@ -206,10 +210,12 @@
 .seventh .senventh_1 .change0 {
   font-size: 50rpx;
   color: #ff5e5b;
+  margin-left: 10rpx;
 }
 .seventh .senventh_1 .image_6 {
   font-size: 50rpx;
   color: #000;
+  margin-left: 10rpx;
 }
 .add_btn {
   width: 100%;
@@ -273,17 +279,16 @@
   margin-right: 30rpx;
 }
 textarea {
-  padding-right: 100rpx;
+  padding-right: 30rpx;
   padding-left: 100rpx;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  width: 700rpx;
+  border-bottom-right-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
   height: 50px;
   background-color: #fff;
   min-height: 32px;
   /* 设置 min-height 是为了设置 textarea 的高度 */
   /* 因为行内样式优先级比较高，所以曲线救国 */
-  font-size: 16px;
+  font-size: 30rpx;
   line-height: 16px;
 }
 .rich-text {

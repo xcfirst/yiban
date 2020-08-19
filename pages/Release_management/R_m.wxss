@@ -14,8 +14,8 @@
 .zero1 .first1 .icon1_1 {
   flex: 1;
   margin-left: 20rpx;
-  margin-top: 8rpx;
-  font-size: 50rpx;
+  margin-top: -2rpx;
+  font-size: 67rpx;
   color: #18c3b3;
 }
 .zero1 .first1 .earing_info1 {
@@ -30,14 +30,21 @@
   flex: 1;
   margin-top: 0rpx;
   font-size: 35rpx;
+  color: #ff5e5b;
+}
+.zero1 .first1 .icon2_2 {
+  flex: 1;
+  margin-top: 0rpx;
+  font-size: 35rpx;
   color: #000;
 }
 .zero1 .time {
   display: flex;
   margin-right: 30rpx;
+  margin-top: -12rpx;
   justify-content: flex-end;
   color: #999592;
-  font-size: 30rpx;
+  font-size: 25rpx;
 }
 .font {
   display: flex;

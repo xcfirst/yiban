@@ -8,7 +8,34 @@ Page({
     images:[],
     tempFilePaths:[],
     temp:0,
-    mes:{}
+    mes:{},
+    Richeng:[
+      {
+        date:'2020年1月1日',
+        title:'易班轻应用',
+        adress:'第四教学楼'
+      },
+      {
+        date:'2020年1月1日',
+        title:'易班轻应用',
+        adress:'第四教学楼'
+      },
+      {
+        date:'2020年1月1日',
+        title:'易班轻应用',
+        adress:'第四教学楼'
+      },
+      {
+        date:'2020年1月1日',
+        title:'易班轻应用',
+        adress:'第四教学楼'
+      },
+      {
+        date:'2020年1月1日',
+        title:'易班轻应用',
+        adress:'第四教学楼'
+      },
+    ]
   },
 
   /**

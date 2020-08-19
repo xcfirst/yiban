@@ -28,7 +28,7 @@
 <view class="second" style="white-space:pre-wrap" hidden="{{hidden2}}"><view class="image_2 iconfont icon-didian"></view>| <input class="input"  type="text" bindinput='addressInput' placeholder="请在这里输入地点"></input></view>
 <view class="second_spe" style="white-space:pre-wrap"><view class="image_2 iconfont icon-bianjizhengwen"></view>| 请在下方输入正文</view>
 <view class="second_plu">
-  <textarea class="input" bindinput='textInput' maxlength='{{maxTextLen}}'  auto-height="{{auto_height}}" bindblur='areablur' bindfocus='areafocus' ></textarea>
+  <textarea class="input1" bindinput='textInput' maxlength='{{maxTextLen}}'  auto-height="{{auto_height}}" bindblur='areablur' bindfocus='areafocus' ></textarea>
 </view>
  
 

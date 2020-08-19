@@ -7,7 +7,7 @@
   align-items: center;
   background-color: #ff5e5b;
   border-radius: 15rpx;
-  margin: 30rpx;
+  font-size: 42rpx;
 }
 .Active2 {
   line-height: 25px;
@@ -20,6 +20,17 @@
   width: 700rpx;
   height: auto;
   background-color: #fff;
+  position: relative;
+}
+.Active2 .radiu {
+  height: 25rpx;
+  width: 25rpx;
+  border: 2px solid #18c3b3;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 34rpx;
+  right: 585rpx;
 }
 .Active2 .Active3 {
   display: flex;
@@ -55,11 +66,12 @@
 }
 .name_list {
   display: flex;
-  margin: 0rpx 30rpx;
+  margin: 10rpx 30rpx;
   margin-bottom: 30rpx;
 }
 .name_list .name {
   font-size: 30rpx;
+  font-weight: 500;
   display: flex;
   flex: 1;
   justify-content: center;
@@ -69,15 +81,11 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-}
-.all .more {
-  margin-right: 60rpx;
-  margin-bottom: 20rpx;
+  margin: 40rpx 30rpx 0 30rpx;
 }
 .zero {
   display: flex;
   flex-flow: column;
-  height: 110rpx;
   font-size: 35rpx;
   margin: 20rpx 30rpx;
   background-color: #fff;
@@ -99,15 +107,16 @@
 .zero .first .icon2 {
   flex: 1;
   margin-top: 0rpx;
-  font-size: 35rpx;
+  font-size: 34rpx;
   color: #ff5e5b;
 }
 .zero .time {
   display: flex;
   margin-right: 30rpx;
+  margin-bottom: 13rpx;
   justify-content: flex-end;
   color: #999592;
-  font-size: 30rpx;
+  font-size: 25rpx;
 }
 .second {
   display: flex;
@@ -115,16 +124,16 @@
 }
 .icon1 {
   flex: 1;
-  margin-left: 20rpx;
-  margin-top: 15rpx;
-  font-size: 50rpx;
+  margin-left: 9rpx;
+  margin-top: 7rpx;
+  font-size: 67rpx;
   color: #ff5e5b;
 }
 .icon3 {
   flex: 1;
-  margin-left: 20rpx;
-  margin-top: 15rpx;
-  font-size: 50rpx;
+  margin-left: 9rpx;
+  margin-top: 7rpx;
+  font-size: 67rpx;
   color: #18c3b3;
 }
 .content {
@@ -148,4 +157,41 @@
 .content .befor .after {
   font-size: 16px;
   line-height: 24px;
+}
+.zero0 {
+  margin: 25rpx 30rpx;
+  border-radius: 15px;
+  justify-content: center;
+  width: 700rpx;
+  height: auto;
+  background-color: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.zero0 .first0 {
+  margin-left: 50rpx;
+  display: flex;
+  width: 600rpx;
+  position: relative;
+}
+.zero0 .first0 .radiu {
+  height: 105rpx;
+  width: 12rpx;
+  background-color: #18c3b3;
+  border-radius: 23%;
+  position: absolute;
+  top: 34rpx;
+  right: 585rpx;
+}
+.zero0 .first0 .second0 {
+  display: flex;
+  flex-flow: column;
+  margin: 20rpx 30rpx;
+  padding-left: 20rpx;
+}
+.zero0 .first0 .second0 .title {
+  font-size: 35rpx;
+}
+.zero0 .first0 .second0 .other {
+  font-size: 30rpx;
 }

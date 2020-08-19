@@ -11,7 +11,7 @@
        <view class="first1">
              <icon class="icon1_1 iconfont icon-yuandian"></icon>
              <text class="earing_info1">{{item.title}}</text>
-             <icon data-index = "{{index}}" catchtap="choose" hidden ="{{hidden}}" class="icon2_1 iconfont {{item.select?'icon-xuanze1':'icon-zidingyikexuankuang'}}"></icon>
+             <icon data-index = "{{index}}" catchtap="choose" hidden ="{{hidden}}" class="{{item.select?'icon2_1':'icon2_2'}} iconfont {{item.select?'icon-xuanze1':'icon-zidingyikexuankuang'}}"></icon>
        </view>
        <view class="time">{{item.date}}</view>
      </view>

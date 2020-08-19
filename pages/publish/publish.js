@@ -289,41 +289,38 @@ Page({
               const checked2 = this.data.list_1[1].ischeck
               if( title && text && startTime && endTime && address && label && userId && checked1){
                 this.publish()
-                wx.showModal({
-                  confirm: false,
-                  content: '取消成功',
-                  showCancel: true,
-                  confirmText: '确定',
-                  confirmColor: '#3CC51F',
+                wx.showToast({
+                  title: '发布成功',
+                  duration: 1500,
+                  mask: true,
                 });
                   
               }
               else if(title && text && label && userId && checked2 && image){
                 this.publish()
-                wx.showModal({
-                  confirm: false,
-                  content: '取消成功',
-                  showCancel: true,
-                  confirmText: '确定',
-                  confirmColor: '#3CC51F',
+                wx.showToast({
+                  title: '发布成功',
+                  duration: 1500,
+                  mask: true,
                 });
+  
               }
               else{
-                wx.showToast({
-                title: '请填全信息',    
-                icon:'none',
-                duration: 3000,    
-                mask:true 
-               })
+                wx.showModal({
+                  content: '请将信息填写完整',
+                  showCancel: false,
+                  confirmText: '确定',
+                  confirmColor: '#18c3b3',
+                });
               }
             }
             else{
-              wx.showToast({
-                  title: '没有权限，请先认证',    
-                  icon:'none',
-                  duration: 3000,    
-                  mask:true 
-                 })
+              wx.showModal({
+                content: '没有权限，请先认证',
+                showCancel: false,
+                confirmText: '确定',
+                confirmColor: '#18c3b3',
+              });
             }
           })
             

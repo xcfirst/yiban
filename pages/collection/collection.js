@@ -73,23 +73,18 @@ Page({
           var index = e.currentTarget.dataset.index;
           
           const userId = this.userId
-          let activityIdCertificate = this.data.CollectedCertificate[index].id
-          console.log(activityIdCertificate)
-          wx.request({
+          let certificateId = this.data.CollectedCertificate[index].id
+
+          request({
             url: '/certificate/deleteCertificate',
-            data: { userId ,activityIdCertificate },
+            data: { userId ,certificateId },
             method: "POST",
             header: {
               "content-type": "application/x-www-form-urlencoded"
-            },
-            success: (result) => {
-              console.log(result);
-              this.Leaving_CollectedCertificate();
-            },
-            fail: () => {},
-            complete: () => {}
-          });
-            
+            }
+            }).then(res=>{
+              this.getCollectedCertificate();
+            }) 
 	      } else if (e.cancel){
 	      console.log('用户点击取消')
         }
