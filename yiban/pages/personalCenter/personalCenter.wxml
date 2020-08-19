@@ -2,21 +2,3 @@
 <navigator class="bigcontainer" url="../auditList/auditList">
     身份认证
 </navigator>
-<view class="bigcontainer">
-    日程提醒
-</view>
-<view class="openAndClosed" bindtap="handOpen">
-    开启
-</view>
-<view class="openAndClosed">
-    关闭
-</view>
-<button  open-type='getUserInfo'>登录</button>
-<view class="yiban" bindtap="handyiban">
-    易班登录
-</view>
-<!-- <view class="container" hidden="{{urlSuccess_1?'false':'true'}}">
-    <web-view 
-    src="https://oauth.yiban.cn/code/html?client_id=a1397db859458285&redirect_uri=https://liveforjokes.icu"
-    bindload="handJump"></web-view>
-</view> -->
