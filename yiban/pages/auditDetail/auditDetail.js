@@ -1,5 +1,5 @@
 // pages/auditDetail/auditDetail.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "userId":null,
@@ -22,7 +22,7 @@ Page({
   },
   getAudit() {
     const id = this.data.auditId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getAuthenticationMessageById",
       // url: "http://localhost:8800/getAuthenticationMessageById",
       data: { id },
@@ -45,7 +45,7 @@ Page({
   },
   getInformation(){
     const id = this.data.userId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getStudentDetail",
       // url: "http://localhost:8800/getStudentDetail",
       data: { id },
@@ -80,7 +80,7 @@ Page({
   },
   getSuccess() {
     const id = this.data.auditId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/success",
       // url: "http://localhost:8800/success",
       data: { id },

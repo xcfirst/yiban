@@ -1,5 +1,5 @@
 // pages/FieldOrganization/FieldOrganization.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "nowAssociation": [],
@@ -15,7 +15,7 @@ Page({
   },
   getAssociation() {
     const type = this.data.type;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getAssociationByType",
       // url: "http://localhost:8800/getAssociationByType",
       data: { type },

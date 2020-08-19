@@ -1,5 +1,5 @@
 // pages/informationDetail/informationDetail.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "nowAssociation": {},
@@ -16,7 +16,7 @@ Page({
   },
   getAssociation() {
     const name = this.data.name;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getAssociationByType/getAssociationByName",
       // url: "http://localhost:8800/getAssociationByType/getAssociationByName",
       data: { name },

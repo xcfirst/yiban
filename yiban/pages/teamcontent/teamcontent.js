@@ -1,5 +1,5 @@
 // pages/teamcontent/teamcontent.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "groupArray": {},
@@ -17,7 +17,7 @@ Page({
   },
   groupArray() {
     const id = this.data.id;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getGroup",
       // url: "http://localhost:8800/getGroup",
       data: { id },

@@ -1,5 +1,5 @@
 // pages/auditList/auditList.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "auditArray": []
@@ -11,7 +11,7 @@ Page({
     this.getAudit();
   },
   getAudit() {
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/getAuthenticationMessage",
       // url: "http://localhost:8800/getAuthenticationMessage",
     })

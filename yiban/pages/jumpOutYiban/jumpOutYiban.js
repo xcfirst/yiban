@@ -1,5 +1,5 @@
 // pages/jumpOutPage/jumpOutPage.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "client_id": "a1397db859458285",
@@ -31,7 +31,7 @@ Page({
     const client_secret = this.data.client_secret;
     const code = this.data.code;
     const redirect_uri = this.data.redirect_uri;
-    request({
+    request_1({
       url: "https://openapi.yiban.cn/oauth/access_token",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -51,7 +51,7 @@ Page({
   },
   getInformation() {
     const access_token = this.data.access_token;
-    request({
+    request_1({
       url: "https://openapi.yiban.cn/user/me",
       data: { access_token },
     })
@@ -73,7 +73,7 @@ Page({
     const yb_sex = yibanInfo.yb_sex;
     const yb_userhead = yibanInfo.yb_userhead;
     const yb_username = yibanInfo.yb_usernick;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/saveUser",
       data: { yb_userid, yb_realname, yb_sex, yb_userhead, yb_username },
       method: "POST",

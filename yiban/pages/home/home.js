@@ -1,5 +1,5 @@
 // pages/home/home.js  
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "isClick": false,
@@ -51,7 +51,7 @@ Page({
   },
   saveCode(code) {
     const userId = this.data.userId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/insertOpenId",
       // url: "http://localhost:8800/insertOpenId",
       header: {
@@ -111,7 +111,7 @@ Page({
   },
   getActivityArray() {
     const userId = this.data.userId;
-    request({
+    request_1({
       url: "http://www.liveforjokes.icu:8800/index/activity",
       // url: "http://localhost:8800/index/activity",
       data: { userId },
@@ -139,7 +139,7 @@ Page({
 
   getActivityProve() {
     const userId = this.data.userId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/certificate/getIndexCertificate",
       // url: "http://localhost:8800/certificate/getIndexCertificate",
       header: {

@@ -1,5 +1,5 @@
 // pages/teamEditors/teamEditors.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "inputtext": "",
@@ -19,9 +19,9 @@ Page({
     const userId = this.data.userId;
     const activityId = this.data.activityId;
     const text = this.data.inputtext;
-    request({
-      // url: "http://liveforjokes.icu:8800/insertGroups",
-      url: "http://localhost:8800/insertGroups",
+    request_1({
+      url: "http://liveforjokes.icu:8800/insertGroups",
+      // url: "http://localhost:8800/insertGroups",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

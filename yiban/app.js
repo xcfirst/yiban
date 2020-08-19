@@ -1,10 +1,9 @@
 //app.js
-import { request } from "./request/index.js";
 App({
     globalData: {
         "hasLogin": false,
-        "yibanHasLogin": false,
-        "userId": null
+        "yibanHasLogin": true,
+        "userId": 28
     },
     //onLaunch,onShow: options(path,query,scene,shareTicket,referrerInfo(appId,extraData))
     onLaunch: function (options) {

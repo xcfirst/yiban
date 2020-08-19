@@ -1,5 +1,5 @@
 // pages/activity/activity.js 
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "userId": null,
@@ -34,7 +34,7 @@ Page({
   getActivityArray() {
     const userId = this.data.userId;
     const activityId = this.data.activityId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/activity/queryActivityById",
       // url: "http://localhost:8800/activity/queryActivityById",
       header: {
@@ -78,7 +78,7 @@ Page({
   hasBrowsed() {
     const userId = this.data.userId;
     const activityId = this.data.activityId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/certificate/browsedCertificate",
       // url: "http://localhost:8800/certificate/browsedCertificate",
       header: {
@@ -100,7 +100,7 @@ Page({
     const activityId = this.data.activityId;
     if (!colle) {
       tipTitle = "收藏成功";
-      request({
+      request_1({
         url: "http://liveforjokes.icu:8800/addActivity",
         // url: "http://localhost:8800/addActivity",
         header: {
@@ -131,7 +131,7 @@ Page({
         })
     } else {
       tipTitle = "取消成功";
-      request({
+      request_1({
         url: "http://liveforjokes.icu:8800/getCollectedActivity/deleteCollectedActivity",
         // url: "http://localhost:8800/getCollectedActivity/deleteCollectedActivity",
         header: {
@@ -178,7 +178,7 @@ Page({
   addMessageAllow() {
     const userId = this.data.userId;
     const activityId = this.data.activityId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/insertMessageSubscribeAllow",
       // url: "http://localhost:8800/insertMessageSubscribeAllow",
       header: {

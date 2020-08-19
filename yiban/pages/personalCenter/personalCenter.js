@@ -1,5 +1,5 @@
 // pages/personalCenter/personalCenter.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "ACCESS_TOKEN": null,
@@ -22,7 +22,7 @@ Page({
   },
   getAccessToken() {
     const that = this;
-    request({
+    request_1({
       url: "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx3ba5b3cafbcbd958&secret=13c3597b68a04f2b65270413e38a5989",
 
     })
@@ -38,7 +38,7 @@ Page({
     var user = wx.getStorageSync('user');
     let openid = user.openid;
     let ACCESS_TOKEN = this.data.ACCESS_TOKEN;
-    request({
+    request_1({
       "url": "https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=" + ACCESS_TOKEN,
       "header": {
         "Content-Type": "application/json"
@@ -93,7 +93,7 @@ Page({
     const redirect_uri = "https://liveforjokes.icu";
     const code = "30251b3f5793724cd9d59d59fa48733684c313bf9de";
     const client_secret = "eb2c65221a15c0b88f1f6b16c4926458";
-    request({
+    request_1({
       url: "https://openapi.yiban.cn/oauth/authorize",
       data: { client_id, redirect_uri },
     })

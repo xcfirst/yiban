@@ -1,5 +1,5 @@
 // pages/prove/prove.js
-import { request } from "../../request/index.js";
+import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "certificateId": null,
@@ -31,7 +31,7 @@ Page({
   getProveArray() {
     const userId = this.data.userId;
     const certificateId = this.data.certificateId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/certificate/getCertificateById",
       // url: "http://localhost:8800/certificate/getCertificateById",
       header: {
@@ -75,7 +75,7 @@ Page({
   hasBrowsed(){
     const userId = this.data.userId;
     const certificateId = this.data.certificateId;
-    request({
+    request_1({
       url: "http://liveforjokes.icu:8800/certificate/browsedCertificate",
       // url: "http://localhost:8800/certificate/browsedCertificate",
       header: {
@@ -97,7 +97,7 @@ Page({
     const certificateId = this.data.certificateId;
     if (colle) {
       tipTitle = "收藏成功"
-      request({
+      request_1({
         url: "http://liveforjokes.icu:8800/certificate/collectedCertificate",
         // url: "http://localhost:8800/certificate/collectedCertificate",
         header: {
@@ -119,7 +119,7 @@ Page({
 
     } else {
       tipTitle = "取消成功"
-      request({
+      request_1({
         url: "http://liveforjokes.icu:8800/certificate/deleteCertificate",
         // url: "http://localhost:8800/certificate/deleteCertificate",
         header: {
