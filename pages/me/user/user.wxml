@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="tips">
+    <text class="iconfont icon-web-icon-"></text>
+    <text class="tip">本平台是为了给同学们提供便利，同时对组织社团进行推广宣传，为了确保资料的正确性，请先如实填写您的个人信息，方便与您的联系。本平台承诺，将会对您的个人信息进行保密，请放心填写
+    </text>
+  </view>
+
+  <view class="item">
+    <text class="iconfont icon-xingming"/>
+    <input class="input" value="{{username}}" placeholder="请输入昵称" bindinput="inputUsername" disabled="{{true}}" bindconfirm="inputUsername" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-xingming"/>
+    <input class="input" value="{{name}}" placeholder="请输入昵称" bindinput="inputName" bindconfirm="inputName" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-xuehao"/>
+    <input class="input" value="{{studentNum}}" type="number"  placeholder="请输入学号" bindinput="inputStudentNum" bindconfirm="inputStudentNum" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-nianji"/>
+    <input class="input" value="{{grade}}"  placeholder="请输入年级学院" bindinput="inputGrade" bindconfirm="inputGrade" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-banji"/>
+    <input class="input" value="{{major}}"  placeholder="请输入专业班级" bindinput="inputMajor" bindconfirm="inputMajor" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-lianxifangshi"/>
+    <input class="input" value="{{phoneNum}}" placeholder="请输入手机号码" bindinput="inputPhone" bindconfirm="inputPhone" />
+  </view>
+  <view class="item">
+    <text class="iconfont icon-weixinhao"/>
+    <input class="input" value="{{wechatNum}}"  placeholder="请输入微信号" bindinput="inputWx" bindconfirm="inputWx" />
+  </view>
+  <view class="btn" bindtap="updata">
+    <text class="iconfont icon-bianji"></text>
+    <text class="rewrite" >确认提交</text>
+  </view>
+</view>

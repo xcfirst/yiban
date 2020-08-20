@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="item">
+    <text>版本更新</text>
+    <text>1.1.0</text>
+  </view>
+  <text class="item" bindtap="navTo">小程序介绍</text>
+</view>

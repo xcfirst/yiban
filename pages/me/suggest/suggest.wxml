@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="tips">
+    <text class="iconfont icon-web-icon-"/>
+    <text class="tip">关于平台的任何信息都可以进行反馈嗷，十分感谢您的反馈，本平台将在收到反馈信息后根据具体情况进行改进。</text>
+  </view>
+  <view class="input">
+    <text class="iconfont icon-bianjizhengwen"></text>
+    <textarea class="feedback" maxlength="-1" auto-height="true" placeholder="在这里输入您的反馈信息" bindinput="inputText"></textarea>
+
+  </view>
+  <view class="upload">
+    <view class="title">
+      <text class="iconfont icon-tupian-copy"></text>
+      <text class="text">点击上传图片</text>
+    </view>
+    <view class="image-wrap" wx:for="{{images}}" wx:key="*this">
+      <!-- 预览图-->
+      <image class="image" src="{{item}}" mode="aspectFit" data-idx="{{index}}" bindtap="previewImage"></image>
+      <view class="removebtn" data-idx="{{index}}" bindtap="remove">
+        <icon class="iconfont icon-guanbi"></icon>
+      </view>
+    </view>
+    <view class="uploadImage" bindtap="chooseImage">
+      <icon class="iconfont icon-hao"></icon>
+    </view>
+  </view>
+  <view class="btn" bindtap="updata">
+    <icon class="iconfont icon-bianji"/>
+    <text>确认提交</text>
+  </view>
+</view>

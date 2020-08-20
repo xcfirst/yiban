@@ -1,0 +1,57 @@
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.user-information{
+  display: flex;
+  box-sizing: border-box;
+  justify-content:left;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 25rpx;
+  width: 702rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+.user-information image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.info{
+    display: grid;
+    margin-left: 25rpx;
+}
+
+.item{
+  box-sizing: border-box;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  width: 702rpx;
+  border-radius: 20rpx;
+  background-color: white;
+  align-items: center;
+  font-size: 42rpx;
+}
+.iconfont{
+  margin: 25rpx;
+  font-size: 42rpx;
+}
+.icon-shenfenrenzhengzhengjian{
+  font-size: 35rpx;
+}

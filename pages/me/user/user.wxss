@@ -1,0 +1,55 @@
+page{
+  height: 100%;
+}
+.container{
+  height: 100%;
+  padding-top: 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.tips{
+  display: flex;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  background-color: white;
+  color: #818181;
+  font-size: 25rpx;
+  margin-top: 10rpx;
+  border-radius: 20rpx;
+}
+.item{
+  box-sizing: border-box;
+  display: flex;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  align-items: center;
+  background-color: white;
+  width: 702rpx;
+}
+
+.input{
+  border-left-style: solid;
+  margin-left: 20rpx;
+  padding: 10rpx;
+}
+
+.btn{
+  display: flex;
+  box-sizing: border-box;
+  background-color: #ff5e5b;
+  width: 100%;
+  font-size: 42rpx;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+  margin: 25rpx;
+  border-radius: 20rpx;
+  margin-bottom: 0;
+}

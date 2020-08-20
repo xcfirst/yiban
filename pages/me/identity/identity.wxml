@@ -1,0 +1,55 @@
+<view class="container">
+    <view class="tip">
+      <text class="iconfont icon-web-icon-"/>
+      <text  class="text">本平台是为了给同学们提供便利，同时对组织社团进行推广宣传，为了确保活动和资料的正确性，在发布活动和修改资料之前需要进行身份的认证。请提交相关资料证明您的身份(如工作证)。本平台承诺将会对您的个人信息进行保密，请放心填写。
+      注意：在进行身份认前，请现在我的>个人信息 填写个人信息</text>
+    </view>
+
+    <text class="item">工作人员身份</text>
+    <view class="tip">
+      <text class="iconfont icon-web-icon-"/>
+      <text class="text">认证为组织社团的工作人员(部长、干事等)即可进行活动发布。(身份有效期一年)</text>
+    </view>
+
+    <view class="workers">
+      <block wx:if="{{worker.length != 0}}">
+        <view class="tag" wx:for="{{worker}}" wx:key="*this">
+          <icon class="iconfont icon-gerenxinxi"/>
+          <text>{{item.associationName}}</text>
+          <icon class="iconfont icon-yichu" data-level="1" data-idx="{{index}}" bindtap="removeIdentity"/>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="tag">
+          <icon class="iconfont icon-gerenxinxi"/>
+          <text class="text">您还未提交申请</text>
+        </view>
+      </block>
+    </view>
+
+    <text class="item">负责人身份</text>
+    <view class="tip">
+      <text class="iconfont icon-web-icon-"/>
+      <text class="text">认证为组织社团的负责人，可对组织社团的资料进行修改添加，但每个组织社团只能有一个人，请认真核实后进行申请。(身份有效期一年)</text>
+    </view>
+
+    <block wx:if="{{principal.length != 0}}">
+        <view class="tag" wx:for="{{principal}}" wx:key="*this">
+          <icon class="iconfont icon-gerenxinxi"/>
+          <text>{{item.associationName}}</text>
+          <icon class="iconfont icon-yichu" data-idx="{{index}}" data-level="2" bindtap="removeIdentity"/>
+        </view>
+      </block>
+    <block wx:else>
+      <view class="tag">
+        <icon class="iconfont icon-gerenxinxi"/>
+        <text class="text">您还未提交申请</text>
+      </view>
+    </block>
+  <view class="pad">
+    <view class="btn" bindtap="navTo">
+      <icon class="iconfont icon-bianji"/>
+      <text>申请</text>
+    </view>  
+  </view> 
+</view>

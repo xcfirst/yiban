@@ -1,0 +1,14 @@
+/* pages/me/aboutus/introduce/introduce.wxss */
+.pad{
+  box-sizing: border-box;
+  display: flex;
+  width: 702rpx;
+  margin: 25rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+.introduce{
+  border-left: 6rpx solid #818181;
+  padding: 10rpx;
+}
