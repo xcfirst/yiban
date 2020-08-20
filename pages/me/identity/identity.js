@@ -20,7 +20,7 @@ Page({
     .then(res =>{
       console.log(res)
       association = res.data.obj;
-      for(var i=0; i<association.length; i++){
+      for(var i=0; association&&i<association.length; i++){
         if(association[i].level==1){
           worker.push(association[i])
         }
