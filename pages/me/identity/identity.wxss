@@ -65,7 +65,7 @@
 .tag .text{
   font-size: 34rpx;
   padding-left: 10rpx;
-  border-left: 6rpx solid #818181;
+  border-left: 6rpx solid #999592;
 }
 
 .pad{
