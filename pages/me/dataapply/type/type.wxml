@@ -1,0 +1,18 @@
+<!--pages/dataapply/type/type.wxml-->
+<view class="container">
+    <view class="item" data-type='组织' bindtap="navTo">
+      <text>校级组织</text>
+    </view>
+    <view class="item"  data-type='学术科技类' bindtap="navTo">
+      <text>学术科技类</text>
+    </view>
+    <view class="item"  data-type='公益实践类' bindtap="navTo">
+      <text>公益实践类</text>
+    </view>
+    <view class="item" data-type='文化艺术类' bindtap="navTo">
+      <text>文化艺术类</text>
+    </view>
+    <view class="item" data-type='体育竞技类' bindtap="navTo">
+      <text>体育竞技类</text>
+    </view>
+</view>

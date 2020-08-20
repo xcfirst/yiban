@@ -105,28 +105,28 @@
 				{
 					"id": -1,
 					"name": "我的",
-					"pathName": "pages/personalCenter/personalCenter",
+					"pathName": "pages/me/me",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "后台审核详情",
-					"pathName": "pages/auditDetail/auditDetail",
+					"pathName": "pages/me/auditDetail/auditDetail",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "后台审核不通过",
-					"pathName": "pages/auditFail/auditFail",
+					"pathName": "pages/me/auditFail/auditFail",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "后台审核列表",
-					"pathName": "pages/auditList/auditList",
+					"pathName": "pages/me/auditList/auditList",
 					"query": "",
 					"scene": null
 				},

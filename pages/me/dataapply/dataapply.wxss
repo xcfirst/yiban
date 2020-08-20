@@ -1,0 +1,204 @@
+.container{
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 25rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.tips{
+  display: flex;
+  box-sizing: border-box;
+  background-color: white;
+  width: 702rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  color: #818181;
+  font-size: 25rpx;
+}
+
+.item{
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+.input{
+  width: 90%;
+  border-left-style: solid;
+  margin-left: 20rpx;
+  padding: 10rpx;
+}
+
+.upload{
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+.text{
+  margin: 20rpx;
+  color: #818181;
+}
+.image-wrap{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  float: left;
+  margin: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.uploadImage{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  text-align: center;
+  float: left;
+  line-height: 140rpx;
+  margin: 20rpx;
+}
+.image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.removebtn{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background: #ff5e5b;
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+}
+.icon-guanbi{
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  color: white;
+}
+.icon-hao{
+  font-size: 80rpx;
+  color: #818181;
+}
+
+.btn{
+  width: 40%;
+  background-color: white;
+  font-size: 34rpx;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+.pad{
+  height: 150rpx;
+}
+.updata{
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  background-color: #ff5e5b;
+  border-radius: 20rpx;
+  padding: 25rpx;
+  font-size: 42rpx;
+  color: black;
+}
+.index{
+  display: flex;
+  padding: 20rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  background-color: white;
+  width: 70%;
+  margin: auto;
+  margin-top: 30%;
+}
+.index.btn{
+  display: flex;
+  width: 100%;
+}
+
+.branch{
+  display: flex;
+  width: 80%;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.botton{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.btn1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  background-color: #17c3b2;
+  width: 40%;
+}
+
+.btn2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  width: 40%;
+  background-color: #ff5e5b;
+}
+.tag{
+  box-sizing: border-box;
+  position: relative;
+  width: 702rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  background-color: white;
+}
+
+.tag .tag-wrap{
+  display: flex;
+  font-size: 34rpx;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.tag .text{
+  margin: 20rpx;
+  width: 75%;
+  color: black;
+}
+.tag .icon-shanchu{
+  font-size: 50rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.icon-bianji{
+  color: black;
+}
+.icon-web-icon-{
+  font-size: 30rpx;
+  color: black;
+}

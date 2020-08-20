@@ -42,7 +42,7 @@ Page{
     border-radius: 20rpx;
     background-color: #ffffff;
     box-sizing: border-box;
-    margin: 25rpx 24rpx 200rpx 24rpx;
+    margin: 25rpx 24rpx 150rpx 24rpx;
     padding: 25rpx;
     padding-bottom: 30rpx;
 }

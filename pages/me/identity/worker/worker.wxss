@@ -1,0 +1,128 @@
+/* pages/identity/worker/worker.wxss */.container{
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 25rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.tip{
+  display: flex;
+  box-sizing: border-box;
+  align-content: flex-start;
+  width: 702rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+.text{
+  font-size: 25rpx;
+  color: #818181;
+}
+
+
+.item{
+  background-color: #ff5e5b;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  font-size: 34rpx;
+  width: auto;
+  border-radius: 20rpx;
+}
+.inputname{
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+.input{
+  width: 80%;
+  border-left-style: solid;
+  margin-left: 20rpx;
+  padding: 10rpx;
+  font-size: 34rpx;
+  color: black;
+}
+
+.upload{
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+.upload .text{
+  margin: 20rpx;
+  font-size: 34rpx;
+  color: #818181;
+}
+.image-wrap{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  float: left;
+  margin: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.uploadImage{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  text-align: center;
+  float: left;
+  line-height: 140rpx;
+  margin: 20rpx;
+}
+.image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.removebtn{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background: #ff5e5b;
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+}
+.icon-guanbi{
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  color: white;
+}
+
+.pad{
+  height: 150rpx;
+}
+
+.btn{
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  background-color: #ff5e5b;
+  border-radius: 20rpx;
+  padding: 25rpx;
+  font-size: 42rpx;
+}
+
+.icon-web-icon-{
+  font-size: 25rpx;
+}

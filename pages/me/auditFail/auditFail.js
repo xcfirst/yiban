@@ -1,5 +1,5 @@
 // pages/auditFail/auditFail.js
-import { request_1 } from "../../request/index_1.js";
+import { request } from "../index.js";
 Page({
   data: {
     "inputtext": "",
@@ -34,7 +34,6 @@ Page({
           if (res.confirm) {
             console.log('用户点击确定');
             that.getFail();
-            // wx.navigateBack(2);
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -45,9 +44,8 @@ Page({
   getFail() {
     const id = this.data.auditId;
     const information = this.data.inputtext;
-    request_1({
+    request({
       url: "http://liveforjokes.icu:8800/fail",
-      // url: "http://localhost:8800/fail",
       data: { id, information },
     })
       .then(res => {

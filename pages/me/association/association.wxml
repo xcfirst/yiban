@@ -1,0 +1,22 @@
+<view class="container">
+  <block wx:if="{{!association}}">
+    <view class="item" data-target="academic" data-type='学术科技类' bindtap="navTo">
+      <text>学术科技类</text>
+    </view>
+    <view class="item" data-target="practice" data-type='公益实践类' bindtap="navTo">
+      <text>公益实践类</text>
+    </view>
+    <view class="item" data-target="culture" data-type='文化艺术类' bindtap="navTo">
+      <text>文化艺术类</text>
+    </view>
+    <view class="item" data-target="sport" data-type='体育竞技类' bindtap="navTo">
+      <text>体育竞技类</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view wx:for="{{association}}" class="item-a" bindtap="navBack" data-target="{{item}}">
+      <view class="dot"/>
+      <text class="text">{{item}}</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,91 @@
+.container{
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 25rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.tip{
+  display: flex;
+  box-sizing: border-box;
+  align-content: flex-start;
+  width: 702rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  background-color: white;
+}
+.text{
+  font-size: 25rpx;
+  color: #818181;
+}
+
+
+.item{
+  background-color: #ff5e5b;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  font-size: 34rpx;
+  width: auto;
+  border-radius: 20rpx;
+}
+
+.workers{
+  display: flex;
+  flex-direction: column;
+}
+
+.tag{
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 702rpx;
+  font-size: 34rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 25rpx;
+  border-radius: 20rpx;
+  align-items: center;
+  background-color: white;
+}
+.tag .icon-gerenxinxi{
+  font-size: 40rpx;
+  margin-right: 25rpx;
+}
+.tag .icon-yichu{
+  position: absolute;
+  right: 30rpx;
+  font-size: 50rpx;
+}
+.tag .text{
+  font-size: 34rpx;
+  padding-left: 10rpx;
+  border-left: 6rpx solid #818181;
+}
+
+.pad{
+  height: 150rpx;
+}
+
+.btn{
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  background-color: #ff5e5b;
+  border-radius: 20rpx;
+  padding: 25rpx;
+  font-size: 42rpx;
+}
+
+.icon-web-icon-{
+  font-size: 25rpx;
+}

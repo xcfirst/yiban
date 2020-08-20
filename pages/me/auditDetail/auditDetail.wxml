@@ -8,14 +8,8 @@
 </view>
 
 
-<view class="imgcontainer" hidden="{{isPictureNull}}">
-    <image class="picture" 
-        mode="aspectFill" 
-        wx:for="{{auditArray.pictureUrl}}"
-        wx:key="*this"
-        src="item" />
-    <!-- <image class="picture" mode="aspectFill" src="../../image/1.jpg" /> -->
-    <!-- <image class="picture" mode="aspectFill" src="../../image/1.jpg" /> -->
+<view class="imgcontainer">
+    <image wx:for="{{auditArray.pictureUrl}}" class="picture" mode="aspectFill" src="{{item}}" bindtap="previewImage"/>
 </view>
 
 
@@ -26,37 +20,37 @@
     <view class="middlecontent">
         <view class="iconfont icon-gerenxinxi middleIconName"></view>
         <view class="content">
-            {{userInformation.yb_usernam}}
+            张三
         </view>
     </view>
     <view class="middlecontent">
         <view class="iconfont icon-xuehao middleIconNumber"></view>
         <view class="content">
-            {{userInformation.studentNumber}}
+            201811111111
         </view>
     </view>
     <view class="middlecontent">
         <view class="iconfont icon-nianji middleIconGrade"></view>
         <view class="content">
-            {{userInformation.grade}}
+            18级数学与信息学院软件学院
         </view>
     </view>
     <view class="middlecontent">
         <view class="iconfont icon-banji middleIconClass"></view>
         <view class="content">
-            {{userInformation.major}}
+            网络工程1班
         </view>
     </view>
     <view class="middlecontent">
         <view class="iconfont icon-lianxifangshi middleIconPhone"></view>
         <view class="content">
-            {{userInformation.phoneNumber}}
+            13611111111
         </view>
     </view>
     <view class="middlecontent">
         <view class="iconfont icon-weixinhao middleIconWechat"></view>
         <view class="content">
-            {{userInformation.wechatNumber}}
+            wechatyiban
         </view>
     </view>
 </view>

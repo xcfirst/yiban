@@ -1,0 +1,108 @@
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.tips{
+  display: flex;
+  box-sizing: border-box;
+  background-color: white;
+  width: 702rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  color: #818181;
+  font-size: 25rpx;
+}
+.input{
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+
+.feedback{
+  width: 90%;
+  border-left-style: solid;
+  margin-left: 20rpx;
+  padding: 10rpx;
+  color: #818181;
+}
+
+.upload{
+  padding: 20rpx;
+  margin: 25rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
+.text{
+  margin: 20rpx;
+  color: #818181;
+}
+.image-wrap{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  float: left;
+  margin: 20rpx;
+  position: relative;
+  overflow: hidden;
+}
+.uploadImage{
+  width: 150rpx;
+  height: 150rpx;
+  border: 6rpx solid #f0f0f0;
+  text-align: center;
+  float: left;
+  line-height: 140rpx;
+  margin: 20rpx;
+}
+.image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.removebtn{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  background: #ff5e5b;
+  position: absolute;
+  top: -50rpx;
+  right: -50rpx;
+}
+.icon-guanbi{
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  color: white;
+}
+.icon-hao{
+  font-size: 80rpx;
+  color: #818181;
+}
+
+.btn{
+  display: flex;
+  box-sizing: border-box;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  background-color: #ff5e5b;
+  border-radius: 20rpx;
+  padding: 25rpx;
+  font-size: 42rpx;
+  color: black;
+}

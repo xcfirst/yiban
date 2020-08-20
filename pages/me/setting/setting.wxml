@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="item">
+    <text >日程提醒</text>
+    <switch class="switch" checked="{{isSubcribed}}" color="#ff5e5b" bindchange="change"></switch>
+  </view>
+</view>
