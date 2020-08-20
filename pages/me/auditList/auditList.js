@@ -1,5 +1,5 @@
 // pages/auditList/auditList.js
-import { request_1 } from "../../request/index_1.js";
+import { request_1 } from "../../../request/index_1.js";
 Page({
   data: {
     "auditArray": []

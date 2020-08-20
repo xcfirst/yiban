@@ -1,5 +1,5 @@
 // pages/auditDetail/auditDetail.js
-import { request_1 } from "../../request/index_1.js";
+import { request_1 } from "../../../request/index_1.js";
 Page({
   data: {
     "userId":null,
@@ -94,5 +94,13 @@ Page({
         }
 
       })
+  },
+  previewImage:function(e){
+    var images = this.data.auditArray.pictureUrl;
+    var idx = e.currentTarget.dataset.idx;
+    wx.previewImage({
+      current: images[idx],
+      urls: images,
+    })
   }
 })
