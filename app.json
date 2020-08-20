@@ -11,13 +11,24 @@
     "pages/informationDetail/informationDetail",
     "pages/searchActivity/searchActivity",
     "pages/searchOrganization/searchOrganization",
-    "pages/personalCenter/personalCenter",
-    "pages/auditList/auditList",
-    "pages/auditDetail/auditDetail",
-    "pages/auditSuccess/auditSuccess",
-    "pages/auditFail/auditFail",
     "pages/jumpOutYiban/jumpOutYiban",
-    "pages/wechatLogin/wechatLogin"
+    "pages/wechatLogin/wechatLogin",
+    "pages/me/me",
+    "pages/me/aboutus/aboutus",
+    "pages/me/user/user",
+    "pages/me/dataapply/dataapply",
+    "pages/me/suggest/suggest",
+    "pages/me/association/association",
+    "pages/me/identity/identity",
+    "pages/me/identity/worker/worker",
+    "pages/me/identity/principal/principal",
+    "pages/me/setting/setting",
+    "pages/me/dataapply/type/type",
+    "pages/me/auditDetail/auditDetail",
+    "pages/me/auditFail/auditFail",
+    "pages/me/auditList/auditList",
+    "pages/me/auditSuccess/auditSuccess",
+    "pages/me/aboutus/introduce/introduce"
     
     
   ],
@@ -45,7 +56,7 @@
       "selectedIconPath": "./icon/organization1.png"
     },
     {
-      "pagePath": "pages/personalCenter/personalCenter",
+      "pagePath": "pages/me/me",
       "text": "我的",
       "iconPath": "./icon/my.png",
       "selectedIconPath": "./icon/my1.png"
