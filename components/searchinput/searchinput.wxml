@@ -1,0 +1,10 @@
+<!--components/searchinput.wxml-->
+<view class="container">
+    <navigator class="inner" url="{{jumpUrl}}">
+        <text class="iconfont icon-search icons">
+        </text>
+        <view class="tip">
+            {{innetText}}
+        </view>
+    </navigator>
+</view>

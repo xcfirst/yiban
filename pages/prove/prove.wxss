@@ -1,0 +1,110 @@
+/* pages/prove/prove.wxss */
+page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.bigContainer{
+    margin-bottom: 200rpx;
+}
+.toptitle{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25rpx;
+    padding-left: 60rpx;
+    position: relative;
+}
+.radiu{
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #17c3b2;
+    border-radius: 50%;
+    margin-right:25rpx;
+    position: absolute;
+    top: 42rpx;
+    left: 25rpx;
+}
+.middlecontent{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    padding: 25rpx;
+    padding-bottom: 30rpx;
+}
+.container{
+    padding-left: 25rpx;
+    border-left: 2rpx #dedada solid;
+}
+.content{
+    height: 200rpx;
+    font-size: 34rpx;
+}
+.imgcontainer{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    padding: 25rpx;
+    padding-right: 0rpx;
+    padding-bottom: 0rpx;
+}
+.picture{
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 25rpx;
+    margin-bottom: 25rpx;
+}
+.labelcontainer{
+    width: 702rpx;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    padding-left: 25rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.lableinner{
+    height: 40rpx;
+    background-color: #ffffff;
+    border: 2rpx #999592 solid;
+    border-radius: 35rpx;
+    padding: 8rpx 25rpx;
+    margin-bottom: 25rpx;
+    font-size: 34rpx;
+    color: #999592;
+    margin-right: 25rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomoptions{
+    width: 750rpx;
+    height: 100rpx;
+    display: flex;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.bottomcontainer{
+    width: 100%;
+    height: 100%;
+    background-color: #ff5e5b;
+    border-radius: 15rpx;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons{
+    color: #333333;
+}
+.bottominner{
+    font-size: 34rpx;
+}

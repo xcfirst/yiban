@@ -1,0 +1,24 @@
+@import "../../styles/iconfont.wxss";
+.container{
+    background-color: #ffffff;
+    border-radius:20rpx;
+    width: 702rpx;
+    height: 65rpx;
+    margin: 15rpx 24rpx 20rpx 24rpx;
+    
+}
+.inner{
+    height: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.icons{
+    color: #999592;
+    
+}
+.tip{
+    color: #999592;
+    font-size: 34rpx;
+    
+}

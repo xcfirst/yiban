@@ -1,24 +1,24 @@
 //app.js
 App({
   //onLaunch,onShow: options(path,query,scene,shareTicket,referrerInfo(appId,extraData))
-  onLaunch: function(options) {
-    
+  onLaunch: function (options) {},
+  onShow: function (options) {
+    let userId = this.globalData.userId;
+    if (userId == null) {
+      console.log(1);
+      wx.redirectTo({
+        // wx.navigateTo({
+        url: "./pages/jumpOutYiban/jumpOutYiban",
+      });
+    }
   },
-  onShow: function(options) {
-
-  },
-  onHide: function() {
-
-  },
-  onError: function(msg) {
-
-  },
+  onHide: function () {},
+  onError: function (msg) {},
   //options(path,query,isEntryPage)
-  onPageNotFound: function(options) {
-
-  },
+  onPageNotFound: function (options) {},
   globalData: {
-    
-  }
+    hasLogin: false,
+    yibanHasLogin: true,
+    userId: 28,
+  },
 });
-  

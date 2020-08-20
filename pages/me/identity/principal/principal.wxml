@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="tip">
+    <text class="iconfont icon-web-icon-"/>
+    <text  class="text">审核申请将在24小时内受理，请耐心等待。申请负责人则默认为该社团组织的工作人员。
+    注意：在进行身份认证之前，请先在 我的>个人信息填写个人信息。</text>
+  </view>
+
+  <text class="item">负责人认证</text>
+  <view class="tip">
+    <text class="iconfont icon-web-icon-"/>
+    <text class="text">认证为组织社团的负责人，可对组织社团的资料进行修改添加，但每个组织社团只能有一个人，请认真核实后进行申请。(身份有效期一年)</text>
+  </view>
+
+  <view class="button">
+    <text class="btn-1" bindtap="navTo">选择已有组织/社团</text>
+    <text class="btn-1" bindtap="addNew">添加新组织/社团</text>
+  </view>
+  <view wx:if="{{editable}}" class="inputname">
+    <icon class="iconfont icon-fabu"/>
+    <input class="input" value="{{name}}" placeholder="请在这里输入社团名字" bindinput="input"></input>
+  </view>
+  <view wx:else class="inputname">
+    <icon class="iconfont icon-fabu"/>
+    <text wx:if="{{!name}}" class="input" bindtap="navTo">请选择组织/社团</text>
+    <text wx:else class="input" bindtap="navTo">{{name}}</text>
+  </view>
+
+  <view class="upload">
+    <view class="title">
+      <text class="iconfont icon-tupian-copy"></text>
+      <text class="text">点击上传图片</text>
+    </view>
+    <view class="image-wrap" wx:for="{{images}}" wx:key="*this">
+      <!-- 预览图-->
+      <image class="image" src="{{item}}" mode="aspectFit" data-idx="{{index}}" bindtap="previewImage"></image>
+      <view class="removebtn" data-idx="{{index}}" bindtap="remove">
+        <icon class="iconfont icon-guanbi"></icon>
+      </view>
+    </view>
+    <view class="uploadImage" bindtap="chooseImage">
+      <icon class="iconfont icon-hao"></icon>
+    </view>
+  </view>  
+
+  <view class="pad">
+    <view class="btn" bindtap="updata">
+      <icon class="iconfont icon-bianji"/>
+      <text>提交申请</text>
+    </view>  
+  </view> 
+</view>

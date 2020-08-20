@@ -1,0 +1,55 @@
+/* pages/auditList/auditList.wxss */
+Page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.bigContainer{
+    margin-bottom: 100rpx;
+}
+.content{
+    width: 702rpx;
+    height: 90rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    /* position: relative; */
+}
+.contentinner{
+    display: flex;
+}
+.radiuGreen{
+    display: inline-block;
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #17c3b2;
+    border-radius: 50%;
+    margin: 40rpx 20rpx 5rpx 25rpx;
+}
+.radiuRed{
+    display: inline-block;
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #ff5e5b;
+    border-radius: 50%;
+    margin: 40rpx 20rpx 5rpx 25rpx;
+}
+.newIcon{
+    color: #ff5e5b;
+}
+.title{
+    width: 600rpx;
+    font-size: 34rpx;
+    margin-top: 24rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* .time{
+    font-size: 25rpx;
+    float: right;
+    color: #999592;
+    position: absolute;
+    bottom: 15rpx;
+    right: 25rpx;
+} */

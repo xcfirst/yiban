@@ -1,0 +1,68 @@
+<!--pages/home/home.wxml   -->
+<view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}">
+        <view class='headerContainer'>
+            <image src='../../image/5.jpg' class="headerPicture"></image> 
+        </view>
+
+        <view class='loginTip'>
+            <view class="loginTipTop">申请获取以下权限</view>
+            <text class="loginTipBottom">获得你的公开信息(昵称，头像等)</text>
+        </view>
+
+        <button class='bottomButton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+    <!-- <view>我的首页内容</view> -->
+    <view>
+        <searchinput innet-text="搜索" jump-url="../../pages/searchActivity/searchActivity"></searchinput>
+        <view class="bar">
+            <view class="first {{isActive==='one'?'active':''}}" bindtap="handlebar" data-judge="one">
+                活动
+            </view>
+            <view class="second {{isActive==='second'?'active':''}}" bindtap="handlebar" data-judge="second">
+                活动证明
+            </view>
+        </view>
+        <view class="firstPage" hidden="{{isActive=='one'?false:true}}">
+            <navigator class="content" wx:for="{{activityArray}}" wx:key="id"
+                url="../activity/activity?activityId={{item.activity.id}}">
+                <view class="contentinner">
+                    <view class="{{item.browsed?'radiuGreen':'radiuRed'}}"></view>
+                    <view class="title">
+                        {{item.activity.title}}
+                    </view>
+                    <view class="iconfont icon-xinxiaoxi newIcon" hidden="{{item.browsed}}"></view>
+
+                </view>
+                <view class="time">
+                    {{item.activity.dayToNow}}
+                </view>
+            </navigator>
+        </view>
+        <view class="firstPage" hidden="{{isActive=='second'?false:true}}">
+            <navigator class="content" 
+                wx:for="{{activityProveArray}}"
+                wx:key="id"
+                url="../prove/prove?certificateId={{item.activityCertificate.id}}">
+                <view class="contentinner">
+                    <view class="{{item.browsed?'radiuGreen':'radiuRed'}}"></view>
+                    <view class="title">
+                        {{item.activityCertificate.activityTitle}}
+                    </view>
+                    <view class="iconfont icon-xinxiaoxi newIcon" hidden="{{item.browsed}}"></view>
+                </view>
+                <view class="time">
+                    {{item.builtTimeToNow}}
+                </view>
+            </navigator>
+            
+        </view>
+
+    </view>
+</view>

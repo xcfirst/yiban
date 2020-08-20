@@ -129,7 +129,7 @@
   width: 40rpx;
   margin: 30rpx;
 }
-.third_sec .third_plus · .image_onput_2 {
+.third_sec .third_plus .image_onput_2 {
   color: #999592;
   justify-content: top;
   align-items: left;

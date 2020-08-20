@@ -1,0 +1,18 @@
+<!--pages/auditList/auditList.wxml-->
+<view class="bigContainer">
+    <navigator class="content" 
+        wx:for="{{auditArray}}"
+        wx:key="id"
+        url="../auditDetail/auditDetail?auditId={{item.id}}">
+        <view class="contentinner">
+            <view class="{{item.browsed?'radiuGreen':'radiuRed'}}"></view>
+            <view class="title">
+                {{item.associationName}}
+            </view>
+            <view class="iconfont icon-xinxiaoxi newIcon" hidden="{{item.browsed}}"></view>
+        </view>
+        <!-- <view class="time">
+            2020年6月21日
+        </view> -->
+    </navigator>
+</view>

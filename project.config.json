@@ -105,6 +105,75 @@
 					"name": "发布管理",
 					"pathName": "pages/Release_management/R_m",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动内容",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "组队页面",
+					"pathName": "pages/team/team",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布组队",
+					"pathName": "pages/teamEditors/teamEditors",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "社团组织资料",
+					"pathName": "pages/organization/organization",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动搜索",
+					"pathName": "pages/searchActivity/searchActivity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "后台审核详情",
+					"pathName": "pages/me/auditDetail/auditDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "后台审核不通过",
+					"pathName": "pages/me/auditFail/auditFail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "后台审核列表",
+					"pathName": "pages/me/auditList/auditList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "日程",
+					"pathName": "pages/try/try",
+					"scene": null
 				}
 			]
 		}

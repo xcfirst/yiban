@@ -1,0 +1,118 @@
+/* pages/auditDetail/auditDetail.wxss */
+Page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.toptitle{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25rpx;
+    padding-left: 60rpx;
+    position: relative;
+}
+.radiu{
+    height: 16rpx;
+    width: 16rpx;
+    background-color: #17c3b2;
+    border-radius: 50%;
+    margin-right:25rpx;
+    position: absolute;
+    top: 42rpx;
+    left: 25rpx;
+}
+.imgcontainer{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    padding: 25rpx;
+    padding-right: 0rpx;
+    padding-bottom: 0rpx;
+}
+.picture{
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 25rpx;
+    margin-bottom: 25rpx;
+}
+.messageInnerTop{
+    width: 170rpx;
+    height: 65rpx;
+    background-color: #ff5e5b;
+    font-size: 34rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25rpx 25rpx 0rpx 25rpx;
+}
+.middleContainer{
+    margin-bottom: 150rpx;
+}
+.middlecontent{
+    width: 702rpx;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: 25rpx 24rpx 0rpx 24rpx;
+    padding: 25rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.middleIconName{
+    font-size: 34rpx;
+    color: #ff5e5b;
+}
+.middleIconNumber{
+    font-size: 45rpx;
+    color: #ff5e5b;
+}
+.middleIconGrade{
+    font-size: 45rpx;
+    color: #ff5e5b;
+}
+.middleIconClass{
+    font-size: 32rpx;
+    color: #ff5e5b;
+    margin-right: 11rpx;
+}
+.middleIconPhone{
+    font-size: 48rpx;
+    color: #ff5e5b;
+}
+.middleIconWechat{
+    font-size: 34rpx;
+    color: #ff5e5b;
+    margin-right: 11rpx;
+}
+.content{
+    padding-left: 25rpx;
+    font-size: 34rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomoptions{
+    width: 750rpx;
+    display: flex;
+    position: fixed;
+    bottom: 0rpx;
+}
+
+.bottomcontainer{
+    width: 375rpx;
+    padding: 25rpx;
+    background-color: #ff5e5b;
+    border-radius: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

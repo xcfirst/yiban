@@ -1,0 +1,22 @@
+.container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.item{
+  width: 702rpx;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  
+  padding: 20rpx;
+  margin: 25rpx;
+  border-radius: 20rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 42rpx;
+}
+

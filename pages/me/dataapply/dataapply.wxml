@@ -1,0 +1,62 @@
+
+<view class='container'>
+  <view class="tips">
+    <text class="iconfont icon-web-icon-"/>
+    <text class="tip">本平台是为了给同学们提供便利，同时对组织社团进行推广宣传，为了确保资料的正确性，请如实填写资料。</text>
+  </view>
+  <view class="item">
+    <text class="iconfont icon-biaotizhengwenqiehuan-copy"/>
+    <text class="input" > {{name}} </text>
+  </view>
+  <view class="item">
+    <text class="iconfont icon-bianjizhengwen"/>
+    <textarea class="input" value="{{introduce}}" maxlength="-1" auto-height="true" placeholder="请在这里输入社团组织介绍" bindinput="inputIntro"></textarea>
+  </view>
+
+  <view class="upload">
+    <view class="title">
+      <text class="iconfont icon-tupian-copy"></text>
+      <text class="text">点击上传图片</text>
+    </view>
+    <view class="image-wrap" wx:for="{{images}}" wx:key="*this">
+      <!-- 预览图-->
+      <image class="image" src="{{item}}" mode="aspectFit" data-idx="{{index}}" bindtap="previewImage"></image>
+      <view class="removebtn" data-idx="{{index}}" bindtap="remove">
+        <icon class="iconfont icon-guanbi"></icon>
+      </view>
+    </view>
+    <view class="uploadImage" bindtap="chooseImage">
+      <icon class="iconfont icon-hao"></icon>
+    </view>
+  </view>
+
+  <view class="item">
+    <text class="iconfont icon-gongzhonghao"/>
+    <input class="input" value="{{href}}" placeholder="请在这里输入社团组织公众号" bindinput="inputHref"/>
+  </view>
+  <view class="tag" wx:if="{{type}}">
+    <view class="tag-wrap">
+      <icon class="icon" type="success" color="#ff5e5b"></icon>
+      <text class="text">{{type}}</text>
+      <text class="iconfont icon-shanchu" catchtap="typeRemove"/>
+    </view>
+  </view>
+  <view wx:else class="item" bindtap="chooseType">
+    <text class="tip">请点击选择资料类型</text>
+  </view>
+
+  <view class="tag" wx:if="{{name}}">
+    <view class="tag-wrap">
+      <icon class="icon" type="success" color="#ff5e5b"></icon>
+      <text class="text">{{name}}</text>
+      <text class="iconfont icon-shanchu" catchtap="tagRemove"/>
+    </view>
+  </view>
+  
+  <view class="pad">
+    <view class="updata" bindtap="updata" data-index='1'>
+      <text class="iconfont icon-bianji"></text>
+      <text>提交申请</text>
+    </view>
+  </view>
+</view>

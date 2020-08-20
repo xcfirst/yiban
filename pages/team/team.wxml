@@ -1,0 +1,27 @@
+<!--pages/team/team.wxml-->
+<view class="bigContainer">
+    <navigator class="content" wx:for="{{groupArray}}" wx:key="*this"
+        url="../teamcontent/teamcontent?id={{item.id}}&activityId={{item.activityId}}">
+        <view class="contentinner">
+            <view class="radiu"></view>
+            <view class="title">
+                {{item.text}}
+            </view>
+        </view>
+        <view class="time">
+            {{item.date}}
+        </view>
+    </navigator>
+</view>
+
+
+<view class="tipPublish" hidden="{{hasGroup}}">
+    还没有人发布组队噢，您可以点击下方按钮发布组队
+</view>
+
+<navigator class="bottomteam" url="../teamEditors/teamEditors?activityId={{activityId}}">
+    <view class="iconfont icon-bianji bottomicon"></view>
+    <view class="bottomtext">
+        发布组队
+    </view>
+</navigator>

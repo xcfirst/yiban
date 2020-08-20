@@ -15,23 +15,62 @@
     "pages/Leaving_message/L_m",
     "pages/M_c_content/M_c_content",
     "pages/L_m_content/L_m_content",
-    "pages/zudui/zudui"
+    "pages/home/home",
+    "pages/activity/activity",
+    "pages/organization/organization",
+    "pages/prove/prove",
+    "pages/team/team",
+    "pages/teamcontent/teamcontent",
+    "pages/teamEditors/teamEditors",
+    "pages/informationList/informationList",
+    "pages/informationDetail/informationDetail",
+    "pages/searchActivity/searchActivity",
+    "pages/searchOrganization/searchOrganization",
+    "pages/jumpOutYiban/jumpOutYiban",
+    "pages/wechatLogin/wechatLogin",
+    "pages/me/me",
+    "pages/me/aboutus/aboutus",
+    "pages/me/user/user",
+    "pages/me/dataapply/dataapply",
+    "pages/me/suggest/suggest",
+    "pages/me/association/association",
+    "pages/me/identity/identity",
+    "pages/me/identity/worker/worker",
+    "pages/me/identity/principal/principal",
+    "pages/me/setting/setting",
+    "pages/me/dataapply/type/type",
+    "pages/me/auditDetail/auditDetail",
+    "pages/me/auditFail/auditFail",
+    "pages/me/auditList/auditList",
+    "pages/me/auditSuccess/auditSuccess",
+    "pages/me/aboutus/introduce/introduce"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ff5e5b",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true,
     "backgroundColor": "#fef9ef"
   },
   "tabBar": {
-    "color": "#999",
-    "selectedColor": "#d81e06",
-    "backgroundColor": "#fafafa",
-    "position": "bottom",
+    "color": "",
+    "selectedColor": "#ff5e5b",
+    "backgroundColor": "#ffffff",
     "borderStyle": "black",
     "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./icon/home.png",
+        "selectedIconPath": "./icon/home1.png"
+      },
+      {
+        "pagePath": "pages/organization/organization",
+        "text": "资料",
+        "iconPath": "./icon/organization.png",
+        "selectedIconPath": "./icon/organization1.png"
+      },
       {
         "pagePath": "pages/Gongneng/gongneng",
         "text": "功能",
@@ -41,10 +80,11 @@
       {
         "pagePath": "pages/personal/personal",
         "text": "我的",
-        "iconPath": "icon/我的.png",
-        "selectedIconPath": "icon/我的 (1).png"
+        "iconPath": "icon/my.png",
+        "selectedIconPath": "icon/my1.png"
       }
     ]
   },
+  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

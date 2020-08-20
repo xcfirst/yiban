@@ -1,0 +1,77 @@
+/* pages/organization/organization.wxss */
+Page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.mark{
+    width: 702rpx;
+    background-color: #ff5e5b;
+    border-radius: 20rpx;
+    color: #ffffff;
+    text-align: center;
+    line-height: 70rpx;
+    margin: 5rpx 25rpx 0rpx 25rpx;
+}
+.cardContainer{
+    margin: 0rpx 25rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    width: 301rpx;
+    height: 280rpx;
+    background-color: #ffffff;
+    border-radius: 25rpx;
+    margin: 25rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardTop{
+    width: 251rpx;
+    height: 180rpx;
+    background-color: #f9961e;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardIcon{
+    font-size: 100rpx;
+    color: #333333;
+}
+.cardText{
+    font-size: 34rpx;
+}
+.academic{
+    background-color: #1982c4;
+}
+.publicWelfare{
+    background-color: #8bc926;
+}
+.cultureArt{
+    background-color: #feca39;
+}
+.sport{
+    background-color: #6a4c94;
+}
+.bottomContainer{
+    width: 702rpx;
+    margin: 0rpx 25rpx 100rpx 25rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 25rpx 25rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+.bottomIcon{
+    color: #999592;
+    font-size: 25rpx;
+    margin-right: 25rpx;
+    margin-top: 15rpx;
+}
+.bottomTip{
+    font-size: 25rpx;
+}
