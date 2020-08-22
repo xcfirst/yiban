@@ -32,7 +32,7 @@
 
 .feedback{
   width: 90%;
-  border-left-style: solid;
+  border-left: solid #999572;
   margin-left: 20rpx;
   padding: 10rpx;
   color: #818181;
