@@ -41,7 +41,6 @@ page{
 }
 .icon-web-icon-{
   margin-right: 20rpx;
-  font-size: 25rpx;
 }
 .btn{
   display: flex;
