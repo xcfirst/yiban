@@ -45,6 +45,13 @@ Page({
             wx.showToast({
               icon:"none",
               title: "没有权限，请先认证",
+              success:(res=>{
+                setTimeout(function(){
+                  wx.navigateBack({
+                    delta:1
+                  })
+                },2000)
+              })
             })
           }
           else{

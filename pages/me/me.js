@@ -24,8 +24,9 @@ Page({
   },
 
   navToIdentity:function(e){
+    var userid = this.data.userid;
     var path = '';
-    if(this.data.userid==1){
+    if(userid==1||userid==28){
       path = "auditList";
     }
     else{
