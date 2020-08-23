@@ -39,7 +39,10 @@ page{
   margin-left: 20rpx;
   padding: 10rpx;
 }
-
+.icon-web-icon-{
+  margin-right: 20rpx;
+  font-size: 25rpx;
+}
 .btn{
   display: flex;
   box-sizing: border-box;

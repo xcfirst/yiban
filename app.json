@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/Gongneng/gongneng",
-    "pages/personal/personal",
     "pages/collection/collection",
     "pages/calendar/calendar",
     "pages/footprint/footprint",
@@ -78,7 +77,7 @@
         "selectedIconPath": "icon/function1.png"
       },
       {
-        "pagePath": "pages/personal/personal",
+        "pagePath": "pages/me/me",
         "text": "我的",
         "iconPath": "icon/my.png",
         "selectedIconPath": "icon/my1.png"
