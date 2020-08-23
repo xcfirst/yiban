@@ -106,3 +106,7 @@
   font-size: 42rpx;
   color: black;
 }
+.icon-web-icon-{
+  margin-right: 20rpx;
+  font-size: 25rpx;
+}
