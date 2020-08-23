@@ -11,7 +11,6 @@
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
-  color: #ff5e5b;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -150,9 +149,6 @@
 
 .icon-web-icon-:before {
   content: "\e6c9";
-  color: #818181;
-  margin-right: 20rpx;
-  font-size: 25rpx;
 }
 
 .icon-fuzhi:before {

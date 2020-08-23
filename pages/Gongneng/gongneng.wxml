@@ -1,0 +1,103 @@
+<view class="biaoti" style="margin:30rpx">近期活动</view>
+
+<view wx:if="{{schedules.length != 0}}">
+  <view class="zero0">
+    <view wx:if="{{index < 2}}" class="first0" wx:for="{{schedules}}" wx:key="id">
+      <view class="radiu" style="background-color:{{index === 0?'#ff5e5b':'#18c3b3'}}"></view>
+      <view class="second0">
+        <text class="title">{{item.title}}</text>
+        <text class="other">时间：{{item.date}}</text>
+        <text class="other">地点：{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <view class="content">
+    <view class="befor">
+      <view class="after">收藏过的有关近期活动会在这里显示</view>
+    </view>
+  </view>
+</view>
+
+<view class="gongneng_cata">
+  <navigator wx:for="{{cataList}}" url="{{item.url}}">
+    <image src="{{item.image_src}}" mode="widthFix"></image>
+  </navigator>
+</view>
+<view class="name_list">
+  <view class="name" wx:for="{{Name}}">{{item.name}}</view>
+</view>
+<view class="all">
+  <view class="biaoti">消息中心</view>
+  <view bindtap="goNext1" class="more iconfont icon-gengduo1">更多</view>
+</view>
+<view wx:if="{{information.length != 0}}">
+  <navigator url="/pages/M_c_content/M_c_content?id = {{item.id}}" wx:if="{{index < 2}}" wx:for="{{information}}"
+    wx:key="id">
+    <view class="zero">
+      <view class="first">
+        <icon class="{{!item.browsed?'icon1':'icon3'}} iconfont icon-yuandian"></icon>
+        <text class="earing_info">{{item.information}}</text>
+        <view class="icon2 iconfont {{!item.browsed?'icon-xinxiaoxi':''}}"></view>
+      </view>
+      <view class="time">{{item.date}}</view>
+    </view>
+  </navigator>
+</view>
+<view wx:else>
+  <view class="content">
+    <view class="befor">
+      <view class="after">暂无新消息</view>
+    </view>
+  </view>
+</view>
+<view class="all">
+  <view class="biaoti">留言信息</view>
+  <view bindtap="goNext2" class="more iconfont icon-gengduo1">更多</view>
+</view>
+<view wx:if="{{messages.length != 0}}">
+  <navigator wx:if="{{index < 2}}" wx:for="{{messages}}" wx:key="id" url="../activity/activity?activityId={{item.activityId}}">
+    <view class="zero">
+      <view class="first">
+        <icon class="{{!item.browsed?'icon1':'icon3'}}  iconfont icon-yuandian"></icon>
+        <text class="earing_info">{{Leaving}}</text>
+        <view class="icon2 iconfont {{!item.browsed?'icon-xinxiaoxi':''}} "></view>
+      </view>
+      <view class="time">{{item.date}}</view>
+    </view>
+  </navigator>
+</view>
+<view wx:else>
+  <view class="content">
+    <view class="befor">
+      <view class="after">您收藏过的活动暂无新留言</view>
+    </view>
+  </view>
+</view>
+
+<view class="all">
+  <view class="biaoti">发布管理</view>
+  <view bindtap="goNext3" class="more iconfont icon-bianji-copy">编辑</view>
+</view>
+
+<view class="bottom" wx:if="{{publishManagements.length != null}}">
+    <view wx:if="{{index < 2}}" data-id = "{{item.id}}" data-type="{{item.type}}" catchtap="goNext" wx:for="{{publishManagements}}" wx:key="id" >
+      <view class="zero1" >
+        <view class="first1">
+              <icon class="icon1_1 iconfont icon-yuandian"></icon>
+              <text class="earing_info1">{{item.title}}</text>
+        </view>
+        <view class="time">{{item.date}}</view>
+       </view>
+    </view>
+</view>
+
+<view wx:else>
+  <view class="content">
+    <view class="befor">
+      <view class="after">您还未发布活动或组队信息</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="content">
+    <view class="befor">
+      <view class="after">
+        {{information.information}}
+      </view>
+    </view>
+</view>
+
+

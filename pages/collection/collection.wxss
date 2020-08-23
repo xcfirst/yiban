@@ -1,0 +1,61 @@
+.zero1 {
+  display: flex;
+  flex-flow: column;
+  height: 110rpx;
+  font-size: 35rpx;
+  margin: 20rpx 30rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.zero1 .first1 {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.zero1 .first1 .icon1_1 {
+  font-size: 50rpx;
+  color: #ff5e5b;
+}
+.zero1 .first1 .earing_info1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 30rpx;
+}
+.zero1 .first1 .icon2_1 {
+  font-size: 40rpx;
+  color: #ff5e5b;
+  margin-right: 50rpx;
+  margin-top: -5rpx;
+}
+.zero1 .time {
+  display: flex;
+  margin-right: 30rpx;
+  justify-content: flex-end;
+  color: #999592;
+  font-size: 30rpx;
+}
+.second {
+  display: flex;
+  align-items: center;
+}
+.font {
+  display: flex;
+  margin-top: 30rpx;
+  color: #999592;
+  font-size: 30rpx;
+  justify-content: center;
+}
+.biaoti {
+  width: 200rpx;
+  height: 50rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff5e5b;
+  border-radius: 15rpx;
+  margin: 30rpx;
+  font-size: 42rpx;
+}

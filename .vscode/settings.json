@@ -1,4 +1,7 @@
 {
+    "less.compile": {
+        "outExt": ".wxss" //是否输出css文件，false为不输出
+    },
     "files.associations": {
         "*.wxml": "html",
         "*.wxss": "css"

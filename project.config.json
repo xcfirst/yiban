@@ -28,14 +28,12 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"packNpmManually": false,
-		"packNpmRelationList": []
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.2",
-	"appid": "wx3ba5b3cafbcbd958",
-	"projectname": "yiban",
+	"libVersion": "2.12.1",
+	"appid": "wx67d44de33facdaaa",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -69,13 +67,55 @@
 			"list": [
 				{
 					"id": -1,
+					"name": "pages/publish/publish",
+					"pathName": "pages/publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Text/Text",
+					"pathName": "pages/Text/Text",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/collection/collection",
+					"pathName": "pages/collection/collection",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/calendar/calendar",
+					"pathName": "pages/calendar/calendar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息中心",
+					"pathName": "pages/Message_center/M_c",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布管理",
+					"pathName": "pages/Release_management/R_m",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "活动内容",
 					"pathName": "pages/activity/activity",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": 1,
+					"id": -1,
 					"name": "组队页面",
 					"pathName": "pages/team/team",
 					"query": "",
@@ -134,6 +174,13 @@
 					"id": -1,
 					"name": "日程",
 					"pathName": "pages/try/try",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留言发布",
+					"pathName": "pages/leaving_publish/leaving_publish",
 					"scene": null
 				}
 			]

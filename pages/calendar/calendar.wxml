@@ -1,0 +1,26 @@
+<view class="first">
+    <view class=" second icon iconfont icon-web-icon-"></view>
+    <text class="text">日程提醒可以在 我的>设置 里面开启或关闭，默认为开启</text>  
+</view>
+
+
+<view wx:if="{{Richeng != null}}">
+  <view class="zero">
+  <view class="first1" wx:for="{{Richeng}}" wx:key="id">
+    <view class="radiu"></view>
+    <view class="second">
+      <text class="title">{{item.date}}</text>
+      <text class="other">{{item.title}}</text>
+      <text class="other">地点：{{item.address}}</text>
+    </view>
+  </view>
+</view>
+</view>
+
+<view wx:else>
+    <text class="font">
+    收藏过的活动会在这里以日程表形式显示
+  </text>
+</view>
+  
+  

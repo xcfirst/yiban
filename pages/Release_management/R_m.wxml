@@ -1,0 +1,45 @@
+<view class="total">
+
+  <view class="tip">
+    <view class=" icon iconfont icon-web-icon-"></view>
+    <text class="text">点击打开后可以对活动进行留言(只有活动才能留言)</text>  
+  </view>
+
+ <view wx:if="{{Publish}}">
+   <view data-id = "{{item.id}}" data-type="{{item.type}}" catchtap="goNext" wx:for="{{Publish}}" wx:key="id" >
+     <view class="zero1" >
+       <view class="first1">
+             <icon class="icon1_1 iconfont icon-yuandian"></icon>
+             <text class="earing_info1">{{item.title}}</text>
+             <icon data-index = "{{index}}" catchtap="choose" hidden ="{{hidden}}" class="{{item.select?'icon2_1':'icon2_2'}} iconfont {{item.select?'icon-xuanze1':'icon-zidingyikexuankuang'}}"></icon>
+       </view>
+       <view class="time">{{item.date}}</view>
+      </view>
+   </view>
+ </view>
+  
+ <view wx:else>
+   <text class="font">
+     浏览过的活动会在这里显示哦
+   </text>
+ </view>
+
+ <view   hidden ="{{!hidden}}"  class='add_btn'>
+     <button bindtap="sure" class='btn image_5'>
+         <view class="iconfont icon-bianji"></view>编辑
+     </button>
+ </view>
+
+ <view  hidden ="{{hidden}}" class='add_btn'>
+    <button  role="button"  catchtap="delete" class='btn1 image_5'>
+      <view class="iconfont icon-bianji"></view>删除
+    </button>
+
+    <button catchtap="cancel" class='btn2 image_5'>
+      <view class="iconfont icon-bianji"></view>取消编辑
+    </button>
+
+ </view>
+
+</view>
+
