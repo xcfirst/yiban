@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/Gongneng/gongneng",
     "pages/collection/collection",
     "pages/calendar/calendar",
@@ -12,7 +13,7 @@
     "pages/Leaving_message/L_m",
     "pages/M_c_content/M_c_content",
     "pages/L_m_content/L_m_content",
-    "pages/home/home",
+    
     "pages/activity/activity",
     "pages/organization/organization",
     "pages/prove/prove",
