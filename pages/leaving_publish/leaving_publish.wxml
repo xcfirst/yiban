@@ -1,0 +1,70 @@
+<!--pages/activity/activity.wxml -->
+<view class="toptitle" hidden="{{isActivityNull.isTitleNull}}">
+    <view class="radiu"></view>
+    <view class="title">
+        {{nowactivityArray.activity.title}}
+    </view>
+</view>
+<view class="middlecontent" hidden="{{isActivityNull.isDateNull}}">
+    <view class="container">
+        <text class="content" selectable="true">时间：{{nowactivityArray.activity.date}}
+        </text>
+    </view>
+</view> 
+<view class="middlecontent" hidden="{{isActivityNull.isAddressNull}}">
+    <view class="container">
+        <text class="content" selectable="true">地点：{{nowactivityArray.activity.address}}
+        </text>
+    </view>
+</view>
+<view class="middlecontent" hidden="{{isActivityNull.isTextNull}}">
+    <view class="container">
+        <text class="content" selectable="true">{{nowactivityArray.activity.text}}
+        </text>
+    </view>
+</view>
+<view class="imgcontainer" hidden="{{isActivityNull.isPictureNull}}">  
+    <image class="picture" 
+    mode="aspectFill"
+    wx:for="{{nowactivityArray.activity.picUrl}}" 
+    wx:key="*this" 
+    src='{{item}}' 
+    data-index='{{index}}'
+    bindtap="handPreviewImg" />
+</view>
+
+
+
+<view class="labelcontainer">
+    <view class="lableinner"
+    wx:for="{{nowactivityArray.activity.label}}"
+    wx:key="*this">
+        {{item}}
+    </view>
+</view>
+<view class="leaveContainer" hidden="{{isActivityNull.isMessageNull}}">
+    <view class="leaveInnerTop">
+        留言
+    </view>
+    <view class="leaveInnerBottom" hidden="{{hasMessage}}">
+        <view class="leaveInnerContain">
+            暂无留言信息
+        </view>
+    </view>
+    <view class="leaveInnerBottom" 
+        hidden="{{!hasMessage}}"
+        wx:for="{{nowactivityArray.message}}"
+        wx:key="id">
+        <view class="leaveInnerContain hasLeave">
+            {{item.message}}
+        </view>
+    </view>
+</view>
+  
+<navigator class="bottomteam" url="../leaving_edit/leaving_edit?activityId={{activityId}}">
+    <view class="iconfont icon-bianji bottomicon"></view>
+    <view class="bottomtext">
+        发布留言
+    </view>
+</navigator>
+  

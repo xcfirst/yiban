@@ -114,3 +114,28 @@
 .tip .text {
   margin: 15rpx;
 }
+button {
+  padding: 8px 24px;
+  line-height: 1.41176471;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 17px;
+}
+.tip {
+  width: 700rpx;
+  height: auto;
+  display: flex;
+  color: #999592;
+  justify-content: left;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 15rpx;
+  font-size: 30rpx;
+  margin: 30rpx;
+}
+.tip .icon {
+  margin: 15rpx;
+}
+.tip .text {
+  margin: 15rpx;
+}

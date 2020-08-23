@@ -1,4 +1,4 @@
-<navigator wx:for="{{messages}}" wx:key="id" >
+<navigator wx:for="{{messages}}" wx:key="id" url="../activity/activity?activityId={{item.activityId}}">
   <view class="zero" >
     <view class="first">
           <icon class="{{!item.browsed?'icon1':'icon3'}}  iconfont icon-yuandian"></icon>

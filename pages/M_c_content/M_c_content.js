@@ -28,7 +28,7 @@ Page({
       this.setData({
         information:result.data.obj
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
       
   },

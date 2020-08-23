@@ -4,7 +4,7 @@
 </view>
 
 
-<view wx:if="{{Richeng}}">
+<view wx:if="{{Richeng != null}}">
   <view class="zero">
   <view class="first1" wx:for="{{Richeng}}" wx:key="id">
     <view class="radiu"></view>

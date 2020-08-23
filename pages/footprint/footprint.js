@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userId:1,
+    "userId":null,
     footprint:[]
   },
 
@@ -14,6 +14,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getBrowsed();
   },
 
@@ -38,7 +43,7 @@ Page({
       data:{userId}
     })
     .then(res =>{
-      console.log(res);
+      console.log(res.data.obj);
       this.setData({
         footprint:res.data.obj
       })

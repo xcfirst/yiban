@@ -7,7 +7,7 @@ Page({
    */
   data: {
     Publish:[],
-    userId:1,
+    "userId":null,
     hidden: 'hidden',
     icon_choose:'icon-zidingyikexuankuang',
     id:[],
@@ -19,6 +19,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getPublish();
   },
 
@@ -80,48 +85,69 @@ Page({
   },
 
   delete:function(e){
-    console.log(e),
-    wx.showModal({
-      title: '确认删除吗？',
-      showCancel: true,
-      cancelText: '取消',
-      cancelColor: '#18c3b3',
-      confirmText: '确认',
-      confirmColor: '#ff5e5b',
-      success: (result) => {
-        if (result.confirm) {
-            wx.showToast({
-              title: '删除成功'
-            });
-          console.log('用户点击确定')
-          console.log('删除')
-          let data = this.data.Publish
-          for (var index in data) {
-              if(data[index].select){
-                this.data.id.push(this.data.Publish[index].id);
-                this.data.type.push(this.data.Publish[index].type)
+    let publish = this.data.Publish
+    // console.log(e),
+    for(let i=0;i<publish.length;++i){
+      if(publish[i].select){
+        wx.showModal({
+          title: '确认删除吗？',
+          showCancel: true,
+          cancelText: '取消',
+          cancelColor: '#18c3b3',
+          confirmText: '确认',
+          confirmColor: '#ff5e5b',
+          success: (result) => {
+            if (result.confirm) {
+                wx.showToast({
+                  title: '删除成功'
+                });
+              console.log('用户点击确定')
+              console.log('删除')
+              let data = this.data.Publish
+              for (var index in data) {
+                  if(data[index].select){
+                    this.data.id.push(this.data.Publish[index].id);
+                    this.data.type.push(this.data.Publish[index].type)
+                }
+              }
+              let id = this.data.id.toString()
+              let type = this.data.type.toString()
+    
+              request({
+                url: "/deletePublish",
+                data: { id,type },
+              }).then(res=>{
+                console.log(res);
+                this.getPublish();
+                this.setData({
+                  id:[],
+                  type:[]
+                })
+              })
+            } else if (e.cancel){
+            console.log('用户点击取消')
             }
-          }
-          let id = this.data.id.toString()
-          let type = this.data.type.toString()
+          },
+        });
+        break;
+      }
+  }
 
-          request({
-            url: "/deletePublish",
-            data: { id,type },
-          }).then(res=>{
-            console.log(res);
-            this.getPublish();
-            this.setData({
-              id:[],
-              type:[]
-            })
-          })
-	      } else if (e.cancel){
-	      console.log('用户点击取消')
-        }
-      },
-      fail: () => {},
-      complete: () => {}
+  },
+
+  goNext:function(e){
+    let num = e.currentTarget.dataset.type
+    let id  = e.currentTarget.dataset.id
+    console.log(e.currentTarget.dataset.type);
+    if(num == 1)wx.navigateTo({
+      url: "../leaving_publish/leaving_publish?activityId="+id
+    });
+    else if(num == 2)
+    wx.navigateTo({
+      url: "../prove/prove?certificateId="+id
+    });
+    else if(num == 3)wx.navigateTo({
+      url: "../teamcontent/teamcontent?id="+id
     });
   }
 })

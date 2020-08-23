@@ -12,6 +12,7 @@ Page({
     schedules:[],	             //近期活动
     information:[],                  //消息中心
     messages:[],		                 //留言
+    "userId":null,
     Name:[
       { name:"发布"},
       { name:"日程表"},
@@ -20,7 +21,7 @@ Page({
     ]
   },
   
-  userId:1,
+  
   areablur:function(){
     this.setData({
       auto_height:false
@@ -69,6 +70,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getCatas();
   },
 
@@ -79,13 +85,13 @@ Page({
       this.setData({
         cataList:result.data.message
       })
-      console.log(result)
+      console.log(result.data.message)
     })
   },
 
   
   getFunction(){
-    const userId = this.userId
+    const userId = this.data.userId
     request({url:"/getFunction",data:{userId}})
     .then(result=>{
       this.setData({
@@ -93,18 +99,18 @@ Page({
         information:result.data.obj.information,  
         messages:result.data.obj.messages,
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
   },
   
   getPublish(){
-    const userId = this.userId
+    const userId = this.data.userId
     request({
       url: '/getPublish',
       data:{userId}
     })
     .then(res =>{
-      console.log(res);
+      console.log(res.data.obj);
       this.setData({
         publishManagements:res.data.obj
       })
@@ -124,4 +130,20 @@ Page({
     this.getFunction();
     this.getPublish();
   },
+
+  goNext:function(e){
+    let num = e.currentTarget.dataset.type
+    let id  = e.currentTarget.dataset.id
+    console.log(e.currentTarget.dataset.type);
+    if(num == 1)wx.navigateTo({
+      url: "../leaving_publish/leaving_publish?activityId="+id
+    });
+    else if(num == 2)
+    wx.navigateTo({
+      url: "../prove/prove?certificateId="+id
+    });
+    else if(num == 3)wx.navigateTo({
+      url: "../teamcontent/teamcontent?id="+id
+    });
+  }
 })

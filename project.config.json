@@ -27,11 +27,11 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.12.1",
 	"appid": "wx67d44de33facdaaa",
 	"projectname": "miniprogram-1",
 	"debugOptions": {
@@ -104,6 +104,7 @@
 					"id": -1,
 					"name": "发布管理",
 					"pathName": "pages/Release_management/R_m",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -173,6 +174,13 @@
 					"id": -1,
 					"name": "日程",
 					"pathName": "pages/try/try",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "留言发布",
+					"pathName": "pages/leaving_publish/leaving_publish",
 					"scene": null
 				}
 			]

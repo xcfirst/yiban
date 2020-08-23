@@ -24,7 +24,7 @@ Page({
     text: '',                  //正文
     hidden2:'',          //活动时间
     maxTextLen:500,
-    userId:1,
+    "userId":null,
     auto_height:true,          //高度自适应
     Label:[],
     input1:'',
@@ -222,7 +222,7 @@ Page({
         'content-type': 'multipart/form-data',
         'accept': 'application/json',
       },
-      url: 'http://liveforjokes.icu:8864/savePicture',
+      url: 'http://liveforjokes.icu:8800/savePicture',
       filePath: filepath,
       name: 'file',
       formData: {
@@ -233,7 +233,6 @@ Page({
         that.setData({
           mes:JSON.parse(res.data),
           images: that.data.images.concat(JSON.parse(res.data).obj)//把字符串解析成对象
-
         })
         console.log(res.data);
         console.log(that.data.images)
@@ -269,7 +268,7 @@ Page({
       success: (result) => {
         if (result.confirm) {
           const userId = this.data.userId
-          console.log(userId);
+          // console.log(userId);
           request({
             url: '/saveActivityAuthentication',
             data: { userId },
@@ -348,7 +347,7 @@ Page({
         data: { title,label,text,startTime,endTime,address,userId,picture },
       })
       .then(res=>{
-        console.log(res)
+        // console.log(res)
       })
     }else {
       const activityTitle = title
@@ -360,7 +359,7 @@ Page({
         header: {'content-type':'application/x-www-form-urlencoded'},
         data: { activityTitle, activityContent, label, fileUrl,userId}
       }).then(res=>{
-        console.log(res)
+        console.log(res.data.obj)
       })
       
     }
@@ -402,7 +401,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
   },
 
   /**

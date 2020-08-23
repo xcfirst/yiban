@@ -1,0 +1,62 @@
+/* pages/teamEditors/teamEditors.wxss */
+page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.tipcontent{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin: 25rpx;
+    display: flex;
+    box-sizing: border-box;
+    padding: 15rpx 25rpx;
+}
+.tipicon{
+    color: #999592;
+    font-size: 25rpx;
+    margin-right: 25rpx;
+    margin-top: 15rpx;
+}
+.tiptext{
+    font-size: 25rpx;
+    color: #999592;
+}
+.inputcontain{
+    width: 702rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin: 0rpx 25rpx 200rpx 25rpx;
+    padding: 15rpx 25rpx;
+    box-sizing: border-box;
+}
+.inputinner{
+    width: 652rpx;
+    border-left: 2rpx solid #999592;
+    padding-left: 15rpx;
+    box-sizing: border-box;
+}
+.inputtip{
+    font-size: 34rpx;
+    color: #999592;
+}
+.inputcontent{
+    width: 100%;
+    font-size: 34rpx;
+}
+.bottomteam{
+    width: 750rpx;
+    padding: 25rpx 0rpx;
+    background-color: #ff5e5b;
+    border-radius: 20rpx;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomicon{
+    color: #333333;
+    margin-right: 10rpx;
+}

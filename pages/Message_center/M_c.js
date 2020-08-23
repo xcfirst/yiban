@@ -5,7 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  userId:4,
+  "userId":null,
   data: {
     information:[],
   },
@@ -23,17 +23,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getInformations()
   },
 
   getInformations(){
-    const userId = this.userId
+    const userId = this.data.userId
     request({url:"/getInformations",data:{userId}})
     .then(result=>{
       this.setData({
         information:result.data.obj
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
   },
 

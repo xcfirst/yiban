@@ -7,13 +7,18 @@ Page({
    */
   data: {
     Richeng:[],
-    userId:1
+    "userId":null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getSchedule()
   },
 
@@ -32,7 +37,7 @@ Page({
   },
 
   getSchedule(){
-    const userId = this.data.userId
+    const userId = this.data.userId;
     request({
       url: '/getSchedule',
       data: {userId},
@@ -41,7 +46,7 @@ Page({
       this.setData({
         Richeng:res.data.obj
       })
-      console.log(this.data.Richeng);
+      console.log(res.data.obj);
     })
       
   }

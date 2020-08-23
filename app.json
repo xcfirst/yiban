@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/Gongneng/gongneng",
-    "pages/Text/Text",
     "pages/personal/personal",
     "pages/collection/collection",
     "pages/calendar/calendar",
@@ -9,7 +8,6 @@
     "pages/publish/publish",
     "components/popup/popup",
     "components/DateTimePicker/DateTimePicker",
-    "pages/message/message",
     "pages/Release_management/R_m",
     "pages/Message_center/M_c",
     "pages/Leaving_message/L_m",
@@ -43,7 +41,9 @@
     "pages/me/auditFail/auditFail",
     "pages/me/auditList/auditList",
     "pages/me/auditSuccess/auditSuccess",
-    "pages/me/aboutus/introduce/introduce"
+    "pages/me/aboutus/introduce/introduce",
+    "pages/leaving_publish/leaving_publish",
+    "pages/leaving_edit/leaving_edit"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -74,8 +74,8 @@
       {
         "pagePath": "pages/Gongneng/gongneng",
         "text": "功能",
-        "iconPath": "icon/功能管理.png",
-        "selectedIconPath": "icon/功能管理 (1).png"
+        "iconPath": "icon/function.png",
+        "selectedIconPath": "icon/function1.png"
       },
       {
         "pagePath": "pages/personal/personal",
@@ -85,6 +85,5 @@
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

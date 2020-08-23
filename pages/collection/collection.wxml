@@ -1,9 +1,9 @@
-<view wx:if="{{Collected}}">
+<view wx:if="{{Collected != 0}}">
   <view class="biaoti">
     活动
   </view>
 
-  <view wx:for="{{Collected}}" wx:key="id">
+  <navigator wx:for="{{Collected}}" wx:key="id" url="../activity/activity?activityId={{item.id}}">
     <view class="zero1">
       <view class="first1">
         <view class="second">
@@ -14,13 +14,13 @@
       </view>
       <view class="time">{{item.date}}</view>
     </view>
-  </view>
+  </navigator>
 
   <view class="biaoti">
     活动证明
   </view>
 
-  <view wx:for="{{CollectedCertificate}}" wx:key="id">
+  <navigator wx:for="{{CollectedCertificate}}" wx:key="id" url="../prove/prove?certificateId={{item.id}}">
     <view class="zero1">
       <view class="first1">
         <view class="second">
@@ -32,7 +32,7 @@
       </view>
       <view class="time">{{item.date}}</view>
     </view>
-  </view>
+  </navigator>
 </view>
 
 <view wx:else>

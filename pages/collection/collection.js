@@ -7,10 +7,11 @@ Page({
    */
   data: {
     Collected:[],
-    CollectedCertificate:[]
+    CollectedCertificate:[],
+    "userId":null,
   },
 
-  userId:1,
+  
 
   Leaving_Collected: function(e) {
     console.log(e),
@@ -30,7 +31,7 @@ Page({
           console.log(e.currentTarget.dataset.index)
           var index = e.currentTarget.dataset.index;
           
-          const userId = this.userId
+          const userId = this.data.userId;
           let activityId = this.data.Collected[index].id
           console.log(activityId)
           request({
@@ -72,7 +73,7 @@ Page({
           console.log(e.currentTarget.dataset.index)
           var index = e.currentTarget.dataset.index;
           
-          const userId = this.userId
+          const userId = this.data.userId;
           let certificateId = this.data.CollectedCertificate[index].id
 
           request({
@@ -97,6 +98,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
     this.getCollectedActivity();
     this.getCollectedCertificate();
   },
@@ -116,18 +122,18 @@ Page({
   },
 
   getCollectedActivity(){
-    const userId = this.userId
+    const userId = this.data.userId;
     request({url:"/getCollectedActivity",data:{userId}})
     .then(result=>{
       this.setData({
         Collected:result.data.obj
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
   },
 
   getCollectedCertificate(){
-    const userId = this.userId
+    const userId = this.data.userId;
     request({
       url:"/certificate/getCollectedCertificate",
       method: 'POST',   
@@ -138,7 +144,7 @@ Page({
       this.setData({
         CollectedCertificate:result.data.obj
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
   },
 })

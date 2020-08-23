@@ -5,18 +5,16 @@ Page({
   /**
    * 页面的初始数据
    */
-  userId:1,
+  "userId":null,
   data: {
     messages:[],
   },
-
-  userId:1,
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMessages()
+
   },
 
 
@@ -24,17 +22,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
+    this.getMessages()
   },
 
   getMessages(){
-    const userId = this.userId
+    const userId = this.data.userId
     request({url:"/getMessages",data:{userId}})
     .then(result=>{
       this.setData({
         messages:result.data.obj
       })
-      console.log(result)
+      console.log(result.data.obj)
     })
   }
 })
