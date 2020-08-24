@@ -19,6 +19,6 @@ App({
   globalData: {
     hasLogin: false,
     yibanHasLogin: true,
-    userId: 28,
+    userId: 1,
   },
 });

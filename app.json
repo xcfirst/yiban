@@ -13,7 +13,6 @@
     "pages/Leaving_message/L_m",
     "pages/M_c_content/M_c_content",
     "pages/L_m_content/L_m_content",
-    
     "pages/activity/activity",
     "pages/organization/organization",
     "pages/prove/prove",
@@ -25,7 +24,6 @@
     "pages/searchActivity/searchActivity",
     "pages/searchOrganization/searchOrganization",
     "pages/jumpOutYiban/jumpOutYiban",
-    "pages/wechatLogin/wechatLogin",
     "pages/me/me",
     "pages/me/aboutus/aboutus",
     "pages/me/user/user",
