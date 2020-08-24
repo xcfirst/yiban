@@ -8,7 +8,7 @@
     <text class="iconfont icon-biaotizhengwenqiehuan-copy"/>
     <text class="input" > {{name}} </text>
   </view>
-  <view class="item">
+  <view class="item-a">
     <text class="iconfont icon-bianjizhengwen"/>
     <textarea class="input" value="{{introduce}}" maxlength="-1" auto-height="true" placeholder="请在这里输入社团组织介绍" bindinput="inputIntro"></textarea>
   </view>
@@ -54,9 +54,9 @@
   </view>
   
   <view class="pad">
-    <view class="updata" bindtap="updata" data-index='1'>
-      <text class="iconfont icon-bianji"></text>
-      <text>提交申请</text>
-    </view>
+    <cover-view class="updata" bindtap="updata" >
+      <cover-view class="iconfont icon-bianji"></cover-view>
+      <cover-view>提交申请</cover-view>
+    </cover-view>
   </view>
 </view>

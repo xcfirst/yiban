@@ -20,7 +20,16 @@
   color: #818181;
   font-size: 25rpx;
 }
-
+.item-a{
+  display: flex;
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin: 25rpx;
+  margin-bottom: 0;
+  border-radius: 20rpx;
+  width: 702rpx;
+  background-color: white;
+}
 .item{
   display: flex;
   box-sizing: border-box;
@@ -29,6 +38,7 @@
   margin-bottom: 0;
   border-radius: 20rpx;
   width: 702rpx;
+  align-items: center;
   background-color: white;
 }
 .input{
@@ -103,6 +113,8 @@
 }
 .pad{
   height: 150rpx;
+  width: 750rpx;
+  z-index: 9999;
 }
 .updata{
   display: flex;
@@ -200,4 +212,7 @@
 }
 .icon-web-icon-{
   margin-right: 20rpx;
+}
+.icon-gongzhonghao{
+  font-size: 40rpx;
 }
