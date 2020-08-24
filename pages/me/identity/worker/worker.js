@@ -104,7 +104,7 @@ Page({
     var that = this;
     var idx = that.data.idx
     wx.showLoading({
-      title: '正在上传反馈信息',
+      title: '正在上传',
     })
     wx.uploadFile({
       header:{

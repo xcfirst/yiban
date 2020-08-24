@@ -154,6 +154,8 @@
 
 .icon-web-icon-:before {
   content: "\e6c9";
+  color: #818181;
+  font-size: 25rpx;
 }
 
 .icon-fuzhi:before {
@@ -162,6 +164,7 @@
 
 .icon-bianji:before {
   content: "\e600";
+  color:black;
 }
 
 .icon-bianji-copy:before {
