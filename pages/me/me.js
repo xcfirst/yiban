@@ -5,6 +5,7 @@ Page({
     userid:getApp().globalData.userId,
     name: '',
     id:"",
+    level:false,
     avatar:'',
   },
 
@@ -18,23 +19,26 @@ Page({
       this.setData({name:res.data.obj.name,avatar:res.data.obj.yb_userhead})
     })
   },
-  /*onShow: function(){
-    this.setData({
-      avatar: wx.getStorageSync('avatar') || 'https://yunlaiwu0.cn-bj.ufileos.com/teacher_avatar.png',
-    })
-  },*/
+
 
   navToIdentity:function(e){
+    var that = this;
     var userid = this.data.userid;
     var path = '';
-    if(userid==1||userid==28){
-      path = "auditList";
-    }
-    else{
-      path = "identity";
-    }
-    wx.navigateTo({
-      url: '/pages/me/'+path+'/'+path,
+    request({
+      url: "http://liveforjokes.icu:8800/getLevel",
+      data:{userId:userid},
+    }).then(res=>{
+      this.setData({level:res.data.obj})
+      if(that.data.level){
+        path = "auditList";
+      }
+      else{
+        path = "identity";
+      }
+      wx.navigateTo({
+        url: '/pages/me/'+path+'/'+path,
+      })
     })
   },
 
