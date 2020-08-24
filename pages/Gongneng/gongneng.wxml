@@ -22,12 +22,12 @@
 </view>
 
 <view class="gongneng_cata">
-  <navigator wx:for="{{cataList}}" url="{{item.url}}">
+  <navigator wx:for="{{cataList}}" wx:key="*this" url="{{item.url}}">
     <image src="{{item.image_src}}" mode="widthFix"></image>
   </navigator>
 </view>
 <view class="name_list">
-  <view class="name" wx:for="{{Name}}">{{item.name}}</view>
+  <view class="name" wx:for="{{Name}}" wx:key="*this">{{item.name}}</view>
 </view>
 <view class="all">
   <view class="biaoti">消息中心</view>
