@@ -45,6 +45,9 @@ Page{
 .cardText{
     font-size: 34rpx;
 }
+.yuanjiorganization{
+    background-color: #93b5e1;
+}
 .academic{
     background-color: #1982c4;
 }
