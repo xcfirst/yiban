@@ -195,6 +195,9 @@
 .zero0 .first0 .second0 .other {
   font-size: 30rpx;
 }
+.more {
+  color: #333333;
+}
 .zero1 {
   display: flex;
   flex-flow: column;

@@ -98,9 +98,6 @@ Page({
           confirmColor: '#ff5e5b',
           success: (result) => {
             if (result.confirm) {
-                wx.showToast({
-                  title: '删除成功'
-                });
               console.log('用户点击确定')
               console.log('删除')
               let data = this.data.Publish
@@ -112,7 +109,6 @@ Page({
               }
               let id = this.data.id.toString()
               let type = this.data.type.toString()
-    
               request({
                 url: "/deletePublish",
                 data: { id,type },
@@ -123,6 +119,11 @@ Page({
                   id:[],
                   type:[]
                 })
+                wx.showToast({
+                  title: '删除成功',
+                  duration: 1500,
+                  mask: true,
+                });
               })
             } else if (e.cancel){
             console.log('用户点击取消')
