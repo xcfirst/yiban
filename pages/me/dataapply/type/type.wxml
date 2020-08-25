@@ -1,7 +1,10 @@
 <!--pages/dataapply/type/type.wxml-->
 <view class="container">
-    <view class="item" data-type='组织' bindtap="navTo">
-      <text>校级组织</text>
+  <view class="item" data-type='校级组织' bindtap="navTo">
+    <text>校级组织</text>
+  </view>
+    <view class="item" data-type='院级组织' bindtap="navTo">
+      <text>院级组织</text>
     </view>
     <view class="item"  data-type='学术科技类' bindtap="navTo">
       <text>学术科技类</text>
