@@ -53,7 +53,7 @@ Page({
       }
     })
     
-    wx.showModal({
+    /*wx.showModal({
       content:'请选择资料的类型',
       cancelText: '校级组织',
       cancelColor: '#17c3b2',
@@ -64,7 +64,7 @@ Page({
           type = "组织"
         }
       }
-    })
+    })*/
   },
   removeIdentity:function(e){
     var idx = e.currentTarget.dataset.idx;
