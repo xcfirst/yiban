@@ -30,6 +30,9 @@
             </view>
         </view>
         <view class="firstPage" hidden="{{isActive=='one'?false:true}}">
+            <view class="tipPublish" hidden="{{activityArrayLength}}">
+                还没有人发布活动噢，通过身份认证即可发布活动。
+            </view>
             <navigator class="content" wx:for="{{activityArray}}" wx:key="id"
                 url="../activity/activity?activityId={{item.activity.id}}">
                 <view class="contentinner">
@@ -46,6 +49,9 @@
             </navigator>
         </view>
         <view class="firstPage" hidden="{{isActive=='second'?false:true}}">
+            <view class="tipPublish" hidden="{{activityProveArrayLength}}">
+                还没有人发布活动证明噢，通过身份认证即可发布活动。
+            </view>
             <navigator class="content" 
                 wx:for="{{activityProveArray}}"
                 wx:key="id"
@@ -66,3 +72,4 @@
 
     </view>
 </view>
+  
