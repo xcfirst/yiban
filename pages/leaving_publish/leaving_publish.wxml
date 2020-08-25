@@ -28,7 +28,7 @@
     mode="aspectFill"
     wx:for="{{nowactivityArray.activity.picUrl}}" 
     wx:key="*this" 
-    src='{{item}}' 
+    src='{{item.picUrl}}' 
     data-index='{{index}}'
     bindtap="handPreviewImg" />
 </view>
