@@ -6,7 +6,9 @@ Page({
     "isActive": "one",
     "userId": null,
     "activityArray": [],
+    "activityArrayLength": true,
     "activityProveArray": [],
+    "activityProveArrayLength": true,
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     "canIUse": wx.canIUse('button.open-type.getUserInfo'),
     "isHide": false
@@ -120,12 +122,17 @@ Page({
         console.log(res.data.obj);
         if (res.statusCode == 200) {
           let activityArray = [];
+          let activityArrayLength = this.data.activityArrayLength;
           let i, j;
           for (i = 0, j = 0; i < res.data.obj.length; i++, j++) {
             activityArray[j] = res.data.obj[i];
           }
+          if(res.data.obj.length == 0){
+            activityArrayLength = false;
+          }
           this.setData({
-            activityArray
+            activityArray,
+            activityArrayLength
           })
         }
       })
@@ -152,8 +159,13 @@ Page({
         if (res.statusCode == 200) {
           console.log(res.data.obj);
           let activityProveArray = res.data.obj;
+          let activityProveArrayLength = this.data.activityProveArrayLength;
+          if(res.data.obj.length == 0){
+            activityProveArrayLength = false;
+          }
           this.setData({
-            activityProveArray
+            activityProveArray,
+            activityProveArrayLength
           })
         }
       });

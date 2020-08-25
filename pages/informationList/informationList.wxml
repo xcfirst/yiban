@@ -9,4 +9,7 @@
             {{item}}
         </view>
     </navigator>
+    <view class="tipPublish" hidden="{{nowAssociationLength}}">
+        还没有相关资料信息噢，通过身份认证即可添加资料。
+    </view>
 </view>

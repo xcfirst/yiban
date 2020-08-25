@@ -32,3 +32,10 @@ Page{
 .title{
     font-size: 34rpx;
 }
+.tipPublish{
+    font-size: 34rpx;
+    color: #999592;
+    width: 500rpx;
+    margin: 125rpx;
+    text-align: center;
+}

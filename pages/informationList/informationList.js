@@ -3,6 +3,7 @@ import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
     "nowAssociation": [],
+    "nowAssociationLength": true,
     "type": ""
   },
   onLoad: function (options) {
@@ -24,8 +25,13 @@ Page({
         console.log(res.data.obj);
         if (res.statusCode == 200) {
           let nowAssociation = res.data.obj;
+          let nowAssociationLength = this.data.nowAssociationLength;
+          if(res.data.obj == null || res.data.obj.length == 0){
+            nowAssociationLength = false;
+          }
           this.setData({
-            nowAssociation
+            nowAssociation,
+            nowAssociationLength
           })
         }
 
