@@ -43,7 +43,24 @@ class="third_fir" >
     </view>
   
     <!-- 上传图片 -->
-    <view class="question-images clearFloat">
+    <view hidden="{{hidden2}}"  class="question-images clearFloat">
+      <view wx:if="{{index < 3}}" wx:for="{{tempFilePaths}}" wx:key="*this">
+        <view class="q-image-wrap">
+          <!-- 图片缩略图  -->
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <!-- 移除图片的按钮  -->
+          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+            <icon class='iconfont icon-guanbi'></icon>
+          </view>
+        </view>
+      </view>
+      <view  class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 3}}">
+        <icon class='iconfont icon-hao'></icon>
+      </view>
+
+    </view>
+    
+    <view hidden="{{hidden1}}"  class="question-images clearFloat">
       <view wx:for="{{tempFilePaths}}" wx:key="*this">
         <view class="q-image-wrap">
           <!-- 图片缩略图  -->
@@ -54,11 +71,11 @@ class="third_fir" >
           </view>
         </view>
       </view>
-      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 9}}">
+
+      <view  class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 9}}">
         <icon class='iconfont icon-hao'></icon>
       </view>
     </view>
-
 </view>
  
 <!-- 选择标签 -->
