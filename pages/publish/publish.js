@@ -21,7 +21,6 @@ Page({
     address: "", //地点
     time: "", //时间
     text: "", //正文
-    hidden1: "hidden",
     hidden2: "", //活动时间
     maxTextLen: 500,
     userId: null,
@@ -182,13 +181,11 @@ Page({
     if (idx == 0) {
       this.setData({
         hidden2: "",
-        hidden1: "hidden",
       });
       idx1 = idx + 1;
     } else {
       this.setData({
         hidden2: "hidden",
-        hidden1: "",
       });
       idx1 = idx - 1;
     }
@@ -246,7 +243,7 @@ Page({
           // console.log(res);
           const images = that.data.tempFilePaths.concat(res.tempFilePaths);
           // 限制最多只能留下3张照片
-          const images1 = images.length <= 3 ? images : images.slice(0, 3);
+          const images1 = images.length <= 9 ? images : images.slice(0, 9);
           this.setData({
             tempFilePaths: images1,
           });
@@ -387,7 +384,7 @@ Page({
                 this.publish();
                 wx.showToast({
                   title: "发布成功",
-                  duration: 1500,
+                  duration: 3000,
                   mask: true,
                 });
                 setTimeout(function () {
