@@ -1,4 +1,5 @@
-<navigator wx:for="{{messages}}" wx:key="id" url="../activity/activity?activityId={{item.activityId}}">
+<view wx:if="{{messages != null}}">
+  <navigator wx:for="{{messages}}" wx:key="id" url="../activity/activity?activityId={{item.activityId}}">
   <view class="zero" >
     <view class="first">
           <icon class="{{!item.browsed?'icon1':'icon3'}}  iconfont icon-yuandian"></icon>
@@ -8,3 +9,10 @@
     <view class="time">{{item.date}}</view>
   </view>
 </navigator>
+</view>
+  
+<view wx:else>
+  <text class="font">暂无留言信息</text>
+</view>
+  
+

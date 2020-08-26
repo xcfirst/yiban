@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "popup": "../../components/popup/popup",
-    "DateTimePicker":"../../components/DateTimePicker/DateTimePicker"
+    "DateTimePicker": "../../components/DateTimePicker/DateTimePicker"
   },
   "navigationBarTitleText": "发布",
   "navigationBarTextStyle": "white"

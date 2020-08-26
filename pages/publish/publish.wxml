@@ -38,7 +38,7 @@ class="third_fir" >
      <view class="image_3 iconfont icon-tupian-copy"></view>  
       <view
       class="image_onput_1">
-          请上传图片
+          请上传图片（选填）
       </view>
     </view>
   
@@ -54,7 +54,7 @@ class="third_fir" >
           </view>
         </view>
       </view>
-      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 3}}">
+      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 9}}">
         <icon class='iconfont icon-hao'></icon>
       </view>
     </view>

@@ -88,8 +88,9 @@
   border-top-left-radius: 15px;
 }
 .third_fir {
+  padding-bottom: 20rpx;
   flex-flow: column;
-  height: 300rpx;
+  height: auto;
   font-size: 30rpx;
   margin-top: 20rpx;
   margin-left: 30rpx;
