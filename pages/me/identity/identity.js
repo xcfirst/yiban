@@ -12,6 +12,7 @@ Page({
     var that = this;
     var worker = that.data.worker;
     var principal = that.data.principal;
+    this.setData({userId:getApp().globalData.userId})
     var association = null;
     request({
       url: "http://liveforjokes.icu:8800/getAuthentication",

@@ -17,6 +17,7 @@ Page({
   },
   onLoad: function(e){
     var that = this;
+    this.setData({userId:getApp().globalData.userId})
     var url = '';
     wx.showModal({
       content: '您要进行资料更新修改还是添加新的社团组织？',

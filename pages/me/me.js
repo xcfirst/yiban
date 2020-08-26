@@ -12,6 +12,7 @@ Page({
   onLoad:function(e){
     var that = this;
     var data = this.data;
+    this.setData({userid:getApp().globalData.userId})
     request({
       url: "http://liveforjokes.icu:8800/getStudentDetail",
       data:{id:data.userid},
