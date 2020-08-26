@@ -171,6 +171,9 @@ Page({
     })
   },
 
+  inputName:function(e){
+    this.setData({name: e.detail.value});
+  },
   inputIntro:function(e){
     this.setData({introduce:e.detail.value});
   },

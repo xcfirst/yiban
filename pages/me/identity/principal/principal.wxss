@@ -68,7 +68,7 @@
 }
 .input{
   width: 80%;
-  border-left-style: solid;
+  border-left: solid #999592;
   margin-left: 20rpx;
   padding: 10rpx;
   font-size: 34rpx;
