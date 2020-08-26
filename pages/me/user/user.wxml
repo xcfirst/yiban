@@ -7,7 +7,7 @@
 
   <view class="item">
     <text class="iconfont icon-xingming"/>
-    <input class="input" value="{{username}}" placeholder="请输入昵称" bindinput="inputUsername" disabled="{{true}}" bindconfirm="inputUsername" />
+    <input class="input" value="{{username}}" placeholder="请输入姓名" bindinput="inputUsername" disabled="{{true}}" bindconfirm="inputUsername" />
   </view>
   <view class="item">
     <text class="iconfont icon-xingming"/>
