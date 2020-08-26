@@ -129,6 +129,8 @@ Page({
           }
           if(res.data.obj.length == 0){
             activityArrayLength = false;
+          }else{
+            activityArrayLength = true;
           }
           this.setData({
             activityArray,
@@ -162,6 +164,8 @@ Page({
           let activityProveArrayLength = this.data.activityProveArrayLength;
           if(res.data.obj.length == 0){
             activityProveArrayLength = false;
+          }else{
+            activityProveArrayLength = true;
           }
           this.setData({
             activityProveArray,

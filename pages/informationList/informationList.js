@@ -28,6 +28,8 @@ Page({
           let nowAssociationLength = this.data.nowAssociationLength;
           if(res.data.obj == null || res.data.obj.length == 0){
             nowAssociationLength = false;
+          }else{
+            nowAssociationLength = true;
           }
           this.setData({
             nowAssociation,

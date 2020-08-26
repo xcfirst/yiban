@@ -6,6 +6,7 @@ Page({
     isNew:null,
     association:null,
   },
+  //association=''时选择社团类型
   onLoad:function(e){
     if(e.type == '更新'){
       this.setData({association:JSON.parse(e.list), isNew:JSON.parse(e.isNew)});

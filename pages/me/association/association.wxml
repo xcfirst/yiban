@@ -1,5 +1,11 @@
 <view class="container">
   <block wx:if="{{!association}}">
+    <view class="item" data-target="academic" data-type='校级组织' bindtap="navTo">
+      <text>校级组织</text>
+    </view>
+    <view class="item" data-target="academic" data-type='院级组织' bindtap="navTo">
+      <text>院级组织</text>
+    </view>
     <view class="item" data-target="academic" data-type='学术科技类' bindtap="navTo">
       <text>学术科技类</text>
     </view>
