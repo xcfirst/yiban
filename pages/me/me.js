@@ -10,8 +10,12 @@ Page({
   },
 
   onLoad:function(e){
-    var that = this;
+
+    this.setData({userid:getApp().globalData.userId})
+  },
+  onShow:function(e){
     var data = this.data;
+    this.setData({userid:getApp().globalData.userId})
     request({
       url: "http://liveforjokes.icu:8800/getStudentDetail",
       data:{id:data.userid},
@@ -19,8 +23,7 @@ Page({
       this.setData({name:res.data.obj.name,avatar:res.data.obj.yb_userhead})
     })
   },
-
-
+  
   navToIdentity:function(e){
     var that = this;
     var userid = this.data.userid;
@@ -46,5 +49,12 @@ Page({
    wx.navigateTo({
      url: '/pages/me/'+e.currentTarget.dataset.target+'/'+e.currentTarget.dataset.target,
    })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '转发',
+      path: '/pages/me/me',
+      success: function (res) { }
+    }
   }
 })

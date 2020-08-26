@@ -57,6 +57,14 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
+  },
+  onShareAppMessage: function () {
+    if (res.from === 'button') { }
+    return {
+      title: '转发',
+      path: '/pages/informationDetail/informationDetail?name='+name,
+      success: function (res) { }
+    }
   }
 
 })

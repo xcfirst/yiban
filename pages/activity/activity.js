@@ -199,9 +199,15 @@ Page({
     console.log(e.currentTarget.dataset.index);
     var index = e.currentTarget.dataset.index;
     var nowactivityArray = this.data.nowactivityArray;
+    let picUrl = nowactivityArray.activity.picUrl;
+    let picUrlArray = [];
+    let i;
+    for(i=0;i<picUrl.length;i++){
+      picUrlArray[i]=picUrl[i].picUrl;
+    }
     wx.previewImage({
-      current: nowactivityArray.activity.picUrl[index],     //当前图片地址
-      urls: nowactivityArray.activity.picUrl,               //所有要预览的图片的地址集合 数组形式
+      current: picUrlArray[index],     //当前图片地址
+      urls: picUrlArray,               //所有要预览的图片的地址集合 数组形式
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
@@ -211,7 +217,7 @@ Page({
     if (res.from === 'button') { }
     return {
       title: '转发',
-      path: '/pages/activity/activity',
+      path: '/pages/activity/activity?activityId='+this.data.activityId,
       success: function (res) { }
     }
   }

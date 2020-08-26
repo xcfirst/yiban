@@ -6,7 +6,7 @@
   </view>
   <view class="item">
     <text class="iconfont icon-biaotizhengwenqiehuan-copy"/>
-    <text class="input" > {{name}} </text>
+    <input class="input" value="{{name}}" placeholder="请在这里输入社团名字" bindinput="inputName"/>
   </view>
   <view class="item-a">
     <text class="iconfont icon-bianjizhengwen"/>
@@ -42,7 +42,8 @@
     </view>
   </view>
   <view wx:else class="item" bindtap="chooseType">
-    <text class="tip">请点击选择资料类型</text>
+    <text class="iconfont icon-hao" ></text>
+    <text class="tip">点击此处选择资料类型</text>
   </view>
 
   <view class="tag" wx:if="{{name}}">

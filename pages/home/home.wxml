@@ -2,7 +2,7 @@
 <view wx:if="{{isHide}}">
     <view wx:if="{{canIUse}}">
         <view class='headerContainer'>
-            <image src='../../image/5.jpg' class="headerPicture"></image> 
+            <image src='../../image/5.jpg' class="headerPicture"></image>
         </view>
 
         <view class='loginTip'>
@@ -19,7 +19,26 @@
 
 <view wx:else>
     <!-- <view>我的首页内容</view> -->
-    <view>
+    <view hidden="{{userIdSure}}">
+        <view class="userIdtip">
+            请输入userId的值（userId=1是超级管理员即后台管理人员）
+        </view>
+        <view class="userIdinputcontain">
+            <view class="userIdinputinner">
+                <input class="userIdinputcontent" 
+                placeholder-class="userIdinputtip" 
+                placeholder="点击编辑userId的值" 
+                bindinput="handleInput">
+
+                </input>
+            </view>
+        </view>
+        <view class="userIdinnerButton" bindtap="handleCancle">
+            确认
+        </view>
+    </view>
+
+    <view hidden="{{!userIdSure}}">
         <searchinput innet-text="搜索" jump-url="../../pages/searchActivity/searchActivity"></searchinput>
         <view class="bar">
             <view class="first {{isActive==='one'?'active':''}}" bindtap="handlebar" data-judge="one">
@@ -52,9 +71,7 @@
             <view class="tipPublish" hidden="{{activityProveArrayLength}}">
                 还没有人发布活动证明噢，通过身份认证即可发布活动。
             </view>
-            <navigator class="content" 
-                wx:for="{{activityProveArray}}"
-                wx:key="id"
+            <navigator class="content" wx:for="{{activityProveArray}}" wx:key="id"
                 url="../prove/prove?certificateId={{item.activityCertificate.id}}">
                 <view class="contentinner">
                     <view class="{{item.browsed?'radiuGreen':'radiuRed'}}"></view>
@@ -67,9 +84,8 @@
                     {{item.builtTimeToNow}}
                 </view>
             </navigator>
-            
+
         </view>
 
     </view>
 </view>
-  

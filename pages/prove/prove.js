@@ -155,5 +155,13 @@ Page({
       complete: function (res) { },
     })
   },
+  onShareAppMessage: function () {
+    if (res.from === 'button') { }
+    return {
+      title: '转发',
+      path: '/pages/prove/prove?certificateId='+certificateId,
+      success: function (res) { }
+    }
+  }
 
 })

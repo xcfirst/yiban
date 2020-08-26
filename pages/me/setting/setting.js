@@ -7,6 +7,7 @@ Page({
   },
 
   onLoad:function(e){
+    this.setData({userId:getApp().globalData.userId})
     request({
       url:"http://liveforjokes.icu:8800/getIsOpen",
       data:{userId:this.data.userId},

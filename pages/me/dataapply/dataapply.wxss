@@ -98,19 +98,21 @@
   bottom: 12rpx;
   color: white;
 }
-.icon-hao{
+.upload .icon-hao{
   font-size: 80rpx;
   color: #818181;
 }
-
-.btn{
-  width: 40%;
-  background-color: white;
-  font-size: 34rpx;
-  text-align: center;
-  padding: 20rpx;
-  border-radius: 20rpx;
+.item .icon-hao{
+  font-size: 38rpx;
 }
+.item .tip{
+  width: 90%;
+  border-left: solid #999592;
+  margin-left: 20rpx;
+  padding: 10rpx;
+  color:#818181;
+}
+
 .pad{
   height: 150rpx;
   width: 750rpx;
@@ -130,23 +132,6 @@
   font-size: 42rpx;
   color: black;
 }
-.index{
-  display: flex;
-  padding: 20rpx;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  border-radius: 10rpx;
-  padding: 20rpx;
-  background-color: white;
-  width: 70%;
-  margin: auto;
-  margin-top: 30%;
-}
-.index.btn{
-  display: flex;
-  width: 100%;
-}
 
 .branch{
   display: flex;
@@ -160,27 +145,7 @@
   width: 100%;
   justify-content: space-around;
 }
-.btn1{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10%;
-  padding: 10rpx;
-  border-radius: 10rpx;
-  background-color: #17c3b2;
-  width: 40%;
-}
 
-.btn2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10%;
-  padding: 10rpx;
-  border-radius: 10rpx;
-  width: 40%;
-  background-color: #ff5e5b;
-}
 .tag{
   box-sizing: border-box;
   position: relative;
