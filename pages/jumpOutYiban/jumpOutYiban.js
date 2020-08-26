@@ -74,7 +74,7 @@ Page({
     const yb_userhead = yibanInfo.yb_userhead;
     const yb_username = yibanInfo.yb_usernick;
     request_1({
-      url: "http://liveforjokes.icu:8800/saveUser",
+      url: "https://liveforjokes.icu/saveUser",
       data: { yb_userid, yb_realname, yb_sex, yb_userhead, yb_username },
       method: "POST",
     })

@@ -17,8 +17,7 @@ Page({
   getAssociation() {
     const name = this.data.name;
     request_1({
-      url: "http://liveforjokes.icu:8800/getAssociationByType/getAssociationByName",
-      // url: "http://localhost:8800/getAssociationByType/getAssociationByName",
+      url: "https://liveforjokes.icu/getAssociationByType/getAssociationByName",
       data: { name },
     })
       .then(res => {

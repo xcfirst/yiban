@@ -19,7 +19,7 @@ export const request=(params)=>{
     
 
   // 定义公共的url
-  const baseUrl="http://liveforjokes.icu:8800";
+  const baseUrl="https://liveforjokes.icu/";
   return new Promise((resolve,reject)=>{
     wx.request({
      ...params,

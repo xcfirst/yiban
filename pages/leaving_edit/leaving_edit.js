@@ -19,7 +19,7 @@ Page({
     const activityId = this.data.activityId;
     const message	 = this.data.inputtext;
     request_1({
-      url: "http://liveforjokes.icu:8800/insertMessage",
+      url: "https://liveforjokes.icu/insertMessage",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

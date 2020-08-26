@@ -309,7 +309,7 @@ Page({
         "content-type": "multipart/form-data",
         accept: "application/json",
       },
-      url: "http://liveforjokes.icu:8800/savePicture",
+      url: 'https://liveforjokes.icu/savePicture',
       filePath: filepath,
       name: "file",
       formData: {

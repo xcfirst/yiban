@@ -28,11 +28,11 @@ Page({
       success(res){
         if(res.cancel){
           that.setData({isNew:false});
-          url = 'http://liveforjokes.icu:8800/updateAssociationAuthentication';
+          url = 'https://liveforjokes.icu/updateAssociationAuthentication';
         }
         else if(res.confirm){
           that.setData({isNew:true});
-          url ='http://liveforjokes.icu:8800/insertAssociationAuthentication';
+          url ='https://liveforjokes.icu/insertAssociationAuthentication';
         }
       },
       complete(res){
@@ -79,7 +79,7 @@ Page({
         'content-type': 'multipart/form-data',
         'accept': 'application/json'
       },
-      url: 'http://liveforjokes.icu:8800/savePicture',
+      url: 'https://liveforjokes.icu/savePicture',
       filePath: images[idx],
       name: 'file',
       formData: {
@@ -199,10 +199,10 @@ Page({
       success(res){
         if(res.confirm){
           if(that.data.isNew){
-            url = 'http://liveforjokes.icu:8800/insertAssociation'
+            url = 'https://liveforjokes.icu/insertAssociation'
           }
           else{
-            url = 'http://liveforjokes.icu:8800/updateAssociation'
+            url = 'https://liveforjokes.icu/updateAssociation'
           }
           that.setData({idx: 0});
           var promise = new Promise((resolve,reject)=>{

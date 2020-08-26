@@ -72,7 +72,7 @@ Page({
           promise.then(res=>{
             console.log(that.data.path)
             request({
-              url: 'http://liveforjokes.icu:8800/sendAuthenticationMessage',
+              url: 'https://liveforjokes.icu/sendAuthenticationMessage',
               method:"POST",
               header:{
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -121,7 +121,7 @@ Page({
         'content-type': 'multipart/form-data',
         'accept': 'application/json'
       },
-      url: 'http://liveforjokes.icu:8800/savePicture',
+      url: 'https://liveforjokes.icu/savePicture',
       filePath: images[idx],
       name: 'file',
       formData: {

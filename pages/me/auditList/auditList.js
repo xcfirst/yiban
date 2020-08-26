@@ -12,8 +12,7 @@ Page({
   },
   getAudit() {
     request_1({
-      url: "http://liveforjokes.icu:8800/getAuthenticationMessage",
-      // url: "http://localhost:8800/getAuthenticationMessage",
+      url: "https://liveforjokes.icu/getAuthenticationMessage",
     })
       .then(res => {
         console.log(res.data.obj);

@@ -45,7 +45,7 @@ Page({
           promise.then(res=>{
             console.log(res)
             request({
-              url: 'http://liveforjokes.icu:8800/sendMail',
+              url: 'https://liveforjokes.icu/sendMail',
               data:{ text:that.data.text,picture:that.data.path},
               method:"POST",
               header:{
@@ -94,7 +94,7 @@ Page({
         'content-type': 'multipart/form-data',
         'accept': 'application/json'
       },
-      url: 'http://liveforjokes.icu:8800/savePicture',
+      url: 'https://liveforjokes.icu/savePicture',
       filePath: images[idx],
       name: 'file',
       formData: {

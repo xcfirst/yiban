@@ -17,7 +17,7 @@ Page({
     var data = this.data;
     this.setData({userid:getApp().globalData.userId})
     request({
-      url: "http://liveforjokes.icu:8800/getStudentDetail",
+      url: "https://liveforjokes.icu/getStudentDetail",
       data:{id:data.userid},
     }).then(res=>{
       this.setData({name:res.data.obj.name,avatar:res.data.obj.yb_userhead})
@@ -29,7 +29,7 @@ Page({
     var userid = this.data.userid;
     var path = '';
     request({
-      url: "http://liveforjokes.icu:8800/getLevel",
+      url: "https://liveforjokes.icu/getLevel",
       data:{userId:userid},
     }).then(res=>{
       this.setData({level:res.data.obj})

@@ -20,8 +20,7 @@ Page({
   groupArray() {
     const activityId = this.data.activityId;
     request_1({
-      url: "http://liveforjokes.icu:8800/getGroups",
-      // url: "http://localhost:8800/getGroups",
+      url: "https://liveforjokes.icu/getGroups",
       data: { activityId },
     })
       .then(res => {

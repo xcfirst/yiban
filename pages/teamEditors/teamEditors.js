@@ -20,8 +20,7 @@ Page({
     const activityId = this.data.activityId;
     const text = this.data.inputtext;
     request_1({
-      url: "http://liveforjokes.icu:8800/insertGroups",
-      // url: "http://localhost:8800/insertGroups",
+      url: "https://liveforjokes.icu/insertGroups",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
