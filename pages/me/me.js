@@ -46,5 +46,12 @@ Page({
    wx.navigateTo({
      url: '/pages/me/'+e.currentTarget.dataset.target+'/'+e.currentTarget.dataset.target,
    })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '转发',
+      path: '/pages/me/me',
+      success: function (res) { }
+    }
   }
 })

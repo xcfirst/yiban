@@ -211,7 +211,7 @@ Page({
     if (res.from === 'button') { }
     return {
       title: '转发',
-      path: '/pages/activity/activity',
+      path: '/pages/activity/activity?activityId='+this.data.activityId,
       success: function (res) { }
     }
   }

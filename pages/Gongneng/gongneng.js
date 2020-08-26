@@ -145,5 +145,12 @@ Page({
     else if(num == 3)wx.navigateTo({
       url: "../teamcontent/teamcontent?id="+id
     });
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '转发',
+      path: '/pages/gongneng/gongneng',
+      success: function (res) { }
+    }
   }
 })

@@ -11,11 +11,36 @@ Page({
     "activityProveArrayLength": true,
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     "canIUse": wx.canIUse('button.open-type.getUserInfo'),
-    "isHide": false
+    "isHide": false,
+    "userIdInuput":null,
+    "userIdSure":false
   },
   onLoad: function (options) {
 
   },
+  //修改userid
+  handleInput(e){
+    console.log(e.detail.value);
+    let userIdInuput = e.detail.value;
+    this.setData({
+      userIdInuput
+    })
+  },
+  handleCancle(e){
+    let app = getApp();
+    let userIdInuput = this.data.userIdInuput;
+    app.globalData.userId = userIdInuput;
+    // console.log(app.globalData.userId);
+    let userId = app.globalData.userId;
+    let userIdSure = true;
+    this.setData({
+      userId,
+      userIdSure
+    })
+  },
+
+
+
   //登录
   getUreInformation() {
     let that = this;
@@ -175,4 +200,11 @@ Page({
       });
 
   },
+  onShareAppMessage: function () {
+    return {
+      title: '转发',
+      path: '/pages/home/home',
+      success: function (res) { }
+    }
+  }
 })

@@ -32,5 +32,12 @@ Page({
         }
       })
   },
-
+  onShareAppMessage: function () {
+    if (res.from === 'button') { }
+    return {
+      title: '转发',
+      path: '/pages/teamcontent/teamcontent?id='+id,
+      success: function (res) { }
+    }
+  }
 })
