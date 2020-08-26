@@ -23,8 +23,7 @@ Page({
   getAudit() {
     const id = this.data.auditId;
     request_1({
-      url: "http://liveforjokes.icu:8800/getAuthenticationMessageById",
-      // url: "http://localhost:8800/getAuthenticationMessageById",
+      url: "https://liveforjokes.icu/getAuthenticationMessageById",
       data: { id },
     })
       .then(res => {
@@ -46,8 +45,7 @@ Page({
   getInformation(){
     const id = this.data.userId;
     request_1({
-      url: "http://liveforjokes.icu:8800/getStudentDetail",
-      // url: "http://localhost:8800/getStudentDetail",
+      url: "https://liveforjokes.icu/getStudentDetail",
       data: { id },
     })
       .then(res => {
@@ -81,8 +79,7 @@ Page({
   getSuccess() {
     const id = this.data.auditId;
     request_1({
-      url: "http://liveforjokes.icu:8800/success",
-      // url: "http://localhost:8800/success",
+      url: "https://liveforjokes.icu/success",
       data: { id },
     })
       .then(res => {

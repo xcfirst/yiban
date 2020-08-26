@@ -15,7 +15,7 @@ Page({
     this.setData({userId:getApp().globalData.userId})
     var association = null;
     request({
-      url: "http://liveforjokes.icu:8800/getAuthentication",
+      url: "https://liveforjokes.icu/getAuthentication",
       data:{ userId:that.data.userId },
     })//获取数据然后分类
     .then(res =>{
@@ -78,7 +78,7 @@ Page({
       success(res){
         if(res.confirm){
           request({
-            url: "http://liveforjokes.icu:8800/deleteAuthentication",
+            url: "https://liveforjokes.icu/deleteAuthentication",
             data:{ userId:that.data.userId, level:level, associationName:name},
           })
           .then(res =>{

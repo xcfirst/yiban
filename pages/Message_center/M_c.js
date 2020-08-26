@@ -46,7 +46,7 @@ Page({
     console.log(e);
     const id = e.currentTarget.dataset.index 
     // request({
-    //   url: 'http://liveforjokes.icu:8864/getInformation',
+    //   url: 'https://liveforjokes.icu/getInformation',
     //   data: { id },
     // }).then(res=>{
     //   console.log(res);

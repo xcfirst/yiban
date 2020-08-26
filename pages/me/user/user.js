@@ -18,7 +18,7 @@ Page({
     var data = this.data;
     this.setData({id:getApp().globalData.userId})
     request({
-      url: "http://liveforjokes.icu:8800/getStudentDetail",
+      url: "https://liveforjokes.icu/getStudentDetail",
       data:{id:data.id},
     }).then(res=>{
       if(res.data.msg=="success"){
@@ -65,7 +65,7 @@ Page({
       }
       if(isFinished){
         request({
-          url: "http://liveforjokes.icu:8800/submitIdentityInformation",
+          url: "https://liveforjokes.icu/submitIdentityInformation",
           method:"POST",
           data:{ id:data.id, studentNumber:data.studentNum, name:data.name, username:data.username, grade:data.grade, major:data.major, phoneNumber:data.phoneNum ,wechatNumber:data.wechatNum},
 

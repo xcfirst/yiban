@@ -17,8 +17,7 @@ Page({
   getAssociation() {
     const type = this.data.type;
     request_1({
-      url: "http://liveforjokes.icu:8800/getAssociationByType",
-      // url: "http://localhost:8800/getAssociationByType",
+      url: "https://liveforjokes.icu/getAssociationByType",
       data: { type },
     })
       .then(res => {

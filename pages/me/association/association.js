@@ -16,7 +16,7 @@ Page({
       var type = this.data.type
       if(this.data.type){
         request({
-          url: 'http://liveforjokes.icu:8800/getAssociationByType',
+          url: 'https://liveforjokes.icu/getAssociationByType',
           data:{ type },
         })
         .then(res =>{
@@ -28,7 +28,7 @@ Page({
   navTo:function(e){
     var type = e.currentTarget.dataset.type;
     request({
-      url: 'http://liveforjokes.icu:8800/getAssociationByType',
+      url: 'https://liveforjokes.icu/getAssociationByType',
       data:{ type },
     })
     .then(res =>{
@@ -42,7 +42,7 @@ Page({
     var prepage = page[page.length-2];
     if(!that.data.isNew){
       request({
-        url: 'http://liveforjokes.icu:8800/getAssociationByType/getAssociationByName',
+        url: 'https://liveforjokes.icu/getAssociationByType/getAssociationByName',
         data:{ name },
       }).then(res =>{
         var data = res.data.obj;

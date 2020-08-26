@@ -32,8 +32,7 @@ Page({
     const userId = this.data.userId;
     const certificateId = this.data.certificateId;
     request_1({
-      url: "http://liveforjokes.icu:8800/certificate/getCertificateById",
-      // url: "http://localhost:8800/certificate/getCertificateById",
+      url: "https://liveforjokes.icu/certificate/getCertificateById",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -76,8 +75,7 @@ Page({
     const userId = this.data.userId;
     const certificateId = this.data.certificateId;
     request_1({
-      url: "http://liveforjokes.icu:8800/certificate/browsedCertificate",
-      // url: "http://localhost:8800/certificate/browsedCertificate",
+      url: "https://liveforjokes.icu/certificate/browsedCertificate",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -98,8 +96,7 @@ Page({
     if (colle) {
       tipTitle = "收藏成功"
       request_1({
-        url: "http://liveforjokes.icu:8800/certificate/collectedCertificate",
-        // url: "http://localhost:8800/certificate/collectedCertificate",
+        url: "https://liveforjokes.icu/certificate/collectedCertificate",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -120,8 +117,7 @@ Page({
     } else {
       tipTitle = "取消成功"
       request_1({
-        url: "http://liveforjokes.icu:8800/certificate/deleteCertificate",
-        // url: "http://localhost:8800/certificate/deleteCertificate",
+        url: "https://liveforjokes.icu/certificate/deleteCertificate",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },

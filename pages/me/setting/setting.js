@@ -9,7 +9,7 @@ Page({
   onLoad:function(e){
     this.setData({userId:getApp().globalData.userId})
     request({
-      url:"http://liveforjokes.icu:8800/getIsOpen",
+      url:"https://liveforjokes.icu/getIsOpen",
       data:{userId:this.data.userId},
     }).then(res=>{
       if(res.data.msg=="success"){
@@ -21,7 +21,7 @@ Page({
 
   change:function(){
     request({
-      url:"http://liveforjokes.icu:8800/updateOpen",
+      url:"https://liveforjokes.icu/updateOpen",
       method:"POST",
       data:{userId:this.data.userId},
       header:{

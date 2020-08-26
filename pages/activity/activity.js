@@ -35,8 +35,7 @@ Page({
     const userId = this.data.userId;
     const activityId = this.data.activityId;
     request_1({
-      url: "http://liveforjokes.icu:8800/activity/queryActivityById",
-      // url: "http://localhost:8800/activity/queryActivityById",
+      url: "https://liveforjokes.icu/activity/queryActivityById",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -79,8 +78,7 @@ Page({
     const userId = this.data.userId;
     const activityId = this.data.activityId;
     request_1({
-      url: "http://liveforjokes.icu:8800/certificate/browsedCertificate",
-      // url: "http://localhost:8800/certificate/browsedCertificate",
+      url: "https://liveforjokes.icu/certificate/browsedCertificate",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -101,8 +99,7 @@ Page({
     if (!colle) {
       tipTitle = "收藏成功";
       request_1({
-        url: "http://liveforjokes.icu:8800/addActivity",
-        // url: "http://localhost:8800/addActivity",
+        url: "https://liveforjokes.icu/addActivity",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -132,8 +129,7 @@ Page({
     } else {
       tipTitle = "取消成功";
       request_1({
-        url: "http://liveforjokes.icu:8800/getCollectedActivity/deleteCollectedActivity",
-        // url: "http://localhost:8800/getCollectedActivity/deleteCollectedActivity",
+        url: "https://liveforjokes.icu/getCollectedActivity/deleteCollectedActivity",
         header: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -179,8 +175,7 @@ Page({
     const userId = this.data.userId;
     const activityId = this.data.activityId;
     request_1({
-      url: "http://liveforjokes.icu:8800/insertMessageSubscribeAllow",
-      // url: "http://localhost:8800/insertMessageSubscribeAllow",
+      url: "https://liveforjokes.icu/insertMessageSubscribeAllow",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },

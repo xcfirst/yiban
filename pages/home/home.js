@@ -79,8 +79,7 @@ Page({
   saveCode(code) {
     const userId = this.data.userId;
     request_1({
-      url: "http://liveforjokes.icu:8800/insertOpenId",
-      // url: "http://localhost:8800/insertOpenId",
+      url: "https://liveforjokes.icu/insertOpenId",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
@@ -139,8 +138,7 @@ Page({
   getActivityArray() {
     const userId = this.data.userId;
     request_1({
-      url: "http://www.liveforjokes.icu:8800/index/activity",
-      // url: "http://localhost:8800/index/activity",
+      url: "https://liveforjokes.icu/index/activity",
       data: { userId },
     })
       .then(res => {
@@ -174,8 +172,7 @@ Page({
   getActivityProve() {
     const userId = this.data.userId;
     request_1({
-      url: "http://liveforjokes.icu:8800/certificate/getIndexCertificate",
-      // url: "http://localhost:8800/certificate/getIndexCertificate",
+      url: "https://liveforjokes.icu/certificate/getIndexCertificate",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
