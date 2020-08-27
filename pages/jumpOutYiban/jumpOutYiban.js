@@ -4,7 +4,7 @@ Page({
   data: {
     "client_id": "a1397db859458285",
     "client_secret": "eb2c65221a15c0b88f1f6b16c4926458",
-    "redirect_uri": "https://liveforjokes.icu",
+    "redirect_uri": "https://liveforjokes.icu/index.html",
     "code": null,
     "access_token": null,
     "yibanInfo": null

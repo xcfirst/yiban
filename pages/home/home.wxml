@@ -1,44 +1,48 @@
 <!--pages/home/home.wxml   -->
 <view wx:if="{{isHide}}">
     <view wx:if="{{canIUse}}">
-        <view class='headerContainer'>
-            <image src='../../image/5.jpg' class="headerPicture"></image>
+        <!-- 修改userId -->
+        <view hidden="{{userIdSure}}">
+            <view class="userIdtip">
+                请输入userId的值（userId=1是超级管理员即后台管理人员）
+            </view>
+            <view class="userIdinputcontain">
+                <view class="userIdinputinner">
+                    <input class="userIdinputcontent" placeholder-class="userIdinputtip" placeholder="点击编辑userId的值"
+                        bindinput="handleInput">
+
+                    </input>
+                </view>
+            </view>
+            <view class="userIdinnerButton" bindtap="handleCancle">
+                确认
+            </view>
+        </view>
+        <view hidden="{{!userIdSure}}">
+            <view class='headerContainer'>
+                <image src='../../image/5.jpg' class="headerPicture"></image>
+            </view>
+
+            <view class='loginTip'>
+                <view class="loginTipTop">申请获取以下权限</view>
+                <text class="loginTipBottom">获得你的公开信息(昵称，头像等)</text>
+            </view>
+
+            <button class='bottomButton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+                授权登录
+            </button>
         </view>
 
-        <view class='loginTip'>
-            <view class="loginTipTop">申请获取以下权限</view>
-            <text class="loginTipBottom">获得你的公开信息(昵称，头像等)</text>
-        </view>
 
-        <button class='bottomButton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
-            授权登录
-        </button>
     </view>
     <view wx:else>请升级微信版本</view>
 </view>
 
 <view wx:else>
     <!-- <view>我的首页内容</view> -->
-    <view hidden="{{userIdSure}}">
-        <view class="userIdtip">
-            请输入userId的值（userId=1是超级管理员即后台管理人员）
-        </view>
-        <view class="userIdinputcontain">
-            <view class="userIdinputinner">
-                <input class="userIdinputcontent" 
-                placeholder-class="userIdinputtip" 
-                placeholder="点击编辑userId的值" 
-                bindinput="handleInput">
 
-                </input>
-            </view>
-        </view>
-        <view class="userIdinnerButton" bindtap="handleCancle">
-            确认
-        </view>
-    </view>
 
-    <view hidden="{{!userIdSure}}">
+    <view>
         <searchinput innet-text="搜索" jump-url="../../pages/searchActivity/searchActivity"></searchinput>
         <view class="bar">
             <view class="first {{isActive==='one'?'active':''}}" bindtap="handlebar" data-judge="one">
