@@ -27,7 +27,7 @@ Page({
       data: { id },
     })
       .then(res => {
-        console.log(res.data.obj);
+        console.log(res);
         if (res.statusCode == 200) {
           let auditArray = res.data.obj;
           let isPictureNull = this.data.isPictureNull;

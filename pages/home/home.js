@@ -12,21 +12,21 @@ Page({
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     "canIUse": wx.canIUse('button.open-type.getUserInfo'),
     "isHide": false,
-    "userIdInuput":null,
-    "userIdSure":false
+    "userIdInuput": null,
+    "userIdSure": false
   },
   onLoad: function (options) {
 
   },
   //修改userid
-  handleInput(e){
+  handleInput(e) {
     console.log(e.detail.value);
     let userIdInuput = e.detail.value;
     this.setData({
       userIdInuput
     })
   },
-  handleCancle(e){
+  handleCancle(e) {
     let app = getApp();
     let userIdInuput = this.data.userIdInuput;
     app.globalData.userId = userIdInuput;
@@ -150,15 +150,19 @@ Page({
           for (i = 0, j = 0; i < res.data.obj.length; i++, j++) {
             activityArray[j] = res.data.obj[i];
           }
-          if(res.data.obj.length == 0){
+          if (res.data.obj.length == 0) {
             activityArrayLength = false;
-          }else{
+          } else {
             activityArrayLength = true;
           }
           this.setData({
             activityArray,
             activityArrayLength
           })
+          // 隐藏导航栏加载框
+          wx.hideNavigationBarLoading();
+          // 停止下拉动作
+          wx.stopPullDownRefresh();
         }
       })
   },
@@ -184,24 +188,37 @@ Page({
           console.log(res.data.obj);
           let activityProveArray = res.data.obj;
           let activityProveArrayLength = this.data.activityProveArrayLength;
-          if(res.data.obj.length == 0){
+          if (res.data.obj.length == 0) {
             activityProveArrayLength = false;
-          }else{
+          } else {
             activityProveArrayLength = true;
           }
           this.setData({
             activityProveArray,
             activityProveArrayLength
           })
+          // 隐藏导航栏加载框
+          wx.hideNavigationBarLoading();
+          // 停止下拉动作
+          wx.stopPullDownRefresh();
         }
       });
 
   },
-  onShareAppMessage: function () {
-    return {
-      title: '转发',
-      path: '/pages/home/home',
-      success: function (res) { }
+  onPullDownRefresh: function () {
+    // 显示顶部刷新图标
+    wx.showNavigationBarLoading();
+    var userId = this.data.userId;
+    if (userId != null) {
+      this.getActivityArray();
+      this.getActivityProve();
     }
+  },
+onShareAppMessage: function () {
+  return {
+    title: '转发',
+    path: '/pages/home/home',
+    success: function (res) { }
   }
+}
 })

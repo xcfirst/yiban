@@ -71,10 +71,23 @@ Page({
 
         }).then(res=>{
           console.log(res)
-          if(res.data.event==0){
+          if(res.statusCode==200){
             wx.showToast({
               title: '提交成功',
               icon: 'success',
+              duration: 2000,
+              success:(res=>{
+                setTimeout(function(){
+                  wx.navigateBack({
+                    delta:1
+                  })
+                },2000)
+              })
+            })
+          }
+          else{
+            wx.showToast({
+              title: '提交失败，请稍后重试',
               duration: 2000,
               success:(res=>{
                 setTimeout(function(){

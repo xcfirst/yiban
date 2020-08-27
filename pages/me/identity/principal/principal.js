@@ -20,7 +20,6 @@ Page({
     this.setData({type:options.type,userId:getApp().globalData.userId})
   },
   onShow:function(){
-    this.setData({images:[], path:[]})
     if(this.data.type!="组织"){
       this.setData({type:''})
     }
@@ -33,7 +32,7 @@ Page({
   navTo:function(e){
     this.setData({editable:false})
     wx.navigateTo({
-      url: '../../association/association?type='+this.data.type,
+      url: '../../association/association?isNew='+JSON.stringify(true),
     })
   },
 

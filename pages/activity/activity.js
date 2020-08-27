@@ -161,7 +161,7 @@ Page({
   isAllowTip() {
     const that = this;
     wx.requestSubscribeMessage({
-      tmplIds: ['8nR52iQ_h-NDdUMLv5R_w40aOXGQgi--uThwLQOF6Qg'], // 此处可填写多个模板 ID，但低版本微信不兼容只能授权一个
+      tmplIds: ['F-9DiNhiW_cjstwoV52BFrtaH2Ve8PFfErsr06oBrx4'], // 此处可填写多个模板 ID，但低版本微信不兼容只能授权一个
       success(res) {
         console.log(res);
         console.log('已授权接收订阅消息');

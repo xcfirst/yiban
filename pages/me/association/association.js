@@ -12,7 +12,7 @@ Page({
       this.setData({association:JSON.parse(e.list), isNew:JSON.parse(e.isNew)});
     }
     else{
-      this.setData({type:e.type});
+      this.setData({type:e.type, isNew:e.isNew});
       var type = this.data.type
       if(this.data.type){
         request({
