@@ -21,14 +21,13 @@ Page({
     this.setData({type:options.type,userId:getApp().globalData.userId})
   },
   onShow:function(){
-    this.setData({images:[], path:[]})
     if(this.data.type!="组织"){
       this.setData({type:''})
     }
   },
   navTo:function(e){
     wx.navigateTo({
-      url: '../../association/association?type='+this.data.type,
+      url: '../../association/association?isNew='+JSON.stringify(true),
     })
   },
 
@@ -139,6 +138,7 @@ Page({
       sizeType:['compressed','original'],
       sourceType:['album','camera'],
       success: res => {
+        console.log(res.tempFilePaths)
         const images = this.data.images.concat(res.tempFilePaths);
         this.setData({
           images:images
