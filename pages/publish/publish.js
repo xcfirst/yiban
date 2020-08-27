@@ -235,7 +235,6 @@ Page({
   chooseImage(e) {
     var that = this;
     // console.log(e)
-    if (this.data.list_1[0].ischeck) {
       wx.chooseImage({
         sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
         sourceType: ["album", "camera"], //可选择性开放访问相册、相机
@@ -243,9 +242,9 @@ Page({
           // console.log(res);
           const images = that.data.tempFilePaths.concat(res.tempFilePaths);
           // 限制最多只能留下3张照片
-          const images1 = images.length <= 9 ? images : images.slice(0, 9);
+          // const images1 = images.length <= 1000 ? images : images.slice(0, 1000);
           this.setData({
-            tempFilePaths: images1,
+            tempFilePaths: images,
           });
           that.upload();
           that.setData({
@@ -253,36 +252,21 @@ Page({
           });
         },
       });
-    } else {
-      wx.chooseImage({
-        sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
-        sourceType: ["album", "camera"], //可选择性开放访问相册、相机
-        success: (res) => {
-          // console.log(res);
-          const images = that.data.tempFilePaths.concat(res.tempFilePaths);
-          // 限制最多只能留下3张照片
-          const images1 = images.length <= 100 ? images : images.slice(0, 100);
-          this.setData({
-            tempFilePaths: images1,
-          });
-          that.upload();
-          that.setData({
-            temp: that.data.tempFilePaths.length, //用来解决 for 循环比 异步 快
-          });
-        },
-      });
-    }
+
   },
 
   removeImage(e) {
     var that = this;
     var tempFilePaths = that.data.tempFilePaths;
+    var images = that.data.images;
     // 获取要删除的第几张图片的下标
     const idx = e.currentTarget.dataset.idx;
     // splice  第一个参数是下表值  第二个参数是删除的数量
     tempFilePaths.splice(idx, 1);
+    images.splice(idx,1)
     this.setData({
       tempFilePaths: tempFilePaths,
+      images:images
     });
   },
 
@@ -389,7 +373,7 @@ Page({
                 });
                 setTimeout(function () {
                   wx.navigateBack(2);
-                }, 1500);
+                }, 2000);
               } else if (
                 title &&
                 text &&
@@ -406,7 +390,7 @@ Page({
                 });
                 setTimeout(function () {
                   wx.navigateBack(2);
-                }, 1500);
+                }, 2000);
               } else {
                 wx.showModal({
                   content: "请将信息填写完整",

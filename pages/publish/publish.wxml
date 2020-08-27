@@ -54,7 +54,7 @@ class="third_fir" >
           </view>
         </view>
       </view>
-      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 9}}">
+      <view class='uploadImgBtn' bindtap="chooseImage" wx:if="{{tempFilePaths.length < 1000}}">
         <icon class='iconfont icon-hao'></icon>
       </view>
     </view>

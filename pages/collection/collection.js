@@ -30,7 +30,6 @@ Page({
           console.log('用户点击确定')
           console.log(e.currentTarget.dataset.index)
           var index = e.currentTarget.dataset.index;
-          
           const userId = this.data.userId;
           let activityId = this.data.Collected[index].id
           console.log(activityId)
@@ -98,13 +97,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var app = getApp();
-    let userId = app.globalData.userId;
-    this.setData({
-      userId
-    })
-    this.getCollectedActivity();
-    this.getCollectedCertificate();
+
   },
 
   /**
@@ -118,7 +111,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var app = getApp();
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
+    this.getCollectedActivity();
+    this.getCollectedCertificate();
   },
 
   getCollectedActivity(){

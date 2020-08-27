@@ -34,7 +34,7 @@
   margin-right: 30rpx;
   justify-content: flex-end;
   color: #999592;
-  font-size: 30rpx;
+  font-size: 25rpx;
 }
 .second {
   display: flex;
