@@ -13,7 +13,7 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #ff5e5b;
+  color: #ff5e5b;
 }
 
 .icon-mima:before {
@@ -158,8 +158,8 @@
 
 .icon-web-icon-:before {
   content: "\e6c9";
-  color: #818181;
-  font-size: 25rpx;
+  color: #818181;
+  font-size: 25rpx;
 }
 
 .icon-fuzhi:before {
