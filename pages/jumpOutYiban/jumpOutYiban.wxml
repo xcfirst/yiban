@@ -1,10 +1,58 @@
-<!--pages/jumpOutPage/jumpOutYiban.wxml--> 
-<view class="container" hidden="{{urlSuccess_1?'false':'true'}}">
-    <web-view 
-    src="https://oauth.yiban.cn/code/html?client_id={{client_id}}&redirect_uri={{redirect_uri}}"
-    bindload="handJump"
-    binderror="handerror"></web-view>
+<!--pages/jumpOutPage/jumpOutYiban.wxml-->
+<view class='headerContainer'>
+    <image src='../../image/5.jpg' class="headerPicture"></image>
+    <view class="headerText">
+        华农的奇妙活动
+    </view>
 </view>
 
+<view class="container">
+    <view class="topTip">
+        易班账号登录
+    </view>
 
+    <view class="topInputContainer">
+        <view class="iconfont icon-wode2 inputIcon"></view>
+        <input class="innerInput" type="text" placeholder="请输入手机或邮箱" placeholder-class="inputtip"
+            bindinput="handleInput" />
+    </view>
+    <view class="topInputContainer">
+        <view class="iconfont icon-mima inputIcon"></view>
+        <input class="innerInput" type="text" placeholder="请输入密码" placeholder-class="inputtip" bindinput="handleInput"
+            password="true" />
+    </view>
+</view>
+<view class="container">
+    <view class="bottomContainer">
+        <view class="middleTip">
+            本应用为第三方应用
+        </view>
+        <view class="bottomBigTip">
+            将允许华农的奇妙活动进行以下操作：
+        </view>
 
+        <view class="bottomSmallContainer">
+            <view class="iconfont icon-xuanze1"></view>
+            <view>
+                获得你的用户信息、关系信息
+            </view>
+        </view>
+        <view class="bottomSmallContainer">
+            <view class="iconfont icon-xuanze1"></view>
+            <view>
+                分享内容到你的消息通知
+            </view>
+        </view>
+        <view class="bottomSmallContainer">
+            <view class="iconfont icon-xuanze1"></view>
+            <view>
+                获得你的动态、话题、评论
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bottomYibanLogin" bindtap="handYibanLogin">
+    <view>
+        授权并登录
+    </view>
+</view>

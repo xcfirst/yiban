@@ -12,43 +12,59 @@ Page({
   onLoad: function (options) {
     // console.log(options);
   },
-  handJump(e) {
-    console.log(e);
-    let str = e.detail.src;
-    let code;
-    if (str.indexOf("https://liveforjokes.icu/?code=") >= 0) {
-      console.log('包含此字符串');
-      console.log(str.substring(31));
-      code = str.substring(31);
-      this.setData({
-        code
+  handYibanLogin(e){
+      request_1({
+        url: "https://liveforjokes.icu/getAccessToken",
       })
-      this.getAccess_token();
-    }
-  },
-  getAccess_token() {
-    const client_id = this.data.client_id;
-    const client_secret = this.data.client_secret;
-    const code = this.data.code;
-    const redirect_uri = this.data.redirect_uri;
-    request_1({
-      url: "https://openapi.yiban.cn/oauth/access_token",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      data: { client_id, client_secret, code, redirect_uri },
-      method: "POST",
-    })
-      .then(res => {
-        if (res.statusCode == 200) {
+        .then(res => {
           console.log(res);
-          this.setData({
-            access_token: res.data.access_token
-          })
-          this.getInformation();
-        }
-      });
+          if (res.statusCode == 200) {
+            this.setData({
+              access_token: res.data
+            })
+            this.getInformation();
+          }
+        })
+    
   },
+
+  // handJump(e) {
+  //   console.log(e);
+  //   let str = e.detail.src;
+  //   let code;
+  //   if (str.indexOf("https://liveforjokes.icu/?code=") >= 0) {
+  //     console.log('包含此字符串');
+  //     console.log(str.substring(31));
+  //     code = str.substring(31);
+  //     this.setData({
+  //       code
+  //     })
+  //     this.getAccess_token();
+  //   }
+  // },
+  // getAccess_token() {
+  //   const client_id = this.data.client_id;
+  //   const client_secret = this.data.client_secret;
+  //   const code = this.data.code;
+  //   const redirect_uri = this.data.redirect_uri;
+  //   request_1({
+  //     url: "https://openapi.yiban.cn/oauth/access_token",
+  //     header: {
+  //       "Content-Type": "application/x-www-form-urlencoded"
+  //     },
+  //     data: { client_id, client_secret, code, redirect_uri },
+  //     method: "POST",
+  //   })
+  //     .then(res => {
+  //       if (res.statusCode == 200) {
+  //         console.log(res);
+  //         this.setData({
+  //           access_token: res.data.access_token
+  //         })
+  //         this.getInformation();
+  //       }
+  //     });
+  // },
   getInformation() {
     const access_token = this.data.access_token;
     request_1({
@@ -63,7 +79,6 @@ Page({
           })
           this.saveInformation();
         }
-
       })
   },
   saveInformation() {
@@ -85,21 +100,10 @@ Page({
           app.globalData.userId = res.data.obj.id;
           app.globalData.yibanHasLogin = true;
           console.log("userId = " + app.globalData.userId);
-          wx.switchTab({
-            url: '../home/home',
+          wx.redirectTo({
+            url: '../wechatLogin/wechatLogin',
           })
         }
       });
-  },
-  handerror(e) {
-    console.log(1);
-    var pages = getCurrentPages();
-    console.log(pages);
-    var currentPage = pages[pages.length - 1];
-    console.log(currentPage);
-    var url = currentPage.route;
-    console.log(url);
-    var options = currentPage.options;
-    console.log(options);
   }
 })

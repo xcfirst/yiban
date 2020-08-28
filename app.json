@@ -41,7 +41,8 @@
     "pages/me/auditSuccess/auditSuccess",
     "pages/me/aboutus/introduce/introduce",
     "pages/leaving_publish/leaving_publish",
-    "pages/leaving_edit/leaving_edit"
+    "pages/leaving_edit/leaving_edit",
+    "pages/wechatLogin/wechatLogin"
   ],
   "window": {
     "backgroundTextStyle": "dark",
