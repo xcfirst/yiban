@@ -4,6 +4,8 @@ Page({
   data:{
     userId:getApp().globalData.userId,
     isSubcribed:true,
+    isManager:false,
+    isDisplay:false
   },
 
   onLoad:function(e){
@@ -15,6 +17,24 @@ Page({
       if(res.data.msg=="success"){
         console.log(res)
         this.setData({isSubcribed:res.data.obj})
+      }
+    })
+    request({
+      url:"https://liveforjokes.icu/getLevel",
+      data:{userId:this.data.userId},
+    }).then(res=>{
+      if(res.data.msg=="success"){
+        console.log(res)
+        this.setData({isManager:res.data.obj})
+      }
+    })
+    request({
+      url:"https://liveforjokes.icu/isDisplay",
+      data:{userId:this.data.userId},
+    }).then(res=>{
+      if(res.data.obj){
+        console.log(res)
+        this.setData({isDisplay:res.data.obj})
       }
     })
   },
@@ -32,5 +52,33 @@ Page({
         this.setData({isSubcribed:!this.data.isSubcribed})
       }
     })
+  },
+  changeManager:function(e){
+    if(this.data.isManager){
+      request({
+        method:"POST",
+        header:{
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        url:"https://liveforjokes.icu/deleteManger",
+        data:{userId:this.data.userId},
+      }).then(res=>{
+        console.log(res);
+        this.setData({isManager:false})
+      })
+    }
+    else{
+      request({
+        method:"POST",
+        header:{
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        url:"https://liveforjokes.icu/addManger",
+        data:{userId:this.data.userId},
+      }).then(res=>{
+        console.log(res);
+        this.setData({isManager:true})
+      })
+    }
   }
 })

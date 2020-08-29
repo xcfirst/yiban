@@ -7,9 +7,11 @@ App({
     if (userId == null) {
       console.log(1);
       wx.redirectTo({
-        // wx.navigateTo({
-        url: "./pages/jumpOutYiban/jumpOutYiban",
-      });
+        url: './pages/wechatLogin/wechatLogin',
+      })
+      // wx.redirectTo({
+      //   url: "./pages/jumpOutYiban/jumpOutYiban",
+      // });
     }
   },
   onHide: function () {},
@@ -19,6 +21,6 @@ App({
   globalData: {
     hasLogin: false,
     yibanHasLogin: true,
-    userId: 1,
+    userId: null,
   },
 });

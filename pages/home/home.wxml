@@ -1,8 +1,8 @@
-<!--pages/home/home.wxml   -->
-<view wx:if="{{isHide}}">
-    <view wx:if="{{canIUse}}">
+<!--pages/home/home.wxml   --> 
+<!-- <view wx:if="{{isHide}}">
+    <view wx:if="{{canIUse}}"> -->
         <!-- 修改userId -->
-        <view hidden="{{userIdSure}}">
+        <!-- <view hidden="{{userIdSure}}">
             <view class="userIdtip">
                 请输入userId的值（userId=1是超级管理员即后台管理人员）
             </view>
@@ -36,9 +36,9 @@
 
     </view>
     <view wx:else>请升级微信版本</view>
-</view>
+</view> -->
 
-<view wx:else>
+<!-- <view wx:else> -->
     <!-- <view>我的首页内容</view> -->
 
 
@@ -92,4 +92,4 @@
         </view>
 
     </view>
-</view>
+<!-- </view> -->

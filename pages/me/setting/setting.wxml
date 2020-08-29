@@ -3,4 +3,8 @@
     <text >日程提醒</text>
     <switch class="switch" checked="{{isSubcribed}}" color="#ff5e5b" bindchange="change"></switch>
   </view>
+  <view wx:if="{{isDisplay}}" class="item">
+    <text >切换为管理员</text>
+    <switch class="switch" checked="{{isManager}}" color="#ff5e5b" bindchange="changeManager"></switch>
+  </view>
 </view>

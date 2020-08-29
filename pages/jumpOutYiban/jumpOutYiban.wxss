@@ -1,1 +1,81 @@
 /* pages/jumpOutPage/jumpOutPage.wxss */
+page{
+    background-color: #fef9ef;
+    font-size: 42rpx;
+    color: #333333;
+}
+.headerContainer {
+    margin: 50rpx 0 50rpx 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerPicture {
+    border-radius: 50%;
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 25rpx;
+}
+.container{
+    width: 702rpx;
+    margin: 25rpx;
+    padding: 25rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+}
+.topTip{
+    margin-left: 50rpx;
+}
+.topInputContainer{
+    width: 600rpx;
+    height: 90rpx;
+    margin: 25rpx;
+    padding: 15rpx;
+    border: #999592 solid 2rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.inputIcon{
+    color: #999592;
+}
+.innerInput{
+    padding-left: 15rpx;
+    padding-right: 25rpx;
+    font-size: 34rpx;
+}
+.inputtip{
+    font-size: 34rpx;
+    color: #999592;
+}
+
+.middleTip{
+    font-size: 36rpx;
+    margin: 25rpx 0rpx 30rpx 25rpx;
+}
+.bottomBigTip{
+    font-size: 34rpx;
+    margin: 0rpx 0rpx 15rpx 25rpx;
+}
+.bottomSmallContainer{
+    font-size: 25rpx;
+    color: #999592;
+    margin-left: 25rpx;
+    margin-bottom: 15rpx;
+    display: flex;
+    align-items: center;
+}
+
+.bottomYibanLogin{
+    width: 750rpx;
+    height: 100rpx;
+    font-size: 34rpx;
+    position: fixed;
+    bottom: 0rpx;
+    background-color: #ff5e5b;
+    border-radius: 15rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
