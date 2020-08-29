@@ -168,6 +168,7 @@
 
 .icon-bianji:before {
   content: "\e600";
+  color: black;
 }
 
 .icon-bianji-copy:before {
