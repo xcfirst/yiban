@@ -40,7 +40,7 @@
         <icon data-index="{{index}}" catchtap="Leaving_CollectedCertificate" class="icon2_1 iconfont icon-collection-b">
         </icon>
       </view>
-      <view class="time">{{item.date}}</view>
+      <view class="time">{{item.timeToNow}}</view>
     </view>
   </navigator>
 </view>

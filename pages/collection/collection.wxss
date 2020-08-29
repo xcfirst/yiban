@@ -1,13 +1,14 @@
 .zero1 {
   display: flex;
   flex-flow: column;
-  height: 110rpx;
+  height: auto;
   font-size: 35rpx;
   margin: 20rpx 30rpx;
   background-color: #fff;
   border-radius: 15rpx;
 }
 .zero1 .first1 {
+  margin-top: 10rpx;
   color: #000;
   display: flex;
   justify-content: space-between;
@@ -30,6 +31,8 @@
   margin-top: -5rpx;
 }
 .zero1 .time {
+  margin-bottom: 10rpx;
+  margin-top: 15rpx;
   display: flex;
   margin-right: 30rpx;
   justify-content: flex-end;
