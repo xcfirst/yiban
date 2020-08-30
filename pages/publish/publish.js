@@ -77,7 +77,7 @@ Page({
       {
         id: 5,
         name: "电影节",
-        bg_color: "#fffffff",
+        bg_color: "#ffffff",
         selected: false,
         name_eng: "电影节",
       },

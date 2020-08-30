@@ -1,6 +1,6 @@
 <view class="first">
     <view class=" second icon iconfont icon-web-icon-"></view>
-    <text class="text">日程提醒可以在 我的>设置 里面开启或关闭，默认为开启</text>  
+    <text class="text">日程提醒可以在 我的>设置 里面开启或关闭，默认为开启，若开启提醒，则会在活动开始当天09：00提醒。</text>  
 </view>
 
 
