@@ -84,9 +84,10 @@ class="third_sec">
 <view class="zero" >
 </view>
 
-<view class='add_btn'>
-    <button bindtap="sure" class='btn image_5'>
-        <view class="iconfont icon-bianji"></view>确认发布
-    </button>
-</view>
+<cover-view class="bottomteam" bindtap="sure">
+  <cover-view class="iconfont icon-bianji bottomicon"></cover-view>
+  <cover-view class="bottomtext">
+      确认发布
+  </cover-view>
+</cover-view>
 

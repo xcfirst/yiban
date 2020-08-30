@@ -130,7 +130,7 @@
   width: 40rpx;
   margin: 30rpx;
 }
-.third_sec .third_plus .image_onput_2 {
+.third_sec .third_plus  .image_onput_2 {
   color: #999592;
   justify-content: top;
   align-items: left;
@@ -291,6 +291,7 @@ textarea {
   /* 因为行内样式优先级比较高，所以曲线救国 */
   font-size: 30rpx;
   line-height: 16px;
+  padding-bottom: 20rpx;
 }
 .rich-text {
   overflow: hidden;
@@ -317,4 +318,19 @@ textarea {
 .beizhu {
   font-size: 25rpx;
   margin-right: 30rpx;
+}
+.bottomteam {
+  width: 750rpx;
+  padding: 25rpx 0rpx;
+  background-color: #ff5e5b;
+  border-radius: 20rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottomicon {
+  color: #333333;
+  margin-right: 10rpx;
 }

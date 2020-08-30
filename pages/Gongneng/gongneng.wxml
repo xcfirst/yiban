@@ -82,7 +82,7 @@
   <view bindtap="goNext3" class="more iconfont icon-bianji-copy">编辑</view>
 </view>
 
-<view class="bottom" wx:if="{{publishManagements.length != null}}">
+<view class="bottom" wx:if="{{publishManagements.length != 0}}">
     <view wx:if="{{index < 2}}" data-id = "{{item.id}}" data-type="{{item.type}}" catchtap="goNext" wx:for="{{publishManagements}}" wx:key="id" >
       <view class="zero1" >
         <view class="first1">
