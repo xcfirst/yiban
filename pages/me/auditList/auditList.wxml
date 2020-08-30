@@ -11,8 +11,8 @@
             </view>
             <view class="iconfont icon-xinxiaoxi newIcon" hidden="{{item.browsed}}"></view>
         </view>
-        <!-- <view class="time">
-            2020年6月21日
-        </view> -->
     </navigator>
+</view>
+<view class="tipPublish" hidden="{{!auditArrayLength}}">
+    还没有人提交审核
 </view>

@@ -45,11 +45,10 @@ Page{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-/* .time{
-    font-size: 25rpx;
-    float: right;
+.tipPublish{
+    font-size: 34rpx;
     color: #999592;
-    position: absolute;
-    bottom: 15rpx;
-    right: 25rpx;
-} */
+    width: 500rpx;
+    margin: 125rpx;
+    text-align: center;
+}
