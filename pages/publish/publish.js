@@ -4,6 +4,7 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
     images: [],
     tempFilePaths: [],
@@ -235,24 +236,23 @@ Page({
   chooseImage(e) {
     var that = this;
     // console.log(e)
-      wx.chooseImage({
-        sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
-        sourceType: ["album", "camera"], //可选择性开放访问相册、相机
-        success: (res) => {
-          // console.log(res);
-          const images = that.data.tempFilePaths.concat(res.tempFilePaths);
-          // 限制最多只能留下3张照片
-          // const images1 = images.length <= 1000 ? images : images.slice(0, 1000);
-          this.setData({
-            tempFilePaths: images,
-          });
-          that.upload();
-          that.setData({
-            temp: that.data.tempFilePaths.length, //用来解决 for 循环比 异步 快
-          });
-        },
-      });
-
+    wx.chooseImage({
+      sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
+      sourceType: ["album", "camera"], //可选择性开放访问相册、相机
+      success: (res) => {
+        // console.log(res);
+        const images = that.data.tempFilePaths.concat(res.tempFilePaths);
+        // 限制最多只能留下3张照片
+        // const images1 = images.length <= 1000 ? images : images.slice(0, 1000);
+        this.setData({
+          tempFilePaths: images,
+        });
+        that.upload();
+        that.setData({
+          temp: that.data.tempFilePaths.length, //用来解决 for 循环比 异步 快
+        });
+      },
+    });
   },
 
   removeImage(e) {
@@ -263,10 +263,10 @@ Page({
     const idx = e.currentTarget.dataset.idx;
     // splice  第一个参数是下表值  第二个参数是删除的数量
     tempFilePaths.splice(idx, 1);
-    images.splice(idx,1)
+    images.splice(idx, 1);
     this.setData({
       tempFilePaths: tempFilePaths,
-      images:images
+      images: images,
     });
   },
 
@@ -293,7 +293,7 @@ Page({
         "content-type": "multipart/form-data",
         accept: "application/json",
       },
-      url: 'https://liveforjokes.icu/savePicture',
+      url: "https://liveforjokes.icu/savePicture",
       filePath: filepath,
       name: "file",
       formData: {
@@ -497,6 +497,22 @@ Page({
     let userId = app.globalData.userId;
     this.setData({
       userId,
+    });
+    request({
+      url: "/saveActivityAuthentication",
+      data: { userId },
+    }).then((res) => {
+      console.log(res);
+      const result = res.data.msg;
+      if (result === "success") {
+      } else {
+        wx.showModal({
+          content: "你还没有发布权限，请先认证，可到 我的->身份认证 进行确认",
+          showCancel: false,
+          confirmText: "确定",
+          confirmColor: "#18c3b3",
+        });
+      }
     });
   },
 
