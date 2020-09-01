@@ -7,7 +7,7 @@
   <text class="item">工作人员认证</text>
   <view class="tip">
     <text class="iconfont icon-web-icon-"/>
-    <text class="text">认证为组织社团的负责人，可对组织社团的资料进行修改添加，但每个组织社团只能有一个人，请认真核实后进行申请。(身份有效期一年)</text>
+    <text class="text">认证为组织社团的工作人员（部长、干事）即可进行活动发布。(身份有效期一年)</text>
   </view>
 
   <view class="inputname">

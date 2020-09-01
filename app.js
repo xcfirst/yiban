@@ -6,12 +6,12 @@ App({
     let userId = this.globalData.userId;
     if (userId == null) {
       console.log(1);
-      wx.redirectTo({
-        url: './pages/wechatLogin/wechatLogin',
-      })
       // wx.redirectTo({
-      //   url: "./pages/jumpOutYiban/jumpOutYiban",
+      //   url: "./pages/wechatLogin/wechatLogin",
       // });
+      wx.redirectTo({
+        url: "./pages/jumpOutYiban/jumpOutYiban",
+      });
     }
   },
   onHide: function () {},
@@ -21,6 +21,6 @@ App({
   globalData: {
     hasLogin: false,
     yibanHasLogin: true,
-    userId: 59,
+    userId: null,
   },
 });
