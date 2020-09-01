@@ -20,7 +20,7 @@
   
  <view wx:else>
    <text class="font">
-     浏览过的活动会在这里显示哦
+     发布过的活动会在这里显示哦
    </text>
  </view>
 
