@@ -12,50 +12,21 @@ Page({
     "activityProveArrayLength": true,
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     "canIUse": wx.canIUse('button.open-type.getUserInfo'),
-    "isHide": false,
-    "userIdInuput": null,
-    "userIdSure": false
+    "isHide": false
   },
   onLoad: function (options) {
 
-  },
-  //修改userid
-  handleInput(e) {
-    console.log(e.detail.value);
-    let userIdInuput = e.detail.value;
-    this.setData({
-      userIdInuput
-    })
-  },
-  handleCancle(e) {
-    let app = getApp();
-    let userIdInuput = this.data.userIdInuput;
-    app.globalData.userId = userIdInuput;
-    // console.log(app.globalData.userId);
-    let userId = app.globalData.userId;
-    let userIdSure = true;
-    this.setData({
-      userId,
-      userIdSure
-    })
   },
 
 
   onShow: function () {
     let app = getApp();
-    // let hasLogin = app.globalData.hasLogin;
-    // let yibanHasLogin = app.globalData.yibanHasLogin;
-    // if (hasLogin == false && yibanHasLogin == true) {
       this.getUreInformation();
     // }
     let userId = app.globalData.userId;
     this.setData({
       userId
     })
-    // if (userId != null) {
-    //   this.getActivityArray();
-    //   this.getActivityProve();
-    // }
   },
   //登录
   getUreInformation() {

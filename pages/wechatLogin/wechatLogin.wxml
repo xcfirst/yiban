@@ -1,25 +1,8 @@
 <!--pages/wechatLogin/wechatLogin.wxml-->
-<!-- 修改userId -->
-<view hidden="{{userIdSure}}">
-    <view class="userIdtip">
-        请输入userId的值（userId=1是超级管理员即后台管理人员）
-    </view>
-    <view class="userIdinputcontain">
-        <view class="userIdinputinner">
-            <input class="userIdinputcontent" placeholder-class="userIdinputtip" placeholder="点击编辑userId的值"
-                bindinput="handleInput">
-
-            </input>
-        </view>
-    </view>
-    <view class="userIdinnerButton" bindtap="handleCancle">
-        确认
-    </view>
-</view>
 <view hidden="{{!isHide}}">
     <view wx:if="{{canIUse}}">
         
-        <view hidden="{{!userIdSure}}">
+        <!-- <view hidden="{{!userIdSure}}"> -->
             <view class='headerContainer'>
                 <image src='../../image/5.jpg' class="headerPicture"></image>
             </view>
@@ -32,7 +15,7 @@
             <button class='bottomButton' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
                 授权登录
             </button>
-        </view>
+        <!-- </view> -->
 
 
     </view>

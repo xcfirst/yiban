@@ -25,7 +25,7 @@ page{
     background-color: #ffffff;
 }
 .topTip{
-    margin-left: 50rpx;
+    margin-left: 25rpx;
 }
 .topInputContainer{
     width: 600rpx;
@@ -65,6 +65,9 @@ page{
     margin-bottom: 15rpx;
     display: flex;
     align-items: center;
+}
+.tipIcon{
+    color: #999592;
 }
 
 .bottomYibanLogin{

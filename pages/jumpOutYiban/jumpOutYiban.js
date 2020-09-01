@@ -2,69 +2,54 @@
 import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
-    "client_id": "a1397db859458285",
-    "client_secret": "eb2c65221a15c0b88f1f6b16c4926458",
-    "redirect_uri": "https://liveforjokes.icu/index.html",
-    "code": null,
     "access_token": null,
-    "yibanInfo": null
+    "yibanInfo": null,
+    "username": null,
+    "password": null
   },
   onLoad: function (options) {
     // console.log(options);
   },
-  handYibanLogin(e){
-      request_1({
-        url: "https://liveforjokes.icu/getAccessToken",
-      })
-        .then(res => {
-          console.log(res);
-          if (res.statusCode == 200) {
+  handleInput(e) {
+    console.log(e.detail.value);
+    let username = e.detail.value;
+    this.setData({
+      username
+    })
+  },
+  handleInputCode(e) {
+    console.log(e.detail.value);
+    let password = e.detail.value;
+    this.setData({
+      password
+    })
+  },
+  handYibanLogin(e) {
+    let username = this.data.username;
+    let password = this.data.password;
+    request_1({
+      url: "https://liveforjokes.icu/getAccessTokenByLogin",
+      data: { username, password }
+    })
+      .then(res => {
+        console.log(res);
+        if (res.statusCode == 200) {
+          if (res.data == "账号或密码错误") {
+            console.log("密码错误");
+            wx.showToast({
+              title: "账号或密码错误",
+              icon: 'none',
+              duration: 2000,
+            });
+          } else {
             this.setData({
               access_token: res.data
             })
             this.getInformation();
           }
-        })
-    
+        }
+      })
   },
-
-  // handJump(e) {
-  //   console.log(e);
-  //   let str = e.detail.src;
-  //   let code;
-  //   if (str.indexOf("https://liveforjokes.icu/?code=") >= 0) {
-  //     console.log('包含此字符串');
-  //     console.log(str.substring(31));
-  //     code = str.substring(31);
-  //     this.setData({
-  //       code
-  //     })
-  //     this.getAccess_token();
-  //   }
-  // },
-  // getAccess_token() {
-  //   const client_id = this.data.client_id;
-  //   const client_secret = this.data.client_secret;
-  //   const code = this.data.code;
-  //   const redirect_uri = this.data.redirect_uri;
-  //   request_1({
-  //     url: "https://openapi.yiban.cn/oauth/access_token",
-  //     header: {
-  //       "Content-Type": "application/x-www-form-urlencoded"
-  //     },
-  //     data: { client_id, client_secret, code, redirect_uri },
-  //     method: "POST",
-  //   })
-  //     .then(res => {
-  //       if (res.statusCode == 200) {
-  //         console.log(res);
-  //         this.setData({
-  //           access_token: res.data.access_token
-  //         })
-  //         this.getInformation();
-  //       }
-  //     });
-  // },
   getInformation() {
     const access_token = this.data.access_token;
     request_1({

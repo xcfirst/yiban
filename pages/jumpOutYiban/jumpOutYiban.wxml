@@ -1,4 +1,4 @@
-<!--pages/jumpOutPage/jumpOutYiban.wxml-->
+<!--pages/jumpOutPage/jumpOutYiban.wxml -->
 <view class='headerContainer'>
     <image src='../../image/5.jpg' class="headerPicture"></image>
     <view class="headerText">
@@ -18,7 +18,7 @@
     </view>
     <view class="topInputContainer">
         <view class="iconfont icon-mima inputIcon"></view>
-        <input class="innerInput" type="text" placeholder="请输入密码" placeholder-class="inputtip" bindinput="handleInput"
+        <input class="innerInput" type="text" placeholder="请输入密码" placeholder-class="inputtip" bindinput="handleInputCode"
             password="true" />
     </view>
 </view>
@@ -32,19 +32,19 @@
         </view>
 
         <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1"></view>
+            <view class="iconfont icon-xuanze1 tipIcon"></view>
             <view>
                 获得你的用户信息、关系信息
             </view>
         </view>
         <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1"></view>
+            <view class="iconfont icon-xuanze1 tipIcon"></view>
             <view>
                 分享内容到你的消息通知
             </view>
         </view>
         <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1"></view>
+            <view class="iconfont icon-xuanze1 tipIcon"></view>
             <view>
                 获得你的动态、话题、评论
             </view>

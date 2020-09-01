@@ -4,48 +4,6 @@ Page{
     font-size: 42rpx;
     color: #333333;
 }
-/* 改变userId */
-.userIdtip{
-    font-size: 34rpx;
-    color: #333333;
-    width: 500rpx;
-    margin: 125rpx;
-    margin-bottom: 25rpx;
-    text-align: center;
-}
-.userIdinputcontain{
-    width: 602rpx;
-    background-color: #ffffff;
-    border-radius: 20rpx;
-    margin: 0rpx 75rpx 25rpx 75rpx;
-    padding: 15rpx 25rpx;
-    box-sizing: border-box;
-}
-.userIdinputinner{
-    width: 652rpx;
-    border-left: 2rpx solid #999592;
-    padding-left: 15rpx;
-    box-sizing: border-box;
-}
-.userIdinputtip{
-    font-size: 34rpx;
-    color: #999592;
-}
-.userIdinputcontent{
-    width: 100%;
-    font-size: 34rpx;
-}
-.userIdinnerButton{
-    width: 127rpx;
-    font-size: 34rpx;
-    background-color: #ff5e5b;
-    border-radius: 25rpx;
-    text-align: center;
-    line-height: 60rpx;
-    margin: 0 auto;
-}
-
-
 .headerContainer {
     margin: 90rpx 0 90rpx 50rpx;
     border-bottom: 1px solid #ccc;

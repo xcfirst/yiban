@@ -1,5 +1,4 @@
 <!--pages/auditDetail/auditDetail.wxml-->
-<!--pages/activity/activity.wxml -->
 <view class="toptitle">
     <view class="radiu"></view>
     <view class="title">
@@ -15,53 +14,7 @@
         wx:key="*this"
         src="{{item}}" 
         bindtap="previewImage"/>
-    <!-- <image class="picture" mode="aspectFill" src="../../image/1.jpg" /> -->
-    <!-- <image class="picture" mode="aspectFill" src="../../image/1.jpg" /> -->
 </view>
-
-
-<view class="messageInnerTop">
-    个人信息
-</view>
-<view class="middleContainer">
-    <view class="middlecontent">
-        <view class="iconfont icon-gerenxinxi middleIconName"></view>
-        <view class="content">
-            {{userInformation.yb_realname}}
-        </view>
-    </view>
-    <view class="middlecontent">
-        <view class="iconfont icon-xuehao middleIconNumber"></view>
-        <view class="content">
-            {{userInformation.studentNumber}}
-        </view>
-    </view>
-    <view class="middlecontent">
-        <view class="iconfont icon-nianji middleIconGrade"></view>
-        <view class="content">
-            {{userInformation.grade}}
-        </view>
-    </view>
-    <view class="middlecontent">
-        <view class="iconfont icon-banji middleIconClass"></view>
-        <view class="content">
-            {{userInformation.major}}
-        </view>
-    </view>
-    <view class="middlecontent">
-        <view class="iconfont icon-lianxifangshi middleIconPhone"></view>
-        <view class="content">
-            {{userInformation.phoneNumber}}
-        </view>
-    </view>
-    <view class="middlecontent">
-        <view class="iconfont icon-weixinhao middleIconWechat"></view>
-        <view class="content">
-            {{userInformation.wechatNumber}}
-        </view>
-    </view>
-</view>
-
 <view class="bottomoptions">
     <view class="bottomcontainer" bindtap="handSuccessSubmit">
         审核通过

@@ -42,64 +42,6 @@ Page{
     margin-right: 25rpx;
     margin-bottom: 25rpx;
 }
-.messageInnerTop{
-    width: 170rpx;
-    height: 65rpx;
-    background-color: #ff5e5b;
-    font-size: 34rpx;
-    border-radius: 20rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 25rpx 25rpx 0rpx 25rpx;
-}
-.middleContainer{
-    margin-bottom: 150rpx;
-}
-.middlecontent{
-    width: 702rpx;
-    border-radius: 20rpx;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    margin: 25rpx 24rpx 0rpx 24rpx;
-    padding: 25rpx;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-.middleIconName{
-    font-size: 34rpx;
-    color: #ff5e5b;
-}
-.middleIconNumber{
-    font-size: 45rpx;
-    color: #ff5e5b;
-}
-.middleIconGrade{
-    font-size: 45rpx;
-    color: #ff5e5b;
-}
-.middleIconClass{
-    font-size: 32rpx;
-    color: #ff5e5b;
-    margin-right: 11rpx;
-}
-.middleIconPhone{
-    font-size: 48rpx;
-    color: #ff5e5b;
-}
-.middleIconWechat{
-    font-size: 34rpx;
-    color: #ff5e5b;
-    margin-right: 11rpx;
-}
-.content{
-    padding-left: 25rpx;
-    font-size: 34rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .bottomoptions{
     width: 750rpx;
     display: flex;

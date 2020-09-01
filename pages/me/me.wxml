@@ -7,10 +7,6 @@
     </view>
   </view>
 
-  <view class="item" data-target="user" bindtap="navTo">
-    <text class="iconfont icon-wode"></text>
-    <text>个人信息</text>
-  </view>
   <view class="item" data-target="identity" bindtap="navToIdentity">
     <text class="iconfont icon-shenfenrenzhengzhengjian"></text>
     <text>身份认证</text>
