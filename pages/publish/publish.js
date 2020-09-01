@@ -511,6 +511,13 @@ Page({
           showCancel: false,
           confirmText: "确定",
           confirmColor: "#18c3b3",
+          success: (result) => {
+            if (result.confirm) {
+              setTimeout(function () {
+                wx.navigateBack(2);
+              }, 1000);
+            }
+          }
         });
       }
     });
