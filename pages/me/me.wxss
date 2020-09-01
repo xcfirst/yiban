@@ -18,6 +18,7 @@
 
 .user-information{
   display: flex;
+  align-items: center;
   box-sizing: border-box;
   justify-content:left;
   margin: 25rpx;
@@ -35,6 +36,7 @@
 .info{
     display: grid;
     margin-left: 25rpx;
+    font-size: 42rpx;
 }
 
 .item{
