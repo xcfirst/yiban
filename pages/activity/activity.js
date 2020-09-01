@@ -165,7 +165,7 @@ Page({
       success(res) {
         console.log(res);
         console.log('已授权接收订阅消息');
-        if(res["8nR52iQ_h-NDdUMLv5R_w40aOXGQgi--uThwLQOF6Qg"] == "accept"){
+        if(res["F-9DiNhiW_cjstwoV52BFrtaH2Ve8PFfErsr06oBrx4"] == "accept"){
           that.addMessageAllow();
         }
       }

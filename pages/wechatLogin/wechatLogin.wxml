@@ -2,7 +2,7 @@
 <!-- 修改userId -->
 <view hidden="{{userIdSure}}">
     <view class="userIdtip">
-        请输入userId的值（userId=1是超级管理员即后台管理人员）
+        请输入userId的值（userId=59是登录过的易班账号。在 我的>设置 里面可以切换普通用户和后台管理人员）
     </view>
     <view class="userIdinputcontain">
         <view class="userIdinputinner">
