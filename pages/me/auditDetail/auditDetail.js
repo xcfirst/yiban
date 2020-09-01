@@ -11,14 +11,12 @@ Page({
   onLoad: function (options) {
     var app = getApp();
     let userId = app.globalData.userId;
-    // console.log(options.auditId);
     let auditId = options.auditId;
     this.setData({
       auditId,
       userId
     })
     this.getAudit();
-    this.getInformation();
   },
   getAudit() {
     const id = this.data.auditId;
@@ -37,23 +35,6 @@ Page({
           this.setData({
             auditArray,
             isPictureNull
-          })
-        }
-
-      })
-  },
-  getInformation(){
-    const id = this.data.userId;
-    request_1({
-      url: "https://liveforjokes.icu/getStudentDetail",
-      data: { id },
-    })
-      .then(res => {
-        console.log(res);
-        if (res.statusCode == 200) {
-          let userInformation = res.data.obj;
-          this.setData({
-            userInformation
           })
         }
 
