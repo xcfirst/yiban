@@ -25,7 +25,7 @@ page{
     background-color: #ffffff;
 }
 .topTip{
-    margin-left: 50rpx;
+    margin-left: 25rpx;
 }
 .topInputContainer{
     width: 600rpx;
