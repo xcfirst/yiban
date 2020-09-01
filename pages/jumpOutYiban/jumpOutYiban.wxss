@@ -66,6 +66,9 @@ page{
     display: flex;
     align-items: center;
 }
+.tipIcon{
+    color: #999592;
+}
 
 .bottomYibanLogin{
     width: 750rpx;

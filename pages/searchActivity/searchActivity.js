@@ -5,6 +5,7 @@ Page({
     "searchText": "",
     "hasText": false,
     "searchResult": [],
+    "hasSearchList":true
   },
   onLoad: function (options) {
 
@@ -44,10 +45,16 @@ Page({
       data: { search },
     })
       .then(res => {
-        console.log(res.data.obj);
+        console.log(res);
         if (res.statusCode == 200) {
           let searchResult = res.data.obj;
           let i;
+          let hasSearchList;
+          if(res.data.obj == null || searchResult.length==0){
+            hasSearchList = false;
+          }else{
+            hasSearchList = true;
+          }
           if (searchResult != null) {
             for (i = 0; i < searchResult.length; i++) {
               if (searchResult[i].label == null || searchResult[i].label == "")
@@ -71,7 +78,8 @@ Page({
             }
           }
           this.setData({
-            searchResult
+            searchResult,
+            hasSearchList
           })
         }
       })

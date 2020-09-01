@@ -10,6 +10,7 @@ Page({
     major:'',
     phoneNum:'',
     wechatNum:'',
+    yb_userid:'',
     isFinished: false
   },
   
@@ -22,6 +23,7 @@ Page({
       data:{id:data.id},
     }).then(res=>{
       if(res.data.msg=="success"){
+        console.log(res);
         var obj = res.data.obj;
         that.setData({
           studentNum:obj.studentNumber,
@@ -30,7 +32,8 @@ Page({
           grade:obj.grade,
           major:obj.major,
           phoneNum:obj.phoneNumber,
-          wechatNum:obj.wechatNumber
+          wechatNum:obj.wechatNumber,
+          yb_userid:obj.yb_userid
         })
       }
     })
@@ -67,7 +70,7 @@ Page({
         request({
           url: "https://liveforjokes.icu/submitIdentityInformation",
           method:"POST",
-          data:{ id:data.id, studentNumber:data.studentNum, name:data.name, username:data.username, grade:data.grade, major:data.major, phoneNumber:data.phoneNum ,wechatNumber:data.wechatNum},
+          data:{ id:data.id, studentNumber:data.studentNum, name:data.name, username:data.username, grade:data.grade, major:data.major, phoneNumber:data.phoneNum ,wechatNumber:data.wechatNum , yb_userid:data.yb_userid},
 
         }).then(res=>{
           console.log(res)
