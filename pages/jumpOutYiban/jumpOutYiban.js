@@ -2,10 +2,16 @@
 import { request_1 } from "../../request/index_1.js";
 Page({
   data: {
-    "access_token": null,
+    // "access_token": null,
     "yibanInfo": null,
     "username": null,
-    "password": null
+    "password": null,
+
+    "client_id":"a1397db859458285",
+    "client_secret":"eb2c65221a15c0b88f1f6b16c4926458",
+    "redirect_uri":"https://liveforjokes.icu/index.html",
+    "code":null,
+    "access_token":null
   },
   onLoad: function (options) {
     // console.log(options);
@@ -50,6 +56,9 @@ Page({
         }
       })
   },
+
+
+  
   getInformation() {
     const access_token = this.data.access_token;
     request_1({
@@ -90,5 +99,42 @@ Page({
           })
         }
       });
-  }
+  },
+
+
+  // handJump(e){
+  //   console.log(e);
+  //   if(e.detail.src.indexOf("https://liveforjokes.icu/index.html?code=") >= 0){
+  //     let code = e.detail.src.slice(41);
+  //     console.log(code);
+  //     this.setData({
+  //       code
+  //     })
+  //     this.getAccess_token(code);
+  //   }
+  // },
+  // getAccess_token(code){
+  //   let client_id = this.data.client_id;
+  //   let client_secret = this.data.client_secret;
+  //   let redirect_uri = this.data.redirect_uri;
+  //   const that = this;
+  //   request_1({
+  //     url: "https://openapi.yiban.cn/oauth/access_token",
+  //     header: {
+  //       "Content-Type": "application/x-www-form-urlencoded"
+  //     },
+  //     data: { client_id, client_secret,code,redirect_uri },
+  //     method: "POST",
+  //   })
+  //     .then(res => {
+  //       console.log(res);
+  //       if (res.statusCode == 200) {
+  //         let access_token = res.data.access_token;
+  //         that.setData({
+  //           access_token
+  //         })
+  //         that.getInformation();
+  //       }
+  //     })
+  // }
 })

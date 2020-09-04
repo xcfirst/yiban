@@ -161,11 +161,11 @@ Page({
   isAllowTip() {
     const that = this;
     wx.requestSubscribeMessage({
-      tmplIds: ['F-9DiNhiW_cjstwoV52BFrtaH2Ve8PFfErsr06oBrx4'], // 此处可填写多个模板 ID，但低版本微信不兼容只能授权一个
+      tmplIds: ['0q6KMwhT8Qg9zDIhBf0FeodFVC9lHpeCnBrZmiBqVds'], // 此处可填写多个模板 ID，但低版本微信不兼容只能授权一个
       success(res) {
         console.log(res);
         console.log('已授权接收订阅消息');
-        if(res["F-9DiNhiW_cjstwoV52BFrtaH2Ve8PFfErsr06oBrx4"] == "accept"){
+        if(res["0q6KMwhT8Qg9zDIhBf0FeodFVC9lHpeCnBrZmiBqVds"] == "accept"){
           that.addMessageAllow();
         }
       }

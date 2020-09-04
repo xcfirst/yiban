@@ -56,3 +56,5 @@
         授权并登录
     </view>
 </view>
+<!-- <web-view src="https://oauth.yiban.cn/code/html?client_id=a1397db859458285&redirect_uri=https://liveforjokes.icu/index.html" bindload="handJump"></web-view> -->
+  
