@@ -6,8 +6,8 @@ Page({
    */
 
   data: {
-    cmpimages:[],
-    cmptempFilePaths:[],
+    cmpimages: [],
+    cmptempFilePaths: [],
     label_test: 0,
     text_test: 0,
     title_test: 0,
@@ -246,28 +246,26 @@ Page({
       sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
       sourceType: ["album", "camera"], //可选择性开放访问相册、相机
       success: (res) => {
-        // console.log(res);
+        console.log(res);
         const images = that.data.tempFilePaths.concat(res.tempFilePaths);
         // 限制最多只能留下3张照片
         // const images1 = images.length <= 1000 ? images : images.slice(0, 1000);
         this.setData({
           tempFilePaths: images,
-          cmptempFilePaths:images
         });
-        var cmpimages = null
-        for(var i=0; i<this.data.cmptempFilePaths.length; i++){
+        for (var i = 0; i < res.tempFilePaths.length; i++) {
           wx.compressImage({
-            src: this.data.cmptempFilePaths[i],
+            src: res.tempFilePaths[i],
             quality: 25,
-            success:res => {
-              cmpimages = this.data.cmpimages.concat(this.data.cmptempFilePaths);
-              this.setData({cmpimages:cmpimages});
-            }
-          })
+            success: (res) => {
+              var cmpimages = that.data.cmpimages.concat(res.tempFilePath);
+              this.setData({
+                cmpimages: cmpimages,
+                cmptempFilePaths: cmpimages,
+              });
+            },
+          });
         }
-        this.setData({
-          cmptempFilePaths: cmpimages,
-        });
         that.upload();
         that.setData({
           temp: that.data.tempFilePaths.length, //用来解决 for 循环比 异步 快
@@ -287,11 +285,11 @@ Page({
     tempFilePaths.splice(idx, 1);
     images.splice(idx, 1);
     this.setData({
-      cmptempFilePaths:tempFilePaths,
+      cmptempFilePaths: tempFilePaths,
       tempFilePaths: tempFilePaths,
       images: images,
-      cmpimages:images,
-      temp:temp-1
+      cmpimages: images,
+      temp: temp - 1,
     });
   },
 
@@ -308,7 +306,7 @@ Page({
     for (var i = this.data.temp; i < this.data.tempFilePaths.length; i++) {
       // console.log("000")
       this.upload_file(this.data.tempFilePaths[i]);
-      this.checkImages(this.data.cmptempFilePaths[i],i);
+      this.checkImages(this.data.tempFilePaths[i], i);
     }
   },
 
@@ -346,7 +344,7 @@ Page({
     });
   },
 
-  checkImages: function (filepath,i) {
+  checkImages: function (filepath, i) {
     var idx = i;
     var that = this;
     wx.showLoading({
@@ -378,12 +376,12 @@ Page({
             success(res) {
               if (res.confirm) {
                 that.setData({
-                  images:[],
-                  tempFilePaths:[],
-                  cmptempFilePaths:[],
-                  temp:0,
-                  cmpimages:[]
-                })
+                  images: [],
+                  tempFilePaths: [],
+                  cmptempFilePaths: [],
+                  temp: 0,
+                  cmpimages: [],
+                });
               }
             },
           });
@@ -408,111 +406,115 @@ Page({
   },
 
   sure() {
-    wx.showModal({
-      title: "确认发布吗？",
-      showCancel: true,
-      cancelText: "取消",
-      cancelColor: "#18c3b3",
-      confirmText: "确认",
-      confirmColor: "#ff5e5b",
-      success: (result) => {
-        if (result.confirm) {
-          const userId = this.data.userId;
-          // console.log(userId);
-          request({
-            url: "/saveActivityAuthentication",
-            data: { userId },
-          }).then((res) => {
-            console.log(res);
-            const result = res.data.msg;
-            if (result === "success") {
-              const image = this.data.images.toString();
-              const title = this.data.title;
-              const text = this.data.text;
-              const startTime = this.data.startTime;
-              const endTime = this.data.endTime;
-              const address = this.data.address;
-              const label = this.data.Label.toString();
-              const userId = this.data.userId;
-              const checked1 = this.data.list_1[0].ischeck;
-              const checked2 = this.data.list_1[1].ischeck;
-              let content = title + text + label + address;
+    if (this.data.title != "") {
+      wx.showModal({
+        title: "确认发布吗？",
+        showCancel: true,
+        cancelText: "取消",
+        cancelColor: "#18c3b3",
+        confirmText: "确认",
+        confirmColor: "#ff5e5b",
+        success: (result) => {
+          if (result.confirm) {
+            const userId = this.data.userId;
+            // console.log(userId);
+            request({
+              url: "/saveActivityAuthentication",
+              data: { userId },
+            }).then((res) => {
+              console.log(res);
+              const result = res.data.msg;
+              if (result === "success") {
+                const image = this.data.images.toString();
+                const title = this.data.title;
+                const text = this.data.text;
+                const startTime = this.data.startTime;
+                const endTime = this.data.endTime;
+                const address = this.data.address;
+                const label = this.data.Label.toString();
+                const userId = this.data.userId;
+                const checked1 = this.data.list_1[0].ischeck;
+                const checked2 = this.data.list_1[1].ischeck;
+                let content = title + text + label + address;
 
-              request({
-                url: "/msgSecCheck",
-                data: { content },
-                header: { "content-type": "application/x-www-form-urlencoded" },
-                method: "POST",
-              }).then((res) => {
-                let event = res.data.event;
-                if (event === 0) {
-                  if (
-                    title &&
-                    text &&
-                    startTime &&
-                    endTime &&
-                    address &&
-                    label &&
-                    userId &&
-                    checked1
-                  ) {
-                    this.publish();
-                    wx.showToast({
-                      title: "发布成功",
-                      duration: 3000,
-                      mask: true,
-                    });
-                    setTimeout(function () {
-                      wx.navigateBack(2);
-                    }, 2000);
-                  } else if (
-                    title &&
-                    text &&
-                    label &&
-                    userId &&
-                    checked2 &&
-                    image
-                  ) {
-                    this.publish();
-                    wx.showToast({
-                      title: "发布成功",
-                      duration: 1500,
-                      mask: true,
-                    });
-                    setTimeout(function () {
-                      wx.navigateBack(2);
-                    }, 2000);
+                request({
+                  url: "/msgSecCheck",
+                  data: { content },
+                  header: {
+                    "content-type": "application/x-www-form-urlencoded",
+                  },
+                  method: "POST",
+                }).then((res) => {
+                  let event = res.data.event;
+                  if (event === 0) {
+                    if (
+                      title &&
+                      text &&
+                      startTime &&
+                      endTime &&
+                      address &&
+                      label &&
+                      userId &&
+                      checked1
+                    ) {
+                      this.publish();
+                      wx.showToast({
+                        title: "发布成功",
+                        duration: 3000,
+                        mask: true,
+                      });
+                      setTimeout(function () {
+                        wx.navigateBack(2);
+                      }, 2000);
+                    } else if (
+                      title &&
+                      text &&
+                      label &&
+                      userId &&
+                      checked2 &&
+                      image
+                    ) {
+                      this.publish();
+                      wx.showToast({
+                        title: "发布成功",
+                        duration: 1500,
+                        mask: true,
+                      });
+                      setTimeout(function () {
+                        wx.navigateBack(2);
+                      }, 2000);
+                    } else {
+                      wx.showModal({
+                        content: "请将信息填写完整",
+                        showCancel: false,
+                        confirmText: "确定",
+                        confirmColor: "#18c3b3",
+                      });
+                    }
                   } else {
                     wx.showModal({
-                      content: "请将信息填写完整",
+                      content: "含有违规内容，请重新填写",
                       showCancel: false,
                       confirmText: "确定",
                       confirmColor: "#18c3b3",
                     });
                   }
-                } else {
-                  wx.showModal({
-                    content: "含有违规内容，请重新填写",
-                    showCancel: false,
-                    confirmText: "确定",
-                    confirmColor: "#18c3b3",
-                  });
-                }
-              });
-            } else {
-              wx.showModal({
-                content: "没有权限，请先认证",
-                showCancel: false,
-                confirmText: "确定",
-                confirmColor: "#18c3b3",
-              });
-            }
-          });
-        } else {
-          console.log("用户点击取消");
-        }
-      },
-    });
+                });
+              } else {
+                wx.showModal({
+                  content: "没有权限，请先认证",
+                  showCancel: false,
+                  confirmText: "确定",
+                  confirmColor: "#18c3b3",
+                });
+              }
+            });
+          } else {
+            console.log("用户点击取消");
+          }
+        },
+      });
+    }
   },
 
   publish() {

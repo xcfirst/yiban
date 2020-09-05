@@ -60,9 +60,27 @@ Page({
         cancelColor: "#17c3b2",
         confirmColor: "#ff5e5b",
         success(res) {
+          let content = that.data.inputtext
           if (res.confirm) {
-            console.log('用户点击确定');
-            that.submitGroup();
+            request_1({
+              url: 'https://liveforjokes.icu/msgSecCheck',
+              data: { content },
+              header: {'content-type':'application/x-www-form-urlencoded'},
+              method: 'POST',
+            }).then((res) =>{
+              let event = res.data.event;
+              if (event === 0){
+                console.log('用户点击确定');
+                that.submitGroup();
+              }else{
+                wx.showModal({
+                  content: "含有违规内容，请重新填写",
+                  showCancel: false,
+                  confirmText: "确定",
+                  confirmColor: "#18c3b3",
+                })
+              }
+            })   
             // wx.navigateBack(2);
           } else if (res.cancel) {
             console.log('用户点击取消')
