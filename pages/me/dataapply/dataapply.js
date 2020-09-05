@@ -121,7 +121,7 @@ Page({
         for(var i=0; i<res.tempFilePaths.length; i++){
           wx.compressImage({
             src: res.tempFilePaths[i],
-            quality: 25,
+            quality: 20,
             success:res => {
               var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
               this.setData({cmpimages:cmpimages});
@@ -195,7 +195,7 @@ Page({
   },
 
   checkImages:function(e){
-    var images = this.data.images;
+    var images = this.data.cmpimages;
     var that = this;
     var idx = that.data.idx
     wx.showLoading({
