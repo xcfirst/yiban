@@ -4,7 +4,8 @@ Page({
   data: {
     "inputtext": "",
     "userId": null,
-    "activityId": null
+    "activityId": null,
+    "access_token": null
   },
   onLoad: function (options) {
     var app = getApp();
@@ -38,7 +39,7 @@ Page({
             wx.navigateBack(2);
           }, 1500)
           // console.log(res);
-        } 
+        }
       });
 
   },
@@ -56,20 +57,43 @@ Page({
       publish = true;
     }
     if (publish == true) {
-      wx.showModal({
-        title: '确认发布吗？',
-        cancelColor: "#17c3b2",
-        confirmColor: "#ff5e5b",
-        success(res) {
-          if (res.confirm) {
-            console.log('用户点击确定');
-            that.submitGroup();
-            // wx.navigateBack(2);
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
+      let content = this.data.inputtext;
+      request_1({
+        url: "https://liveforjokes.icu/msgSecCheck",
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        data: { content },
+        method: "POST",
       })
+        .then(res => {
+          console.log(res);
+          if (res.statusCode == 200) {
+            if (res.data.event == 87014) {
+              wx.showModal({
+                title: '含有违规内容，请重新填写',
+                confirmText: "知道了",
+                confirmColor: "#ff5e5b",
+                showCancel: false,
+              })
+            } else if (res.data.event == 0) {
+              wx.showModal({
+                title: '确认发布吗？',
+                cancelColor: "#17c3b2",
+                confirmColor: "#ff5e5b",
+                success(res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定');
+                    that.submitGroup();
+                    // wx.navigateBack(2);
+                  } else if (res.cancel) {
+                    console.log('用户点击取消')
+                  }
+                }
+              })
+            }
+          }
+        })
     }
   }
 })
