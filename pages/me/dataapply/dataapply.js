@@ -14,7 +14,8 @@ Page({
     path:[],
     isNew:'',
     associationList:null,
-    idx:null
+    idx:null,
+    i:0
   },
   onLoad: function(e){
     var that = this;
@@ -109,7 +110,25 @@ Page({
     })
   },
 
+  compress:function(e){
+    var that = this;
+    wx.compressImage({
+      src: e[that.data.i],
+      quality: 20,
+      success:res => {
+        var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
+        this.setData({cmpimages:cmpimages, i:that.data.i+1});
+      },
+      complete:res=>{
+        if(that.data.i<e.length){
+          this.compress(e);
+        }
+      }
+    })
+  },
+
   chooseImage:function(e){
+    var that = this;
     wx.chooseImage({
       sizeType:['compressed','original'],
       sourceType:['album','camera'],
@@ -118,18 +137,25 @@ Page({
         this.setData({
           images:images
         })
-        for(var i=0; i<res.tempFilePaths.length; i++){
-          wx.compressImage({
-            src: res.tempFilePaths[i],
-            quality: 20,
-            success:res => {
-              var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
-              this.setData({cmpimages:cmpimages});
+        new Promise((resolve,reject)=>{
+          var time = 0;
+          that.setData({i:0})
+          that.compress(res.tempFilePaths);
+          var interval = setInterval(function(){
+            if(res.tempFilePaths.length==0||that.data.i == res.tempFilePaths.length){
+              clearInterval(interval);
+              resolve("success");
             }
-          })
-        }
-        this.setData({idx:0})
-        this.checkImages();
+            if(time > res.tempFilePaths.length*3000){
+              clearInterval(interval);
+              reject("err")
+            }
+            time+=500;
+          },500)
+        }).then (res=>{
+          this.setData({idx:0})
+          this.checkImages();
+        })
       },
     })
   },
@@ -145,10 +171,12 @@ Page({
 
   remove:function(e){
     var images = this.data.images;
+    var cmpimages = this.data.cmpimages;
     var idx = e.currentTarget.dataset.idx;
     console.log(idx);
     images.splice(idx,1);
-    this.setData({images: images})
+    cmpimages.splice(idx,1);
+    this.setData({images: images, cmpimages:cmpimages})
   },
 
   tagRemove:function(e){
