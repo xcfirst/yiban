@@ -10,6 +10,7 @@ Page({
     href:'',
     type:'',
     images:[],
+    cmpimages:[],
     path:[],
     isNew:'',
     associationList:null,
@@ -117,6 +118,18 @@ Page({
         this.setData({
           images:images
         })
+        for(var i=0; i<res.tempFilePaths.length; i++){
+          wx.compressImage({
+            src: res.tempFilePaths[i],
+            quality: 25,
+            success:res => {
+              var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
+              this.setData({cmpimages:cmpimages});
+            }
+          })
+        }
+        this.setData({idx:0})
+        this.checkImages();
       },
     })
   },
@@ -179,6 +192,66 @@ Page({
   },
   inputHref:function(e){
     this.setData({href: e.detail.value});
+  },
+
+  checkImages:function(e){
+    var images = this.data.images;
+    var that = this;
+    var idx = that.data.idx
+    wx.showLoading({
+      title: '正在上传',
+    })
+    wx.uploadFile({
+      header:{
+        'content-type': 'multipart/form-data',
+        'accept': 'application/json'
+      },
+      url: 'https://liveforjokes.icu/imgSecCheck',
+      filePath: images[idx],
+      name: 'media',
+      formData: {
+        method: 'POST',
+        index:idx
+      },
+      success(res){
+        console.log(res)
+        var event = JSON.parse(res.data).event
+        if(event==87014){
+          console.log("???")
+          wx.hideLoading()
+          wx.showModal({
+            title: "图片含有违规内容，请重新选择",
+            comfirmText:'知道了',
+            confirmColor:'#ff5e5b',
+            showCancel:false,
+            success(res){
+              if(res.confirm){
+                that.setData({images:[],cmpimages:[]})
+              }
+            }
+          })
+        }
+        else{
+          if(event!=0){
+            wx.showModal({
+              title: "图片过大，请选择1m以内的图片",
+              comfirmText:'知道了',
+              confirmColor:'#ff5e5b',
+              showCancel:false,
+          })
+        }
+        }
+      },
+      complete(res){
+        that.setData({idx:that.data.idx+1})
+          if(that.data.idx < images.length){
+            that.checkImages();
+          }
+          else{
+            wx.hideLoading()
+          }
+        },
+      })
   },
 
   updata:function(){
@@ -284,8 +357,6 @@ Page({
           }
       }
     })
-    
-
   },
   navTo: function(e){
     wx.navigateTo({
