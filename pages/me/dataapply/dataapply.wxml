@@ -6,7 +6,7 @@
   </view>
   <view class="item">
     <text class="iconfont icon-biaotizhengwenqiehuan-copy"/>
-    <input class="input" value="{{name}}" placeholder="请在这里输入社团名字" bindinput="inputName"/>
+    <input class="input" value="{{name}}" placeholder="请在这里输入社团名字"bindinput="inputName"/>
   </view>
   <view class="item-a">
     <text class="iconfont icon-bianjizhengwen"/>
@@ -32,7 +32,7 @@
 
   <view class="item">
     <text class="iconfont icon-gongzhonghao"/>
-    <input class="input" value="{{href}}" placeholder="请在这里输入社团组织公众号" bindinput="inputHref"/>
+    <input class="input" value="{{href}}" placeholder="请在这里输入社团组织公众号"  bindinput="inputHref"/>
   </view>
   <view class="tag" wx:if="{{type}}">
     <view class="tag-wrap">

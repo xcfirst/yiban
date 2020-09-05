@@ -10,6 +10,7 @@ Page({
     href:'',
     type:'',
     images:[],
+    cmpimages:[],
     path:[],
     isNew:'',
     associationList:null,
@@ -117,6 +118,18 @@ Page({
         this.setData({
           images:images
         })
+        for(var i=0; i<res.tempFilePaths.length; i++){
+          wx.compressImage({
+            src: res.tempFilePaths[i],
+            quality: 25,
+            success:res => {
+              var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
+              this.setData({cmpimages:cmpimages});
+            }
+          })
+        }
+        this.setData({idx:0})
+        this.checkImages();
       },
     })
   },
@@ -181,6 +194,66 @@ Page({
     this.setData({href: e.detail.value});
   },
 
+  checkImages:function(e){
+    var images = this.data.images;
+    var that = this;
+    var idx = that.data.idx
+    wx.showLoading({
+      title: '正在上传',
+    })
+    wx.uploadFile({
+      header:{
+        'content-type': 'multipart/form-data',
+        'accept': 'application/json'
+      },
+      url: 'https://liveforjokes.icu/imgSecCheck',
+      filePath: images[idx],
+      name: 'media',
+      formData: {
+        method: 'POST',
+        index:idx
+      },
+      success(res){
+        console.log(res)
+        var event = JSON.parse(res.data).event
+        if(event==87014){
+          console.log("???")
+          wx.hideLoading()
+          wx.showModal({
+            title: "图片含有违规内容，请重新选择",
+            comfirmText:'知道了',
+            confirmColor:'#ff5e5b',
+            showCancel:false,
+            success(res){
+              if(res.confirm){
+                that.setData({images:[],cmpimages:[]})
+              }
+            }
+          })
+        }
+        else{
+          if(event!=0){
+            wx.showModal({
+              title: "图片过大，请选择1m以内的图片",
+              comfirmText:'知道了',
+              confirmColor:'#ff5e5b',
+              showCancel:false,
+          })
+        }
+        }
+      },
+      complete(res){
+        that.setData({idx:that.data.idx+1})
+          if(that.data.idx < images.length){
+            that.checkImages();
+          }
+          else{
+            wx.hideLoading()
+          }
+        },
+      })
+  },
+
   updata:function(){
     var that = this;
     var url;
@@ -190,78 +263,100 @@ Page({
     const introduce = this.data.introduce;
     const href = this.data.href;
     const type = this.data.type;
-    wx.showModal({
-      content: '确认提交申请吗？',
-      cancelText: '取消',
-      cancelColor: '#17c3b2',
-      confirmColor: '#ff5e5b',
-      confirmText: '确认',
-      success(res){
-        if(res.confirm){
-          if(that.data.isNew){
-            url = 'https://liveforjokes.icu/insertAssociation'
+    var content = name+href+introduce;
+    request({
+      url: 'https://liveforjokes.icu/msgSecCheck',
+      method:"POST",
+      data:{ content:content },
+      header:{
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+    })
+    .then(res =>{
+      console.log(res)
+      if(res.statusCode==200){
+        if(res.data.msg != "ok"){
+          wx.showModal({
+            title: "含有违规内容，请重新填写",
+            comfirmText:'知道了',
+            confirmColor:'#ff5e5b',
+            showCancel:false,
+            })
           }
           else{
-            url = 'https://liveforjokes.icu/updateAssociation'
-          }
-          that.setData({idx: 0});
-          var promise = new Promise((resolve,reject)=>{
-            //上传图片
-            if(that.data.images.length!=0){
-              that.upload();
-            }
-            var time = 0;
-            var interval = setInterval(function(){
-              if(images.length==0||that.data.idx == images.length){
-                clearInterval(interval);
-                resolve("success");
-              }
-              if(time > images.length*3000){
-                clearInterval(interval);
-                reject("err")
-              }
-              time+=500;
-            },500)
-          })      
-          promise.then(res=>{
-            console.log(that.data.path)
-            request({
-              url: url,
-              method:"POST",
-              data:{ id:id, name:name, introduce:introduce, picture:that.data.path, href:href, type:type },
-              header:{
-                "Content-Type": "application/x-www-form-urlencoded"
-              },
-            })
-            .then(res =>{
-              if(res.data.msg == "success"){
-                wx.showToast({
-                  title: '提交成功',
-                  duration:2000,
-                  success:(res=>{
-                    setTimeout(function(){
-                      wx.navigateBack({
-                        delta:1
-                      })
-                    },2000)
+            wx.showModal({
+              content: '确认提交申请吗？',
+              cancelText: '取消',
+              cancelColor: '#17c3b2',
+              confirmColor: '#ff5e5b',
+              confirmText: '确认',
+              success(res){
+                if(res.confirm){
+                  if(that.data.isNew){
+                    url = 'https://liveforjokes.icu/insertAssociation'
+                  }
+                  else{
+                    url = 'https://liveforjokes.icu/updateAssociation'
+                  }
+                  that.setData({idx: 0});
+                  var promise = new Promise((resolve,reject)=>{
+                    //上传图片
+                    if(that.data.images.length!=0){
+                      that.upload();
+                    }
+                    var time = 0;
+                    var interval = setInterval(function(){
+                      if(images.length==0||that.data.idx == images.length){
+                        clearInterval(interval);
+                        resolve("success");
+                      }
+                      if(time > images.length*3000){
+                        clearInterval(interval);
+                        reject("err")
+                      }
+                      time+=500;
+                    },500)
+                  })      
+                  promise.then(res=>{
+                    console.log(that.data.path)
+                    request({
+                      url: url,
+                      method:"POST",
+                      data:{ id:id, name:name, introduce:introduce, picture:that.data.path, href:href, type:type },
+                      header:{
+                        "Content-Type": "application/x-www-form-urlencoded"
+                      },
+                    })
+                    .then(res =>{
+                      if(res.data.msg == "success"){
+                        wx.showToast({
+                          title: '提交成功',
+                          duration:2000,
+                          success:(res=>{
+                            setTimeout(function(){
+                              wx.navigateBack({
+                                delta:1
+                              })
+                            },2000)
+                          })
+                        })
+                      }
+                      else{
+                        wx.showToast({
+                          title: '提交失败，请稍后重试',
+                          icon:'none',
+                          duration:2000
+                        })
+                      }
+                      console.log(res)
+                    })
                   })
-                })
+                }
               }
-              else{
-                wx.showToast({
-                  title: '提交失败，请稍后重试',
-                  icon:'none',
-                  duration:2000
-                })
-              }
-              console.log(res)
-            })
-          })
-          
-        }
+            });
+          }
       }
-    });
-
+    })
   },
   navTo: function(e){
     wx.navigateTo({
