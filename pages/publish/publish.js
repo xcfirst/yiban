@@ -6,6 +6,7 @@ Page({
    */
 
   data: {
+    i:0,
     cmpimages: [],
     cmptempFilePaths: [],
     label_test: 0,
@@ -238,166 +239,185 @@ Page({
     }
   },
 
-  //图片处理
-  chooseImage(e) {
+  compress:function(e){
     var that = this;
-    // console.log(e)
-    wx.chooseImage({
-      sizeType: ["original", "compressed"], //可选择原图或压缩后的图片
-      sourceType: ["album", "camera"], //可选择性开放访问相册、相机
-      success: (res) => {
-        console.log(res);
-        const images = that.data.tempFilePaths.concat(res.tempFilePaths);
-        // 限制最多只能留下3张照片
-        // const images1 = images.length <= 1000 ? images : images.slice(0, 1000);
-        this.setData({
-          tempFilePaths: images,
-        });
-        for (var i = 0; i < res.tempFilePaths.length; i++) {
-          wx.compressImage({
-            src: res.tempFilePaths[i],
-            quality: 25,
-            success: (res) => {
-              var cmpimages = that.data.cmpimages.concat(res.tempFilePath);
-              this.setData({
-                cmpimages: cmpimages,
-                cmptempFilePaths: cmpimages,
-              });
-            },
-          });
+    wx.compressImage({
+      src: e[that.data.i],
+      quality: 20,
+      success:res => {
+        var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
+    this.setData({ cmpimages:cmpimages, i:that.data.i+1 ,cmptempFilePaths:cmpimages});
+      },
+      complete:res=>{
+        if(that.data.i<e.length){
+          this.compress(e);
         }
-        that.upload();
-        that.setData({
-          temp: that.data.tempFilePaths.length, //用来解决 for 循环比 异步 快
-        });
-      },
-    });
+      }
+    })
   },
 
-  removeImage(e) {
+  //图片处理
+  upload:function(){
+    var images = this.data.images;
     var that = this;
-    var tempFilePaths = that.data.tempFilePaths;
-    var images = that.data.images;
-    var temp = that.data.temp;
-    // 获取要删除的第几张图片的下标
-    const idx = e.currentTarget.dataset.idx;
-    // splice  第一个参数是下表值  第二个参数是删除的数量
-    tempFilePaths.splice(idx, 1);
-    images.splice(idx, 1);
-    this.setData({
-      cmptempFilePaths: tempFilePaths,
-      tempFilePaths: tempFilePaths,
-      images: images,
-      cmpimages: images,
-      temp: temp - 1,
-    });
-  },
-
-  handleImagePreview(e) {
-    const idx = e.target.dataset.idx;
-    const images = this.data.tempFilePaths;
-    wx.previewImage({
-      tempFilePaths: images[idx], //当前预览的图片
-      urls: images, //所有要预览的图片
-    });
-  },
-
-  upload: function () {
-    for (var i = this.data.temp; i < this.data.tempFilePaths.length; i++) {
-      // console.log("000")
-      this.upload_file(this.data.tempFilePaths[i]);
-      this.checkImages(this.data.tempFilePaths[i], i);
-    }
-  },
-
-  upload_file: function (filepath) {
-    var that = this;
-    wx.uploadFile({
-      header: {
-        "content-type": "multipart/form-data",
-        accept: "application/json",
-      },
-      url: "https://liveforjokes.icu/savePicture",
-      filePath: filepath,
-      name: "file",
-      formData: {
-        method: "POST", //请求方式
-      },
-      success: function (res) {
-        console.log(res);
-        that.setData({
-          mes: JSON.parse(res.data),
-          images: that.data.images.concat(JSON.parse(res.data).obj), //把字符串解析成对象
-        });
-        console.log(res.data);
-        console.log(that.data.images);
-        // console.log(that.data.images.length + "**********")
-        // wx.showToast({
-        //   title: 'success',
-        // })
-      },
-      fail: function (res) {
-        wx.showToast({
-          title: "图片加载失败",
-        });
-      },
-    });
-  },
-
-  checkImages: function (filepath, i) {
-    var idx = i;
-    var that = this;
+    var idx = that.data.idx
     wx.showLoading({
-      title: "正在上传",
-    });
+      title: '正在上传',
+    })
     wx.uploadFile({
-      header: {
-        "content-type": "multipart/form-data",
-        accept: "application/json",
+      header:{
+        'content-type': 'multipart/form-data',
+        'accept': 'application/json'
       },
-      url: "https://liveforjokes.icu/imgSecCheck",
-      filePath: filepath,
-      name: "media",
+      url: 'https://liveforjokes.icu/savePicture',
+      filePath: images[idx],
+      name: 'file',
       formData: {
-        method: "POST",
-        index: idx,
+        method: 'POST'
       },
-      success(res) {
-        console.log(res);
-        var event = JSON.parse(res.data).event;
-        if (event == 87014) {
-          console.log("???");
-          wx.hideLoading();
+      success(res){
+        var path = that.data.path.concat(JSON.parse(res.data).obj);
+        that.setData({path:path})
+        console.log(res)
+      },
+      complete(res){
+        that.setData({idx:that.data.idx+1})
+        if(that.data.idx < images.length){
+          that.upload();
+        }
+        else{
+          wx.hideLoading()
+        }
+      }
+    })
+  },
+  compress:function(e){
+    var that = this;
+    wx.compressImage({
+      src: e[that.data.i],
+      quality: 20,
+      success:res => {
+        var cmpimages = this.data.cmpimages.concat(res.tempFilePath);
+        this.setData({cmpimages:cmpimages, i:that.data.i+1});
+      },
+      complete:res=>{
+        if(that.data.i<e.length){
+          this.compress(e);
+        }
+      }
+    })
+  },
+
+  chooseImage:function(e){
+    var that = this;
+    wx.chooseImage({
+      sizeType:['compressed','original'],
+      sourceType:['album','camera'],
+      success: res => {
+        const images = this.data.images.concat(res.tempFilePaths);
+        this.setData({
+          images:images
+        })
+        new Promise((resolve,reject)=>{
+          var time = 0;
+          that.setData({i:0})
+          that.compress(res.tempFilePaths);
+          var interval = setInterval(function(){
+            if(res.tempFilePaths.length==0||that.data.i == res.tempFilePaths.length){
+              clearInterval(interval);
+              resolve("success");
+            }
+            if(time > res.tempFilePaths.length*3000){
+              clearInterval(interval);
+              reject("err")
+            }
+            time+=500;
+          },500)
+        }).then (res=>{
+          this.setData({idx:0})
+          this.checkImages();
+        })
+      },
+    })
+  },
+
+  previewImage:function(e){
+    var images = this.data.images;
+    var idx = e.currentTarget.dataset.idx;
+    wx.previewImage({
+      current: images[idx],
+      urls: images,
+    })
+  },
+
+  remove:function(e){
+    var images = this.data.images;
+    var cmpimages = this.data.cmpimages;
+    var idx = e.currentTarget.dataset.idx;
+    console.log(idx);
+    images.splice(idx,1);
+    cmpimages.splice(idx,1);
+    this.setData({images: images, cmpimages:cmpimages})
+  },
+  
+  checkImages:function(e){
+    var images = this.data.cmpimages;
+    var that = this;
+    var idx = that.data.idx
+    wx.showLoading({
+      title: '正在上传',
+    })
+    wx.uploadFile({
+      header:{
+        'content-type': 'multipart/form-data',
+        'accept': 'application/json'
+      },
+      url: 'https://liveforjokes.icu/imgSecCheck',
+      filePath: images[idx],
+      name: 'media',
+      formData: {
+        method: 'POST',
+        index:idx
+      },
+      success(res){
+        console.log(res)
+        var event = JSON.parse(res.data).event
+        if(event==87014){
+          console.log("???")
+          wx.hideLoading()
           wx.showModal({
             title: "图片含有违规内容，请重新选择",
-            comfirmText: "知道了",
-            confirmColor: "#ff5e5b",
-            showCancel: false,
-            success(res) {
-              if (res.confirm) {
-                that.setData({
-                  images: [],
-                  tempFilePaths: [],
-                  cmptempFilePaths: [],
-                  temp: 0,
-                  cmpimages: [],
-                });
+            comfirmText:'知道了',
+            confirmColor:'#ff5e5b',
+            showCancel:false,
+            success(res){
+              if(res.confirm){
+                that.setData({images:[],cmpimages:[]})
               }
-            },
-          });
-        } else {
-          if (event != 0) {
+            }
+          })
+        }
+        else{
+          if(event!=0){
             wx.showModal({
               title: "图片过大，请选择1m以内的图片",
-              comfirmText: "知道了",
-              confirmColor: "#ff5e5b",
-              showCancel: false,
-            });
-          }
+              comfirmText:'知道了',
+              confirmColor:'#ff5e5b',
+              showCancel:false,
+          })
+        }
         }
       },
-    });
-    wx.hideLoading();
+      complete(res){
+        that.setData({idx:that.data.idx+1})
+          if(that.data.idx < images.length){
+            that.checkImages();
+          }
+          else{
+            wx.hideLoading()
+          }
+        },
+      })
   },
   bianji() {
     this.setData({

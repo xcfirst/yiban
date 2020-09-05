@@ -44,12 +44,12 @@ class="third_fir" >
   
     <!-- 上传图片 -->
     <view class="question-images clearFloat">
-      <view wx:for="{{tempFilePaths}}" wx:key="*this">
+      <view wx:for="{{images}}" wx:key="*this">
         <view class="q-image-wrap">
           <!-- 图片缩略图  -->
-          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="previewImage"></image>
           <!-- 移除图片的按钮  -->
-          <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+          <view class="q-image-remover" data-idx="{{index}}" bindtap="remove">
             <icon class='iconfont icon-guanbi'></icon>
           </view>
         </view>
