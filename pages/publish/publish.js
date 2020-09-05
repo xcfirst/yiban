@@ -6,6 +6,10 @@ Page({
    */
 
   data: {
+    label_test: 0,
+    text_test: 0,
+    title_test: 0,
+    address_test: 0,
     images: [],
     tempFilePaths: [],
     temp: 0,
@@ -355,50 +359,80 @@ Page({
               const userId = this.data.userId;
               const checked1 = this.data.list_1[0].ischeck;
               const checked2 = this.data.list_1[1].ischeck;
-              if (
-                title &&
-                text &&
-                startTime &&
-                endTime &&
-                address &&
-                label &&
-                userId &&
-                checked1
-              ) {
-                this.publish();
-                wx.showToast({
-                  title: "发布成功",
-                  duration: 3000,
-                  mask: true,
-                });
-                setTimeout(function () {
-                  wx.navigateBack(2);
-                }, 2000);
-              } else if (
-                title &&
-                text &&
-                label &&
-                userId &&
-                checked2 &&
-                image
-              ) {
-                this.publish();
-                wx.showToast({
-                  title: "发布成功",
-                  duration: 1500,
-                  mask: true,
-                });
-                setTimeout(function () {
-                  wx.navigateBack(2);
-                }, 2000);
-              } else {
-                wx.showModal({
-                  content: "请将信息填写完整",
-                  showCancel: false,
-                  confirmText: "确定",
-                  confirmColor: "#18c3b3",
-                });
-              }
+              let content = title+text+label+address;
+
+              request({
+                url: "/msgSecCheck",
+                data: { content },
+                header: { "content-type": "application/x-www-form-urlencoded" },
+                method: "POST",
+              }).then((res) => {
+                let event1 = res.data.event;
+                        request({
+                          url: "/msgSecCheck",
+                          data: { content },
+                          header: { "content-type": "application/x-www-form-urlencoded" },
+                          method: "POST",
+                        }).then((res) =>{
+                          console.log(res);
+                          let event2 = res.data.event;
+                          console.log(event1);
+                          console.log(event2);
+                          if (event2 === 0 && event1 === 0 || event2 === 44004 && event1 === 44004){
+                            if (
+                              title &&
+                              text &&
+                              startTime &&
+                              endTime &&
+                              address &&
+                              label &&
+                              userId &&
+                              checked1 
+                            ) {
+                              this.publish();
+                              wx.showToast({
+                                title: "发布成功",
+                                duration: 3000,
+                                mask: true,
+                              });
+                              setTimeout(function () {
+                                wx.navigateBack(2);
+                              }, 2000);
+                            } else if (
+                              title &&
+                              text &&
+                              label &&
+                              userId &&
+                              checked2 &&
+                              image
+                            ) {
+                              this.publish();
+                              wx.showToast({
+                                title: "发布成功",
+                                duration: 1500,
+                                mask: true,
+                              });
+                              setTimeout(function () {
+                                wx.navigateBack(2);
+                              }, 2000);
+                            } else {
+                              wx.showModal({
+                                content: "请将信息填写完整",
+                                showCancel: false,
+                                confirmText: "确定",
+                                confirmColor: "#18c3b3",
+                              });
+                            }
+                          }else {
+                            wx.showModal({
+                              content: "含有违规内容，请重新填写",
+                              showCancel: false,
+                              confirmText: "确定",
+                              confirmColor: "#18c3b3",
+                            });
+                          }
+                        })
+              });
             } else {
               wx.showModal({
                 content: "没有权限，请先认证",
@@ -424,6 +458,7 @@ Page({
     const address = this.data.address;
     const label = this.data.Label.toString();
     const userId = this.data.userId;
+
     if (this.data.list_1[0].ischeck) {
       request({
         url: "/activity/saveActivity",
@@ -517,7 +552,7 @@ Page({
                 wx.navigateBack(2);
               }, 1000);
             }
-          }
+          },
         });
       }
     });
