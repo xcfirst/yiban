@@ -58,3 +58,36 @@ Page{
     justify-content: center;
     align-items: center;
 }
+
+
+
+.leaveContainer{
+    width: 702rpx;
+    margin: 25rpx 25rpx 200rpx 25rpx;
+}
+.leaveInnerTop{
+    width: 220rpx;
+    height: 65rpx;
+    background-color: #ff5e5b;
+    font-size: 42rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25rpx;
+}
+.leaveInnerBottom{
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 25rpx;
+    margin-bottom: 25rpx;
+}
+.leaveInnerContain{
+    border-left: 2rpx #999592 solid;
+    padding-left: 25rpx;
+    font-size: 34rpx;
+}
+.hasLeave{
+    font-size: 34rpx;
+    color: #333333;
+}

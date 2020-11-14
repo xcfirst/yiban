@@ -5,15 +5,15 @@ page{
     color: #333333;
 }
 .headerContainer {
-    margin: 50rpx 0 50rpx 25rpx;
+    margin: 100rpx 0 100rpx 25rpx;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .headerPicture {
     border-radius: 50%;
-    width: 60rpx;
-    height: 60rpx;
+    width: 80rpx;
+    height: 80rpx;
     margin-right: 25rpx;
 }
 .container{
@@ -49,7 +49,25 @@ page{
     font-size: 34rpx;
     color: #999592;
 }
-
+.choose{
+    position: fixed;
+    bottom: 0rpx;
+}
+.chooseBg{
+    width: 750rpx;
+    height: 2000rpx;
+    /* background-color: #999592; */
+    background:rgb(153, 149, 146,0.5);
+}
+.middleContainer{
+    width: 750rpx;
+    padding: 25rpx;
+    padding-top: 30rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    background-color: #ffffff;
+    
+}
 .middleTip{
     font-size: 36rpx;
     margin: 25rpx 0rpx 30rpx 25rpx;
@@ -70,10 +88,44 @@ page{
     color: #999592;
 }
 
+.bottomContainer{
+    border-radius: 20rpx;
+    border: #999592 solid 2rpx;
+    padding-left: 60rpx;
+    padding-bottom: 20rpx;
+}
+.chooseButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30rpx;
+}
+.chooseButtonCansle{
+    width: 200rpx;
+    height: 85rpx;
+    margin-right: 40rpx;
+    border-radius: 20rpx;
+    background-color: #17c3b2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chooseButtonSure{
+    width: 200rpx;
+    height: 85rpx;
+    border-radius: 20rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff5e5b;
+    margin-left: 40rpx;
+}
+
+
 .bottomYibanLogin{
     width: 750rpx;
     height: 100rpx;
-    font-size: 34rpx;
+    font-size: 42rpx;
     position: fixed;
     bottom: 0rpx;
     background-color: #ff5e5b;

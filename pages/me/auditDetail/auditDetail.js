@@ -6,7 +6,9 @@ Page({
     "auditId": null,
     "auditArray": {},
     "isPictureNull":true,
-    "userInformation":{}
+    "userInformation":{},
+    "userName":null,
+    "userNumber":null
   },
   onLoad: function (options) {
     var app = getApp();
@@ -17,6 +19,27 @@ Page({
       userId
     })
     this.getAudit();
+    // this.getInfo();
+  },
+  getInfo(){
+    // const id = this.data.userId;
+    const id = this.data.auditArray.userId;
+    request_1({
+      url: "https://liveforjokes.icu/getStudentDetail",
+      data: { id },
+    })
+      .then(res => {
+        console.log(res);
+        if (res.statusCode == 200) {
+          let userName = res.data.obj.yb_realname;
+          let userNumber = res.data.obj.studentNumber;
+          this.setData({
+            userName,
+            userNumber
+          })
+        }
+
+      })
   },
   getAudit() {
     const id = this.data.auditId;
@@ -36,6 +59,7 @@ Page({
             auditArray,
             isPictureNull
           })
+          this.getInfo();
         }
 
       })

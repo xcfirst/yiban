@@ -214,11 +214,11 @@ Page({
       this.getActivityProve();
     }
   },
-onShareAppMessage: function () {
-  return {
-    title: '转发',
-    path: '/pages/home/home',
-    success: function (res) { }
+  onShareAppMessage: function () {
+    return {
+      title: '转发',
+      path: '/pages/home/home',
+      success: function (res) { }
+    }
   }
-}
 })

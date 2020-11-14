@@ -21,12 +21,11 @@ Page({
 
   onShow: function () {
     let app = getApp();
-      this.getUreInformation();
-    // }
     let userId = app.globalData.userId;
     this.setData({
       userId
     })
+    this.getUreInformation();
   },
   //登录
   getUreInformation() {

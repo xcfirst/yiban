@@ -15,6 +15,23 @@
         src="{{item}}" 
         bindtap="previewImage"/>
 </view>
+
+<view class="leaveContainer">
+    <view class="leaveInnerTop">
+        个人信息
+    </view>
+    <view class="leaveInnerBottom">
+        <view class="leaveInnerContain">
+            姓名：{{userName}}
+        </view>
+    </view>
+    <view class="leaveInnerBottom">
+        <view class="leaveInnerContain">
+            学号：{{userNumber}}
+        </view>
+    </view>
+</view>
+
 <view class="bottomoptions">
     <view class="bottomcontainer" bindtap="handSuccessSubmit">
         审核通过

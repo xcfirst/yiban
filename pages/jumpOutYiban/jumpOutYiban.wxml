@@ -2,7 +2,7 @@
 <view class='headerContainer'>
     <image src='../../image/5.jpg' class="headerPicture"></image>
     <view class="headerText">
-        华农的奇妙活动
+        华农奇妙活动
     </view>
 </view>
 
@@ -11,49 +11,74 @@
         易班账号登录
     </view>
 
-    <view class="topInputContainer">
-        <view class="iconfont icon-wode2 inputIcon"></view>
-        <input class="innerInput" type="text" placeholder="请输入手机或邮箱" placeholder-class="inputtip"
-            bindinput="handleInput" />
+    <view class="topInputContainer" bindtap="handClick">
+        <view class="iconfont icon-xingming inputIcon"></view>
+        <input class="innerInput" type="text" placeholder="请输入姓名（易班昵称）" placeholder-class="inputtip"
+            bindinput="handleInputName" />
     </view>
-    <view class="topInputContainer">
+    <view class="topInputContainer" bindtap="handClick">
+        <view class="iconfont icon-wode2 inputIcon"></view>
+        <input class="innerInput" type="text" placeholder="请输入学号" placeholder-class="inputtip"
+            bindinput="handleInputId" />
+    </view>
+    <!-- <view class="topInputContainer" bindtap="handClick">
         <view class="iconfont icon-mima inputIcon"></view>
         <input class="innerInput" type="text" placeholder="请输入密码" placeholder-class="inputtip" bindinput="handleInputCode"
             password="true" />
-    </view>
+    </view> -->
 </view>
-<view class="container">
-    <view class="bottomContainer">
-        <view class="middleTip">
-            本应用为第三方应用
-        </view>
-        <view class="bottomBigTip">
-            将允许华农的奇妙活动进行以下操作：
-        </view>
 
-        <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1 tipIcon"></view>
-            <view>
-                获得你的用户信息、关系信息
+
+<!-- <view class='text' bindtap='chooseSezi'>请选择：颜色/尺码</view> -->
+<!--隐藏区域  -->
+<!-- <view class='maskLayer' wx:if="{{chooseSize}}" bindtap='hideModal'>消失</view> -->
+<view class='choose' wx:if="{{chooseSize}}" animation='{{animationData}}'>
+    <view class="chooseBg" bindtap='hideModal'></view>
+    <view class="middleContainer">
+        <view class="bottomContainer">
+            <view class="middleTip">
+                本应用为第三方应用
             </view>
-        </view>
-        <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1 tipIcon"></view>
-            <view>
-                分享内容到你的消息通知
+            <view class="bottomBigTip">
+                将允许华农的奇妙活动进行以下操作：
             </view>
+    
+            <view class="bottomSmallContainer">
+                <view class="iconfont icon-xuanze1 tipIcon"></view>
+                <view>
+                    获得你的用户信息、关系信息
+                </view>
+            </view>
+            <view class="bottomSmallContainer">
+                <view class="iconfont icon-xuanze1 tipIcon"></view>
+                <view>
+                    分享内容到你的消息通知
+                </view>
+            </view>
+            <view class="bottomSmallContainer">
+                <view class="iconfont icon-xuanze1 tipIcon"></view>
+                <view>
+                    获得你的动态、话题、评论
+                </view>
+            </view>
+            
         </view>
-        <view class="bottomSmallContainer">
-            <view class="iconfont icon-xuanze1 tipIcon"></view>
-            <view>
-                获得你的动态、话题、评论
+        <view class="chooseButton">
+            <view class="chooseButtonCansle" bindtap='hideModal'>
+                取消
+            </view>
+            <view class="chooseButtonSure" bindtap="handYibanLogin">
+                确定
             </view>
         </view>
     </view>
 </view>
-<view class="bottomYibanLogin" bindtap="handYibanLogin">
+
+
+
+<view class="bottomYibanLogin" bindtap='chooseSezi' hidden="{{chooseSize}}">
     <view>
-        授权并登录
+        登录
     </view>
 </view>
 <!-- <web-view src="https://oauth.yiban.cn/code/html?client_id=a1397db859458285&redirect_uri=https://liveforjokes.icu/index.html" bindload="handJump"></web-view> -->
