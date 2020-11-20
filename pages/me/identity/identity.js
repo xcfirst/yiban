@@ -2,6 +2,8 @@ import { request } from "../index.js";
 Page({
   data:{
     userId: getApp().globalData.userId,
+    name:'',
+    studentNum:'',
     type:'',
     association:null,
     worker:[],
@@ -31,28 +33,54 @@ Page({
       }
       that.setData({association:association ,worker:worker,principal:principal})
     })
-  },
-  navTo:function(){
-    var type = '';
-    wx.showModal({
-      content:'请选择要申请的类型',
-      cancelText: '工作人员',
-      cancelColor: '#17c3b2',
-      confirmColor: '#ff5e5b',
-      confirmText: '负责人',
-      success(res){
-        if(res.confirm){
-          wx.navigateTo({
-            url: '../identity/principal/principal?type='+type,
-          })
-        }
-        else if(res.cancel){
-          wx.navigateTo({
-            url: '../identity/worker/worker?type='+type,
-          })
-        }
+
+    request({
+      url: "https://liveforjokes.icu:8864/getUser",
+      data:{userId:data.id},
+    }).then(res=>{
+      if(res.data.msg=="success"){
+        console.log(res);
+        var obj = res.data.obj;
+        that.setData({
+          studentNum:obj.studentNumber,
+          name:obj.name,
+        })
       }
     })
+  },
+
+  navTo:function(){
+    var that = this;
+    var type = '';
+    if(that.name != null){
+      wx.showModal({
+        content:'请选择要申请的类型',
+        cancelText: '工作人员',
+        cancelColor: '#17c3b2',
+        confirmColor: '#ff5e5b',
+        confirmText: '负责人',
+        success(res){
+          if(res.confirm){
+            wx.navigateTo({
+              url: '../identity/principal/principal?type='+type,
+            })
+          }
+          else if(res.cancel){
+            wx.navigateTo({
+              url: '../identity/worker/worker?type='+type,
+            })
+          }
+        }
+      })
+    }
+    else{
+      wx.showToast({
+        title: '未填写真实信息，请先前往个人信息完善信息后再提交身份认证',
+        icon:'none',
+        duration: 2500
+      })
+
+    }
   },
   removeIdentity:function(e){
     var idx = e.currentTarget.dataset.idx;

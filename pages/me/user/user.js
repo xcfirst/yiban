@@ -3,14 +3,13 @@ import { request } from "../index.js";
 Page({
   data:{
     id:getApp().globalData.userId,
-    username:'',
     name:'',
     studentNum:'',
-    grade:'',
+    /*grade:'',
     major:'',
     phoneNum:'',
     wechatNum:'',
-    yb_userid:'',
+    yb_userid:'',*/
     isFinished: false
   },
   
@@ -19,21 +18,21 @@ Page({
     var data = this.data;
     this.setData({id:getApp().globalData.userId})
     request({
-      url: "https://liveforjokes.icu/getStudentDetail",
-      data:{id:data.id},
+      url: "https://liveforjokes.icu:8864/getUser",
+      data:{userId:data.id},
     }).then(res=>{
       if(res.data.msg=="success"){
         console.log(res);
         var obj = res.data.obj;
         that.setData({
           studentNum:obj.studentNumber,
-          username:obj.yb_realname,
           name:obj.name,
+          /*name:obj.name,
           grade:obj.grade,
           major:obj.major,
           phoneNum:obj.phoneNumber,
           wechatNum:obj.wechatNumber,
-          yb_userid:obj.yb_userid
+          yb_userid:obj.yb_userid*/
         })
       }
     })
@@ -47,62 +46,62 @@ Page({
   inputStudentNum: function(e){
     this.setData({studentNum:e.detail.value})
   },
-  inputGrade: function(e){
-    this.setData({grade:e.detail.value})
-  },
-  inputMajor: function(e){
-    this.setData({major:e.detail.value})
-  },
-  inputPhone: function(e){
-    this.setData({phoneNum:e.detail.value})
-  },
-  inputWx: function(e){
-    this.setData({wechatNum:e.detail.value})
-  },
 
   updata: function(){
     var data = this.data;
     var isFinished = this.data.isFinished;
-      if(data.name&&data.wechatNum&&data.grade&&data.major&&data.phoneNum&&data.wechatNum){
+      if(data.name&&data.studentNum){
         isFinished = true
       }
       if(isFinished){
-        request({
-          url: "https://liveforjokes.icu/submitIdentityInformation",
-          method:"POST",
-          data:{ id:data.id, studentNumber:data.studentNum, name:data.name, username:data.username, grade:data.grade, major:data.major, phoneNumber:data.phoneNum ,wechatNumber:data.wechatNum , yb_userid:data.yb_userid},
-
-        }).then(res=>{
-          console.log(res)
-          if(res.statusCode==200){
-            wx.showToast({
-              title: '提交成功',
-              icon: 'success',
-              duration: 2000,
-              success:(res=>{
-                setTimeout(function(){
-                  wx.navigateBack({
-                    delta:1
+        wx.showModal({
+          content: '确认提交信息吗？若有已认证身份则认证将解绑',
+          cancelColor: '#17c3b2',
+          cancelText: '取消',
+          confirmText: '确认',
+          confirmColor: '#ff5e5b',
+          success(res){
+            if(res.confirm){
+              request({
+                url: "https://liveforjokes.icu:8864/getUser",
+                method:"POST",
+                data:{ userId:data.id, studentNumber:data.studentNum, name:data.name},
+      
+              }).then(res=>{
+                console.log(res)
+                if(res.statusCode==200){
+                  wx.showToast({
+                    title: '提交成功',
+                    icon: 'success',
+                    duration: 2000,
+                    success:(res=>{
+                      setTimeout(function(){
+                        wx.navigateBack({
+                          delta:1
+                        })
+                      },2000)
+                    })
                   })
-                },2000)
-              })
-            })
-          }
-          else{
-            wx.showToast({
-              title: '提交失败，请稍后重试',
-              icon: 'none',
-              duration: 2000,
-              success:(res=>{
-                setTimeout(function(){
-                  wx.navigateBack({
-                    delta:1
+                }
+                else{
+                  wx.showToast({
+                    title: '提交失败，请稍后重试',
+                    icon: 'none',
+                    duration: 2000,
+                    success:(res=>{
+                      setTimeout(function(){
+                        wx.navigateBack({
+                          delta:1
+                        })
+                      },2000)
+                    })
                   })
-                },2000)
+                }
               })
-            })
+            }
           }
         })
+      
       }
       else{
         wx.showToast({

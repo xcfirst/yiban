@@ -20,7 +20,7 @@ Page({
       url: "https://liveforjokes.icu/getStudentDetail",
       data:{id:data.userid},
     }).then(res=>{
-      this.setData({name:res.data.obj.yb_realname,avatar:res.data.obj.yb_userhead})
+      this.setData({name:res.data.obj.nickName,avatar:res.data.obj.avatarUrl})
     })
   },
   
