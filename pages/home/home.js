@@ -118,6 +118,7 @@ Page({
   //   }
   // },
   //首页
+  
   onShow: function () {
     let app = getApp();
     let hasLogin = app.globalData.hasLogin;
@@ -129,6 +130,13 @@ Page({
     this.setData({
       userId
     })
+    console.log("userId = " + userId);
+    if (userId == null) {
+      wx.redirectTo({
+        url: "../wechatLogin/wechatLogin",
+      });
+      app.globalData.hasLogin = false;
+    }
     if (userId != null) {
       this.getActivityArray();
       this.getActivityProve();

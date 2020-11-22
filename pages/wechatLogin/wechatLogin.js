@@ -23,10 +23,15 @@ Page({
 
   onShow: function () {
     let app = getApp();
-    // let userId = app.globalData.userId;
-    // this.setData({
-      // userId
-    // })
+    let userId = app.globalData.userId;
+    this.setData({
+      userId
+    })
+    // if(userId == null){
+    //   this.setData({
+    //     isHide:true
+    //   })
+    // }
     this.getUreInformation();
   },
   //登录
@@ -39,11 +44,14 @@ Page({
             success: function (res) {
               console.log("getUserInfo取得的信息：");
               console.log(res);
+              that.setData({
+                userInfo:res.userInfo
+              })
               // 用户已经授权过,不需要显示授权页面
               that.getCode();
-              wx.switchTab({
-                url: '../home/home',
-              })
+              // wx.switchTab({
+              //   url: '../home/home',
+              // })
             }
           });
         } else {
