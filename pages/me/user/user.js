@@ -18,7 +18,7 @@ Page({
     var data = this.data;
     this.setData({id:getApp().globalData.userId})
     request({
-      url: "https://liveforjokes.icu:8864/getUser",
+      url: "https://liveforjokes.icu/getUser",
       data:{userId:data.id},
     }).then(res=>{
       if(res.data.msg=="success"){
@@ -63,7 +63,7 @@ Page({
           success(res){
             if(res.confirm){
               request({
-                url: "https://liveforjokes.icu:8864/getUser",
+                url: "https://liveforjokes.icu/getUser",
                 method:"POST",
                 data:{ userId:data.id, studentNumber:data.studentNum, name:data.name},
       

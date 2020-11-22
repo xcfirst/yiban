@@ -35,7 +35,7 @@ Page({
     })
 
     request({
-      url: "https://liveforjokes.icu:8864/getUser",
+      url: "https://liveforjokes.icu/getUser",
       data:{userId:data.id},
     }).then(res=>{
       if(res.data.msg=="success"){

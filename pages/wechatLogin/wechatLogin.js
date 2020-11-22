@@ -12,7 +12,9 @@ Page({
     "activityProveArrayLength": true,
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     "canIUse": wx.canIUse('button.open-type.getUserInfo'),
-    "isHide": false
+    "isHide": false,
+
+    "userInfo":null
   },
   onLoad: function (options) {
 
@@ -21,10 +23,10 @@ Page({
 
   onShow: function () {
     let app = getApp();
-    let userId = app.globalData.userId;
-    this.setData({
-      userId
-    })
+    // let userId = app.globalData.userId;
+    // this.setData({
+      // userId
+    // })
     this.getUreInformation();
   },
   //登录
@@ -35,6 +37,8 @@ Page({
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: function (res) {
+              console.log("getUserInfo取得的信息：");
+              console.log(res);
               // 用户已经授权过,不需要显示授权页面
               that.getCode();
               wx.switchTab({
@@ -57,14 +61,46 @@ Page({
     wx.login({
       success: res => {
         // 获取到用户的 code 之后：res.code
+        console.log("login取得的信息：");
+        console.log(res);
         console.log("用户的code:" + res.code);
         var app = getApp();
         app.globalData.hasLogin = true;
-        this.saveCode(res.code);
+
+        this.getUserId(res.code);
+        // this.saveCode(res.code);
       }
     });
 
   },
+  getUserId(code){
+    var nickName = this.data.userInfo.nickName;
+    var avatarUrl = this.data.userInfo.avatarUrl;
+    request_1({
+      url: "https://liveforjokes.icu/login",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: { nickName, avatarUrl, code },
+      method: "POST",
+    })
+      .then(res => {
+        console.log(res);
+        let userId = res.data.obj.id;
+        let app = getApp();
+        app.globalData.userId = userId;
+        console.log("userId = " + app.globalData.userId);
+        this.setData({
+          userId
+        })
+        this.saveCode(code);
+        wx.switchTab({
+          url: '../home/home',
+        })
+      })
+  },
+
+
   saveCode(code) {
     const userId = this.data.userId;
     request_1({
@@ -85,14 +121,19 @@ Page({
       // 获取到用户的信息了，打印到控制台上看下
       console.log("用户的信息如下：");
       console.log(e.detail.userInfo);
+      this.setData({
+        userInfo:e.detail.userInfo
+      })
       this.getCode();
       //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
       that.setData({
-        isHide: false
+        isHide: false,
       });
-      wx.switchTab({
-        url: '../home/home',
-      })
+
+      
+      // wx.switchTab({
+      //   url: '../home/home',
+      // })
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -108,5 +149,5 @@ Page({
         }
       });
     }
-  },
+  }
 })

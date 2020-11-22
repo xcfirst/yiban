@@ -5,13 +5,13 @@ App({
   onShow: function (options) {
     let userId = this.globalData.userId;
     if (userId == null) {
-      console.log(1);
-      // wx.redirectTo({
-      //   url: "./pages/wechatLogin/wechatLogin",
-      // });
+      console.log("userId = null");
       wx.redirectTo({
-        url: "./pages/jumpOutYiban/jumpOutYiban",
+        url: "./pages/wechatLogin/wechatLogin",
       });
+      // wx.redirectTo({
+      //   url: "./pages/jumpOutYiban/jumpOutYiban",
+      // });
     }
   },
   onHide: function () {},

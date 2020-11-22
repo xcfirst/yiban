@@ -2,13 +2,13 @@
 import { request_1 } from "../../../request/index_1.js";
 Page({
   data: {
-    "userId":null,
+    "userId": null,
     "auditId": null,
     "auditArray": {},
-    "isPictureNull":true,
-    "userInformation":{},
-    "userName":null,
-    "userNumber":null
+    "isPictureNull": true,
+    "userInformation": {},
+    "userName": null,
+    "userNumber": null
   },
   onLoad: function (options) {
     var app = getApp();
@@ -18,30 +18,55 @@ Page({
       auditId,
       userId
     })
-    this.getAudit();
+    this.getDetail();
+    //this.getAudit();
     // this.getInfo();
   },
-  getInfo(){
-    // const id = this.data.userId;
-    const id = this.data.auditArray.userId;
-    request_1({
-      url: "https://liveforjokes.icu/getStudentDetail",
-      data: { id },
-    })
-      .then(res => {
-        console.log(res);
-        if (res.statusCode == 200) {
-          let userName = res.data.obj.yb_realname;
-          let userNumber = res.data.obj.studentNumber;
-          this.setData({
-            userName,
-            userNumber
-          })
-        }
+  // getInfo(){
+  //   // const id = this.data.userId;
+  //   const id = this.data.auditArray.userId;
+  //   request_1({
+  //     url: "https://liveforjokes.icu/getStudentDetail",
+  //     data: { id },
+  //   })
+  //     .then(res => {
+  //       console.log(res);
+  //       if (res.statusCode == 200) {
+  //         let userName = res.data.obj.yb_realname;
+  //         let userNumber = res.data.obj.studentNumber;
+  //         this.setData({
+  //           userName,
+  //           userNumber
+  //         })
+  //       }
 
-      })
-  },
-  getAudit() {
+  //     })
+  // },
+  // getAudit() {
+  //   const id = this.data.auditId;
+  //   request_1({
+  //     url: "https://liveforjokes.icu/getAuthenticationMessageById",
+  //     data: { id },
+  //   })
+  //     .then(res => {
+  //       console.log(res);
+  //       if (res.statusCode == 200) {
+  //         let auditArray = res.data.obj;
+  //         let isPictureNull = this.data.isPictureNull;
+  //         if(auditArray.pictureUrl.length != 0 && auditArray.pictureUrl != null){
+  //           isPictureNull = false
+  //         }
+  //         this.setData({
+  //           auditArray,
+  //           isPictureNull
+  //         })
+  //         this.getInfo();
+  //       }
+
+  //     })
+  // },
+
+  getDetail() {
     const id = this.data.auditId;
     request_1({
       url: "https://liveforjokes.icu/getAuthenticationMessageById",
@@ -50,16 +75,19 @@ Page({
       .then(res => {
         console.log(res);
         if (res.statusCode == 200) {
-          let auditArray = res.data.obj;
+          let auditArray = res.data.obj.authenticationMessage;
           let isPictureNull = this.data.isPictureNull;
-          if(auditArray.pictureUrl.length != 0 && auditArray.pictureUrl != null){
+          if (auditArray.pictureUrl.length != 0 && auditArray.pictureUrl != null) {
             isPictureNull = false
           }
+          let userName = res.data.obj.user.name;
+          let userNumber = res.data.obj.user.studentNumber;
           this.setData({
             auditArray,
-            isPictureNull
+            isPictureNull,
+            userName,
+            userNumber
           })
-          this.getInfo();
         }
 
       })
@@ -97,7 +125,7 @@ Page({
 
       })
   },
-  previewImage:function(e){
+  previewImage: function (e) {
     var images = this.data.auditArray.pictureUrl;
     var idx = e.currentTarget.dataset.idx;
     wx.previewImage({
