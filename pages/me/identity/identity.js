@@ -36,7 +36,7 @@ Page({
 
     request({
       url: "https://liveforjokes.icu/getUser",
-      data:{userId:data.id},
+      data:{userId:that.data.userId},
     }).then(res=>{
       if(res.data.msg=="success"){
         console.log(res);
@@ -52,7 +52,7 @@ Page({
   navTo:function(){
     var that = this;
     var type = '';
-    if(that.name != null){
+    if(that.data.name != null){
       wx.showModal({
         content:'请选择要申请的类型',
         cancelText: '工作人员',

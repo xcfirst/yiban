@@ -63,10 +63,12 @@ Page({
           success(res){
             if(res.confirm){
               request({
-                url: "https://liveforjokes.icu/getUser",
+                url: "https://liveforjokes.icu/updateUser",
                 method:"POST",
                 data:{ userId:data.id, studentNumber:data.studentNum, name:data.name},
-      
+                header:{
+                  "Content-Type": "application/x-www-form-urlencoded"
+                },
               }).then(res=>{
                 console.log(res)
                 if(res.statusCode==200){
@@ -88,13 +90,13 @@ Page({
                     title: '提交失败，请稍后重试',
                     icon: 'none',
                     duration: 2000,
-                    success:(res=>{
+                    /*success:(res=>{
                       setTimeout(function(){
                         wx.navigateBack({
                           delta:1
                         })
                       },2000)
-                    })
+                    })*/
                   })
                 }
               })
