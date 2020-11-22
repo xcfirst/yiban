@@ -2,8 +2,8 @@ import { request } from "../index.js";
 Page({
   data:{
     userId: getApp().globalData.userId,
-    name:'',
-    studentNum:'',
+    name:null,
+    studentNum:null,
     type:'',
     association:null,
     worker:[],
@@ -41,10 +41,12 @@ Page({
       if(res.data.msg=="success"){
         console.log(res);
         var obj = res.data.obj;
-        that.setData({
-          studentNum:obj.studentNumber,
-          name:obj.name,
-        })
+        if(obj != null){
+          that.setData({
+            studentNum:obj.studentNumber,
+            name:obj.name,
+          })
+        }
       }
     })
   },
@@ -52,6 +54,7 @@ Page({
   navTo:function(){
     var that = this;
     var type = '';
+    console.log(this.data.name);
     if(that.data.name != null){
       wx.showModal({
         content:'请选择要申请的类型',
